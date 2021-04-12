@@ -17,6 +17,9 @@ import { LandingComponent } from './pages/landing/landing.component';
 const routes: Routes = 
 [
   {
+    path: '', component: LandingComponent
+  },
+  {
     path:"registro",component:RegistroComponent
   },
   {
@@ -51,8 +54,10 @@ const routes: Routes =
   },
   {
     path:"landing",component:LandingComponent
-   
   }
+  /*{
+    path: "**", component: PageNotFound
+  },*/
 ];
 
 @NgModule({
