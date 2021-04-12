@@ -1,0 +1,49 @@
+<h1 class = "cardtitle2" style="margin-top:10px">Mis productos</h1>
+<hr style="background-color: #e67e22;">
+
+<!-- TARJETAS -->
+
+<div class="rowCards" id="collectCards">
+    
+    <mat-card class="cards columnCards" id="agregarProduct">
+        <mat-card-content  class="cardtitle" >
+            <div id="addProducto">
+                <a href="" style="text-decoration: none; color:#E67E22">
+                    <img class="imgCard" id="cestaAdd" mat-card-image src="./assets/img/ICOfruitBAG.png" alt="cesta"/>
+                    <p>Agregar producto</p>
+                </a>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+
+    <mat-card class="cards columnCards">
+      <img class="imgCard" mat-card-image src="./assets/fotos/manzanita.jpg" alt="manzanas"/>
+      <mat-card-title class="cardtitle">Manzanas ecológicas</mat-card-title>
+      <mat-card-content>
+        <p class="contentCard"><span class="nameField">Precio:</span> 2€/kg</p>
+        <p class="contentCard">
+          <span class="nameField">Cantidad disponible:</span> 20kg
+        </p>
+      </mat-card-content>
+      <mat-card-actions class = "rowButtons buttonsCards" id= "boton">    
+        <button id="edit">Editar</button>
+        <button>Eliminar</button>
+      </mat-card-actions>    
+    </mat-card>
+
+    <mat-card class="cards columnCards">
+        <img class="imgCard" mat-card-image src="./assets/fotos/tomate.jpg" alt="manzanas"/>
+        <mat-card-title class="cardtitle">Tomates</mat-card-title>
+        <mat-card-content>
+          <p class="contentCard"><span class="nameField">Precio:</span> 1.5€/kg</p>
+          <p class="contentCard">
+            <span class="nameField">Cantidad disponible:</span> 35kg
+          </p>
+        </mat-card-content>
+        <mat-card-actions class = "rowButtons buttonsCards" id= "boton">    
+          <button id="edit">Editar</button>
+          <button>Eliminar</button>
+        </mat-card-actions>    
+    </mat-card>
+</div>

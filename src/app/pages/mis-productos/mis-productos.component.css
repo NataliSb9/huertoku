@@ -1,0 +1,118 @@
+/*tarjetas*/
+.cards {
+  max-width: 255px;
+  border-radius: 25px;
+  margin-right: 35px;
+  margin-left: 35px;
+  padding-bottom: 30px;
+  border-color: #cac6c6;
+  border: solid, 1px;
+  border-style: solid;
+  border-width: 0.5px;
+  /*box-shadow: 8px 8px 16px 5px rgba(0,0,0,0.2);*/
+}
+#collectCards {
+  padding: 12px;
+  margin-top: 150px;
+}
+#collectCards > .cards {
+  margin: 12px;
+}
+
+.imgCard {
+  background-size: cover;
+}
+
+.rowCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.columnCards {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  align-items: flex-start;
+}
+
+.contentCard {
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  color: #767676;
+}
+
+.cardtitle {
+  font-family: "Signika", sans-serif;
+  text-align: left;
+  color: #e67e22;
+}
+
+.nameField {
+  font-style: normal;
+  font-weight: bold;
+  color: #767676;
+}
+
+.rowButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+button {
+  border-radius: 25px;
+  width: 85px;
+  height: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #fdffee;
+  font-size: 15px;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  text-decoration: none;
+  background-color: #267172;
+  transition: box-shadow 0.16s ease;
+}
+
+button:hover {
+  background: #408f91;
+  box-shadow: none;
+}
+
+.buttonsCards {
+  margin-right: 33px;
+  margin-left: 20px;
+}
+
+#edit {
+  margin-right: 10px;
+}
+
+/*Tarjeta Agregar Porducto*/
+#cestaAdd {
+  margin-top: 25px;
+}
+#addProducto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#addProducto p {
+  text-align: center;
+  font-size: 25px;
+}
+
+/**Efecto color borde**/
+
+#agregarProduct:hover {
+  box-shadow: 6px 6px 6px #267172;
+}
+
+/*titulo*/
+.cardtitle2 {
+  font-family: "Signika", sans-serif;
+  text-align: center;
+  color: #e67e22;
+}

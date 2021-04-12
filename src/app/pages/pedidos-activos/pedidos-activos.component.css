@@ -1,0 +1,133 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.field {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+
+/****Tablas****/
+
+#pedido {
+  font-family: "Signika", sans-serif;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+#envio {
+  font-family: "Signika", sans-serif;
+  font-size: 40px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+}
+
+.field {
+  font-family: "Signika", sans-serif;
+  font-size: 26px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.producto {
+  font-size: 16px;
+  margin-left: 22px;
+}
+
+.origen {
+  font-size: 16px;
+  margin-left: 22px;
+}
+.fecha {
+  font-size: 16px;
+  padding-left: 5px;
+  margin-left: 22px;
+}
+
+#tablaEnvios {
+  margin-left: 30px;
+}
+
+#tablaPedido {
+  margin-right: 30px;
+}
+
+.pedidos {
+  margin-right: 25px;
+}
+
+.envios {
+  margin-left: 15px;
+}
+
+.sep {
+  margin: 55px;
+}
+
+/*Tabla*/
+
+h2 {
+  margin-top: 150px;
+  font-size: 28px;
+}
+.pedidosEnvios {
+  margin-top: 0px;
+}
+
+table {
+  width: 500px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-top: 155px;
+  margin-left: 25px;
+  table-layout: fixed;
+  overflow-wrap: break-word;
+}
+
+/*celdas*/
+thead {
+  overflow: hidden;
+}
+table thead th {
+  text-align: center;
+  padding: 0.5em;
+}
+
+table tbody td {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table thead {
+  letter-spacing: 0.03em;
+}
+
+thead {
+  background-color: #e67e22;
+  font-family: "Signika", sans-serif;
+  font-size: 25px;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: rgb(235, 229, 229);
+}
+
+/*titulo*/
+.cardtitle {
+  font-family: "Signika", sans-serif;
+  text-align: center;
+  color: #e67e22;
+}

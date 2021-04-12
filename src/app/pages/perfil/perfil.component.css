@@ -1,0 +1,192 @@
+/* /* 
+COLORES
+    > naranja claro --> #F39C12
+    > naranja ocuro --> #E67E22
+    > verde ----------> #267172
+    > gris -----------> #767676
+    > blanco ---------> #FdFFFF
+ 
+TIPOGRAFIAS
+    > Headers: font-family: 'Signika', sans-serif;
+    > Textos: font-family: 'Roboto', sans-serif; */
+
+
+    
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: inherit;
+}
+
+.colImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.rowNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: inherit;
+}
+
+#container {
+  width: 100%;
+}
+
+/* IMAGEN DE PERFIL */
+#imgPerfil {
+  width: 220px;
+  border-radius: 100%;
+  margin-top: 120px;
+  margin-right:105px;
+  margin-left: 10px;
+  margin-bottom: 35px;
+}
+
+/* DATOS DE PERFIL */
+#edit-profile {
+  margin-bottom: -25px;
+  margin-left: 5px;
+  width: 18px;
+}
+
+#data {
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+  align-items: flex-start;
+  margin-right: 10px;
+  margin-left: 45px; 
+}
+#UserName {
+  color: #f39c12;
+  font-family: "Roboto", sans-serif;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+#data p {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#data img {
+  margin-top: 8px;
+}
+
+a{
+  text-decoration:none;
+  color: #767676;
+}
+a:hover{
+  color:#267172
+ 
+}
+
+/* RESPONISVE */
+/*
+@media screen and (max-width: 980px) {
+  #UserName {
+    position: absolute;
+    margin-left: 5%;
+  }
+  #data {
+    position: absolute;
+    margin-left: 5%;
+  }
+  #trophy {
+    position: absolute;
+    margin-left: 5%;
+  }
+}
+@media screen and (max-width: 812px) {
+  #UserName {
+    position: absolute;
+    margin-left: 10%;
+  }
+  #data {
+    position: absolute;
+    margin-left: 10%;
+  }
+  #trophy {
+    visibility: hidden;
+  }
+  #edit-profile {
+    position: absolute;
+    left: 20%;
+    top: 60%;
+    transform: translate(-0%, -60%);
+    color: #f39c12;
+    font-family: "Roboto", sans-serif;
+  }
+}
+@media screen and (max-width: 690px) {
+  #UserName {
+    position: absolute;
+    margin-left: 20%;
+  }
+
+  #data {
+    position: absolute;
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width: 690px) {
+  #data {
+    position: absolute;
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width: 558px) {
+  #imgPerfil {
+    width: 40%;
+  }
+  #UserName {
+    font-size: medium;
+  }
+  #data {
+    font-size: small;
+  }
+}
+*/
+/*  NAVEGACION */
+
+#separador {
+  border-bottom: solid 2px #f39c12; 
+  width: 875px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 20px;
+  background-color: #f39c12;
+}
+
+#navBar {
+  width: 500px;
+  margin-right: 100px;
+}
+
+#navBar a {
+  text-decoration: none;
+  color: #767676;
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
+  padding: 10px;
+  margin-left: 10%;
+}
+
+#navBar a:hover {
+  color: #267172;
+}

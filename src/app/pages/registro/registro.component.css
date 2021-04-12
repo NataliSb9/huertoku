@@ -1,0 +1,104 @@
+/* CSS rules to specify families
+
+COLORES
+naranja claro --> #F39C12
+naranja ocuro --> #E67E22
+verde ----------> #267172
+gris -----------> #767676
+blanco ---------> #FdFFFF
+
+font-family: 'Roboto', sans-serif;
+font-family: 'Signika', sans-serif;
+*/
+ 
+/*/////////////TARJETAS////////////////*/
+
+.cards {
+    max-width: 350px;
+    border-radius: 25px;
+    margin-right: 35px;
+    margin-left: 35px;
+    padding-bottom: 30px;
+    border-color: #767676;
+  }
+  .cardimg {
+    max-width: 300px;
+    border-radius: 25px;
+    margin-right: 35px;
+    margin-left: 35px;
+    padding-bottom: 30px;
+    border-color: #767676;
+  }
+  #collectCards{
+    padding: 12px;
+    margin-top: 30px;
+  
+  }
+  #collectCards > .cards{
+    margin: 12px;
+  }
+  .cards:hover{
+    box-shadow: 6px 6px 6px  #267172;
+  }
+  .imgCard {
+    background-size: cover;
+  }
+  
+  .rowCards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .columnCards {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    align-items: flex-start;
+  }
+  
+  .contentCard {
+   font-family: 'Roboto', sans-serif;
+   text-align: left;
+   color: #767676;
+  }
+  
+  .cardtitle{
+   font-family: 'Signika', sans-serif;
+   margin-left: 75px;
+   /* margin-bottom: 15px; */
+   padding:20px;
+   color: #e67e22;
+  }
+  .nameField{
+   font-style: normal;
+   font-weight: bold;
+   color: #767676;
+  }
+  /*///////////BOTÓN////////////*/
+
+button 
+{
+    border-radius: 25px;
+    width: 180px;
+    height: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #fdffee;
+    font-size: 15px;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    text-decoration: none;
+    background-color: #267172;
+    transition: box-shadow 0.16s ease;
+}
+
+button:hover 
+{
+    background: #408f91;
+    box-shadow: none;
+}
+.buttonsCards 
+{
+    margin-right: 72px;
+    margin-left: 75px;
+}

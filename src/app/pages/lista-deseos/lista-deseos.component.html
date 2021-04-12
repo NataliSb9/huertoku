@@ -1,0 +1,46 @@
+<div class="container">
+	<table id="cart" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:50%">Product</th>
+							<th style="width:10%">Price</th>
+							<th style="width:8%">Quantity</th>
+							<th style="width:22%" class="text-center">Subtotal</th>
+							<th style="width:10%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-2 hidden-xs"><img src="assets/img/ICOfruitBAG.png" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-10">
+										<h4 class="nomargin" style= "font-family: 'Signika', sans-serif;">Tomates</h4>
+										<p style= "font-family: 'Roboto', sans-serif;">Tomates de la huerta de tus muertos</p>
+									</div>
+								</div>
+							</td>
+							<td data-th="Price">35.00€</td>
+							<td data-th="Quantity">
+								<input type="number" class="form-control text-center" value="1">
+							</td>
+							<td data-th="Subtotal" class="text-center">36.90€</td>
+							<td class="actions" data-th="">
+								<button style="margin: 1px;" class="btn btn-info btn-sm"><i class="fa fa-refresh"><mat-icon routerLink="chat" class="icon" type="button">message</mat-icon></i></button>
+								<button style="margin: 1px;" class="btn btn-info btn-sm"><i class="fa fa-refresh"><mat-icon class="icon" type="button">payment</mat-icon></i></button>						
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr class="visible-xs">
+							<td class="text-center"><strong>Total 36.90</strong></td>
+						</tr>
+						<tr>
+							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuar comprando</a></td>
+							<td colspan="2" class="hidden-xs"></td>
+							<td class="hidden-xs text-center"><strong>Total 36.90€</strong></td>
+							<td><button mat-button mat-dialog-close class="btn btn-danger btn-block">Cerrar <i class="fa fa-angle-right"></i></button></td>
+						</tr>
+					</tfoot>
+				</table>
+</div>

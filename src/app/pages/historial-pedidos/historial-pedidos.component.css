@@ -1,0 +1,191 @@
+.rowFiltros {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.rowInsideFiltros {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.columnFilter {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  align-items: flex-start;
+}
+.columnCheck {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+#lineExp {
+  margin-right: 355px;
+}
+#filtros {
+  margin-top: 130px;
+}
+
+mat-expansion-panel {
+  width: 1050px;
+  margin-left: 290px;
+}
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}
+
+#filtros p {
+  font-family: "Signika", sans-serif;
+  font-size: 20px;
+  color: #e67e22;
+}
+
+#lupa {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  padding-top: 2px;
+}
+#buscar {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4px;
+}
+#buscar input {
+  height: 25px;
+}
+
+#tipo {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+#precio {
+  margin-left: 10px;
+}
+
+label{
+  margin-left: 8px;
+  margin-bottom: -5px;
+}
+
+#filtrosButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 45px;
+}
+
+#dentroFiltrar{
+  margin-left: 15px;
+}
+
+/*****SLIDER****/
+
+::ng-deep .mat-accent .mat-slider-thumb {
+  background-color: #267172;
+}
+::ng-deep .mat-accent .mat-slider-track-fill {
+  background-color: #267172;
+}  
+mat-slider{
+  margin-right: 50px;
+  color: #267172;
+  
+}
+/****** TARJETAS ******/
+.cards {
+  max-width: 250px;
+  border-radius: 25px;
+  padding-bottom: 30px;
+  border-color: #cac6c6;
+  border: solid, 1px;
+  border-width: 0.5px;
+}
+
+#collectCards > .cards {
+  margin: 12px;
+}
+
+.imgCard {
+  background-size: cover;
+}
+
+.rowCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.columnCards {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  align-items: flex-start;
+}
+
+.contentCard {
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  color: #767676;
+}
+
+.cardtitle {
+  font-family: "Signika", sans-serif;
+  text-align: left;
+  color: #e67e22;
+  
+}
+
+.cardtitle2 {
+  font-family: "Signika", sans-serif;
+  text-align: left;
+  color: #e67e22;
+  text-align: center;  
+}
+
+.nameField {
+  font-style: normal;
+  font-weight: bold;
+  color: #767676;
+}
+
+button {
+  border-radius: 25px;
+  width: 85px;
+  height: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #fdffee;
+  font-size: 15px;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  text-decoration: none;
+  background-color: #267172;
+  transition: box-shadow 0.16s ease;
+}
+
+button:hover {
+  background: #408f91;
+  box-shadow: none;
+}
+
+.buttonsCards {
+  margin-right: 72px;
+  margin-left: 75px;
+}
+
+#edit {
+  margin-right: 10px;
+}
+
+@media (max-width: 1500px) {
+  mat-expansion-panel {
+    margin-left: 890px;
+  }
+}

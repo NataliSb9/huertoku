@@ -1,0 +1,38 @@
+
+.toolbar {
+    position: relative;
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("./../../../assets/img/FOOTER-DEF.png");
+    /* background-position:center; */
+    color: white;
+    font-weight: 600;
+  }
+  
+  .item{
+      color: #fdffff;
+      text-decoration: none;
+      display: inline-block;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      margin-bottom: -100px;
+  }
+
+  .icon{
+      color: #fdffff;
+      text-decoration: none;
+      display: inline-block;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      margin-bottom: -100px;
+        
+  }
