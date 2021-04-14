@@ -49,9 +49,10 @@ TIPOGRAFIAS
   width: 100%;
 }
 
+
 /* IMAGEN DE PERFIL */
 #imgPerfil {
-  width: 220px;
+  width: 320px;
   border-radius: 100%;
   margin-top: 120px;
   margin-right:105px;
@@ -62,7 +63,7 @@ TIPOGRAFIAS
 /* DATOS DE PERFIL */
 #edit-profile {
   margin-bottom: -25px;
-  margin-left: 5px;
+  margin-left: 18px;
   width: 18px;
 }
 
@@ -76,8 +77,10 @@ TIPOGRAFIAS
 #UserName {
   color: #f39c12;
   font-family: "Roboto", sans-serif;
-  margin-top: 20px;
-  margin-right: 50px;
+  margin-top: 45px;
+  margin-bottom: 1px;
+  margin-left: -10px;
+  margin-right: 55px;
 }
 #data p {
   margin-top: 5px;
