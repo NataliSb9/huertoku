@@ -21,29 +21,45 @@
             ¡Añade un producto!
         </mat-card-title>
             <mat-card-content>
-                <form [formGroup]="myProduct">
+                <form [formGroup]="myForm">
                     <!-- <div class="form-row"> -->
                       <div class="form-group">
                         <label style="font-family: 'Roboto', sans-serif">Nombre del producto</label>
                         <input type="text" class="form-control" formControlName="productName"
-                            [ngClass]="{'is-invalid': !myProduct.get('productName').valid}">
+                            [ngClass]="{'is-invalid': !myForm.get('productName').valid}">
                       </div>
                     <!-- </div> -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label style="font-family: 'Roboto', sans-serif">Tipo de producto</label>
                         <input type="text" class="form-control" formControlName="productType"
-                        [ngClass]="{'is-invalid': !myProduct.get('productType').valid}">
-                    </div>
+                        [ngClass]="{'is-invalid': !myForm.get('productType').valid}">
+                    </div> -->
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Tipo de producto</label>
+                        <select class="form-control" id="exampleFormControlSelect1" formControlName="productType"
+                        [ngClass]="{'is-invalid': !myForm.get('productType').valid}">
+                          <option>Fruta</option>
+                          <option>Verdura</option>
+                          <option>Otros</option>
+                         
+                        </select>
+                      </div>
+                    
                     <div class="form-row">
                     <div class="form-group col-md-6">
                         <label style="font-family: 'Roboto', sans-serif">Cantidad</label>
                         <input type="number" class="form-control" formControlName="productAmount"
-                        [ngClass]="{'is-invalid': !myProduct.get('productAmount').valid}">
+                        [ngClass]="{'is-invalid': !myForm.get('productAmount').valid}">
                     </div>
                     <div class="form-group col-md-6">
-                        <label style="font-family: 'Roboto', sans-serif">Precio</label>
+                        <label style="font-family: 'Roboto', sans-serif">Precio por unidad</label>
                         <input type="number" class="form-control" formControlName="productPrice"
-                        [ngClass]="{'is-invalid': !myProduct.get('productPrice').valid}">
+                        [ngClass]="{'is-invalid': !myForm.get('productPrice').valid}">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label style="font-family: 'Roboto', sans-serif">Localidad</label>
+                        <input type="text" class="form-control" formControlName="productLocality"
+                        [ngClass]="{'is-invalid': !myForm.get('productLocality').valid}">
                     </div>
                 </div>
                       <!-- <div class="form-group col-md-6">
@@ -55,22 +71,40 @@
                       </div> -->
 
                     <!-- </div> -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck">
                         <label class="form-check-label" for="gridCheck">
                           Eco
                         </label>
                       </div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
+                        <label for="exampleFormControlSelect1">Eco </label>
+                        <select class="form-control" id="exampleFormControlSelect1" class="form-control" formControlName="productEco"
+                        [ngClass]="{'is-invalid': !myForm.get('productEco').valid}">
+                          <option>Sí</option>
+                          <option>No</option>
+                          
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Trueque</label>
+                        <select class="form-control" id="exampleFormControlSelect1" class="form-control" formControlName="productChange"
+                        [ngClass]="{'is-invalid': !myForm.get('productChange').valid}">
+                          <option>Sí</option>
+                          <option>No</option>
+                          
+                        </select>
+                      </div>
+                    <!-- <div class="form-group">
                         <div class="form-check">
                           <input class="form-check-input" type="checkbox" id="gridCheck">
                           <label class="form-check-label" for="gridCheck">
                             Trueque
                           </label>
                         </div>
-                      </div>
+                      </div> -->
                     <mat-card-actions class = "rowButtons buttonsCards" id= "boton" (click)="register()">
                         <button id="buy">Añadir producto</button>
                     </mat-card-actions>
@@ -81,6 +115,7 @@
             </mat-card-content>
         </mat-card>
 </div>
+
 <!-- ////////////////FORMULARIO DE RESCATE///////////////////// -->
         <!-- <div class="col-sm">
             <mat-card class="cards columnCards"> 
@@ -88,35 +123,35 @@
                     ¡Añade un producto!
                 </mat-card-title>
                     <mat-card-content>
-                        <form [formGroup]="myProduct">
+                        <form [formGroup]="myForm">
                             <div class="form-group">
                                 <label style="font-family: 'Roboto', sans-serif">Nombre del producto</label>
                                 <input type="text" class="form-control" formControlName="name"
-                                [ngClass]="{'is-invalid': !myProduct.get('name').valid}">
+                                [ngClass]="{'is-invalid': !myForm.get('name').valid}">
                             </div>
 
                             <div class="form-group">
                                 <label style="font-family: 'Roboto', sans-serif">Tipo de producto</label>
                                 <input type="text" class="form-control" formControlName="typeOfProduct"
-                                [ngClass]="{'is-invalid': !myProduct.get('typeOfProduct').valid}">
+                                [ngClass]="{'is-invalid': !myForm.get('typeOfProduct').valid}">
                             </div>
 
                             <div class="form-group">
                                 <label style="font-family: 'Roboto', sans-serif">Cantidad</label>
                                 <input type="number" class="form-control" formControlName="amount"
-                                [ngClass]="{'is-invalid': !myProduct.get('amount').valid}">
+                                [ngClass]="{'is-invalid': !myForm.get('amount').valid}">
                             </div>
 
                             <div class="form-group">
                                 <label style="font-family: 'Roboto', sans-serif">Trueque</label>
                                 <input type="text" class="form-control" formControlName="change"
-                                [ngClass]="{'is-invalid': !myProduct.get('change').valid}">
+                                [ngClass]="{'is-invalid': !myForm.get('change').valid}">
                             </div>
 
                             <div class="form-group">
                                 <label style="font-family: 'Roboto', sans-serif">Precio</label>
                                 <input type="number" class="form-control" formControlName="price"
-                                [ngClass]="{'is-invalid': !myProduct.get('price').valid}">
+                                [ngClass]="{'is-invalid': !myForm.get('price').valid}">
                             </div>
                             <mat-card-actions class = "rowButtons buttonsCards" id= "boton" (click)="register()">
                                 <button id="buy">Añadir</button>

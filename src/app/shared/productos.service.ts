@@ -12,7 +12,7 @@ export class ProductosService {
 
   constructor(http : HttpClient) { 
 
-    this.url = "https://huertaweb.herokuapp.com"
+    this.url = "https://lahuertapp.herokuapp.com/product"
     this.http = http
   }
 
