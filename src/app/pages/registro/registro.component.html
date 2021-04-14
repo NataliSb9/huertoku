@@ -21,7 +21,7 @@
                             <label style="font-family: 'Roboto', sans-serif">Email</label>
                             <input type="email" class="form-control" formControlName="email"
                             [ngClass]="{'is-invalid': !myRegister.get('email').valid}">
-            
+                                <span>{{currentUser|json}}</span>
                         </div>
                         <div class="form-group">
                             <label style="font-family: 'Roboto', sans-serif">Contraseña</label>
@@ -29,7 +29,7 @@
                             [ngClass]="{'is-invalid': !myRegister.get('password').valid}">
             
                         </div>
-                        <mat-card-actions class = "rowButtons buttonsCards" id= "boton" (click)="register()">
+                        <mat-card-actions class = "rowButtons buttonsCards"  id= "boton" (click)="logIn()">
                             <button id="buy">Iniciar sesión</button>
                         </mat-card-actions>
                     </form>

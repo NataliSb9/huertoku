@@ -11,7 +11,7 @@ import { UserService } from 'src/app/shared/user.service';
 export class LogInComponent implements OnInit 
 {
   public myLog:FormGroup;
-  public user:User
+  
   constructor(private formBuilder: FormBuilder, private userService: UserService) 
   { 
     this.buildForm();
@@ -20,8 +20,12 @@ export class LogInComponent implements OnInit
 
   public register()
   {
-    this.userService.register(this.myLog.value);
-    console.log(this.myLog.value)
+    
+    const user = this.myLog.value;
+    this.userService.register(user).subscribe((data)=>{
+      console.log(data)
+    })
+    
   }
 
   private buildForm()

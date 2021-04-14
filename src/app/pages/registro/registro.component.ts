@@ -1,5 +1,10 @@
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavigationExtras, Router } from '@angular/router';
+import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/shared/user.service';
+
 
 @Component({
   selector: 'app-registro',
@@ -8,17 +13,38 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistroComponent implements OnInit 
 {
+  
   public myRegister:FormGroup;
-
-  constructor(private formBuilder: FormBuilder) 
+  public currentUser:User;
+  constructor(private formBuilder: FormBuilder, private userService:UserService,private router: Router) 
   { 
     this.buildForm();
   }
 
-  public register()
+  public logIn()
   {
     const user = this.myRegister.value;
+    let _this = this;
+
+    this.userService.logIn(user.email,user.password).subscribe(
+      (res: HttpResponse<User>) => {
+          //_this.currentUser=res.body;
+          _this.gotoPerfil(res.body);
+      },
+      (res: HttpErrorResponse) => {
+          console.log(res.message);
+      }
+  );
+  }
+
+  private gotoPerfil(user: User){
     console.log(user);
+    let navigationExtras: NavigationExtras={
+      queryParams:{
+        "usuario": JSON.stringify(user),
+      }
+    };
+    this.router.navigate(['perfil'], navigationExtras);
   }
 
   private buildForm()
