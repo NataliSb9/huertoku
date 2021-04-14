@@ -17,15 +17,15 @@ body {
 h1 {
   font-size: 4rem;
   font-weight: 500;
-  font-family: 'Signika', sans-serif;
+  font-family: "Signika", sans-serif;
   position: absolute;
   top: 48%;
   left: 50%;
   color: rgb(255, 255, 255);
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
 
-@media (max-width: 650px){
+@media (max-width: 650px) {
   h1 {
     font-size: 1.4rem;
   }
@@ -80,7 +80,6 @@ iframe {
   }
 }
 
-
 .logo-img {
   width: 100%;
   max-width: 200px;
@@ -106,7 +105,7 @@ iframe {
   width: 100%;
   margin: 0.4rem;
   padding: 2rem 1rem 2rem 1rem;
-  border: 0.1px solid  #b4bebe;
+  border: 0.1px solid #b4bebe;
   border-radius: 5px;
 }
 
@@ -114,7 +113,7 @@ iframe {
   .container {
     flex-direction: column;
   }
-  
+
   .card {
     width: 100%;
     margin: 2.5rem auto;
@@ -130,11 +129,11 @@ iframe {
 }
 
 .desc {
-  font-style: 'Roboto', sans-serif;
+  font-style: "Roboto", sans-serif;
   font-size: 15px;
 }
-.desc h3{
-  font-family: 'Signika';
+.desc h3 {
+  font-family: "Signika";
   font-size: 1.3rem;
 }
 
@@ -149,9 +148,9 @@ iframe {
   padding: 5rem;
 }
 */
-#cabecera img{
-margin-top: 45px;
-width: 2000px;
+#cabecera img {
+  margin-top: 45px;
+  width: 2000px;
 }
 
 @media (max-width: 1000px) {
@@ -171,7 +170,7 @@ width: 2000px;
 #description {
   font-size: 2rem;
   margin-bottom: 5rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 #cabecera .btn {
@@ -186,10 +185,10 @@ width: 2000px;
   transition: color 1s;
 }
 
-#cesta{
- width: 700px;
- margin-bottom: 25px;
- margin-top: -75px;
+#cesta {
+  width: 700px;
+  margin-bottom: 25px;
+  margin-top: -75px;
 }
 
 @media (max-width: 650px) {
@@ -206,13 +205,13 @@ width: 2000px;
   /*padding: 20rem 10rem 10rem 20rem;*/
   text-align: center;
 }
-#espantapajaros{
+#espantapajaros {
   position: absolute;
   margin-top: -176px;
   left: 78%;
 }
 
-@media (max-width:650px) {
+@media (max-width: 650px) {
   #cabecera-img {
     margin-top: -280px !important;
     left: 88%;
