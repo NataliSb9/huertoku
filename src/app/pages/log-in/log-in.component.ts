@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-log-in',
@@ -9,16 +11,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LogInComponent implements OnInit 
 {
   public myLog:FormGroup;
-
-  constructor(private formBuilder: FormBuilder) 
+  
+  constructor(private formBuilder: FormBuilder, private userService: UserService) 
   { 
     this.buildForm();
+    
   }
 
   public register()
   {
+    
     const user = this.myLog.value;
-    console.log(user);
+    this.userService.register(user).subscribe((data)=>{
+      console.log(data)
+    })
+    
   }
 
   private buildForm()
@@ -39,41 +46,11 @@ export class LogInComponent implements OnInit
       repeatPassword: [,[Validators.required, Validators.minLength(minPassLength)]]
     });
   }
-///////////////////////////////////////////////////////////////////////////////////////////////
 
-  // public isLinear = false;
-  // public firstFormGroup = FormGroup;
-  // public secondFormGroup = FormGroup;
-  // public thirdFormGroup = FormGroup;
-  // public fourthFormGroup = FormGroup;
-  // public fifthFormGroup = FormGroup;
-  // public sixthFormGroup = FormGroup;
-  // public seventhFormGroup = FormGroup;
-  // public eighthFormGroup = FormGroup;
-  // public ninethFormGroup = FormGroup;
-  // public tenthFormGroup = FormGroup
 
-  // constructor(public formBuilder: FormBuilder) {}
 
   ngOnInit() 
   {
-
-    // const minPassLength = 8;
-
-    // this.firstFormGroup = this.formBuilder.group
-    // ({
-    //   firstCtrl: ['', Validators.required]
-    // });
-    //   secon: [,Validators.required],
-    //   surname2: [,Validators.required],
-    //   fechanacimiento: [,Validators.required],
-    //   username: [,Validators.required],
-    //   localidad: [,Validators.required],
-    //   codigopostal: [,Validators.required],
-    //   email:[,Validators.required, Validators.email],
-    //   password:[,Validators.required, Validators.minLength(minPassLength)],
-    //   repeatPassword: [,Validators.required]
-    // });
     
   }
 

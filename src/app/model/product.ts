@@ -7,16 +7,18 @@ export class Product {
     public productPrice     : number;
     public productEco       : string;
     public productChange    : string;
+    public iduser           : number
     
 
-    constructor ( productName: string){
+    constructor ( productName: string, productType :string, productAmount:number, productLocality: string, productPrice: number, productEco:string, productChange:string, iduser: number ){
         this.productName        = productName
-        // this.productType        = productType
-        // this.productAmount      = productAmount
-        // this.productLocality    = productLocality
-        // this.productPrice       = productPrice
-        // this.productEco         = productEco
-        // this.productChange      = productChange
+        this.productType        = productType
+        this.productAmount      = productAmount
+        this.productLocality    = productLocality
+        this.productPrice       = productPrice
+        this.productEco         = productEco
+        this.productChange      = productChange
+        this.iduser             = iduser
     } 
 
 }

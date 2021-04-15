@@ -8,28 +8,24 @@
 
 <!-- IMG DE PERFIL -->
         <div class="colImg" >
-            <img class="colImg" id="imgPerfil" src="assets/img/foto_perfil.png" alt="foto perfil">
+            <img class="colImg" id="imgPerfil" src={{usuarioLogeado.userImg}} alt="foto perfil">
             <!-- <img src="" alt="stars"> -->
         </div>
 
 <!-- DATOS PERFIL -->
         <div class="col" id="data">
-            <h2 class = "row" id="UserName">JAVIER HURTADO</h2>
+            <h2 class = "row" id="UserName">{{usuarioLogeado.name}} {{usuarioLogeado.surname1}} </h2>
             <div class="row">
                 <img src="assets/img/24px_telefono-inteligente.png" >
-                <p>333.333.333</p>
+                <p>{{usuarioLogeado.telefono}}</p>
             </div> 
             <div class="row">
                 <img src="assets/img/24px_email.png" >
-                <p>hurtado@gmail.com</p>
+                <p>{{usuarioLogeado.email}}</p>
             </div>
             <div class="row">
                 <img src="assets/img/24px_mapa-con-un-pequeno-simbolo-de-alfiler-dentro-de-un-circulo.png" >
-                <p>Getafe,Madrid</p>
-            </div>
-            <div class="row">
-                <img src="assets/img/24px_handshake.png">
-                <p>Si</p>
+                <p>{{usuarioLogeado.localidad}}</p>
             </div>
             <div class = "row">
                 <a class = "row" routerLink="../perfileditar"><img id="edit-profile" src="assets/img/24pxORANGE_editar.png"><p id="editPerfil">Editar perfil</p></a>

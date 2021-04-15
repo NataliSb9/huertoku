@@ -1,5 +1,11 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/shared/user.service';
+
 
 @Component({
   selector: 'app-registro',
@@ -8,18 +14,35 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistroComponent implements OnInit 
 {
+  
   public myRegister:FormGroup;
-
-  constructor(private formBuilder: FormBuilder) 
+  // public mensaje
+  constructor(private formBuilder: FormBuilder, private userService:UserService,private router:Router) 
   { 
     this.buildForm();
   }
 
-  public register()
+  public iniciarSesion()
   {
-    const user = this.myRegister.value;
-    console.log(user);
+
+    const usuario1 = this.myRegister.value
+    
+     
+    this.userService.logIn(usuario1).subscribe((usuarioLogeado:User[])=>{
+      
+      
+      if (usuarioLogeado.length > 0) {
+        this.userService.user=usuarioLogeado[0]
+        this.router.navigate(['/', 'perfil'])
+        console.log(this.userService.user)
+      }else{
+        console.log("Datos incorrectos")
+      }
+      console.log(usuarioLogeado)
+    })
   }
+
+
 
   private buildForm()
   {
