@@ -13,15 +13,14 @@
 
         <div class="col" id="dataprofile">  
             <!-- input para modificar datos perfil -->
-            <input type="text" placeholder="Introduce un nuevo nombre de usuario">
+            <input type="text" placeholder="Introduce un nuevo nombre de usuario" #username>           
+            <input type="number" placeholder="Introduce un nuevo telefono de contacto" #tel>
+            <input type="email" placeholder="Introduce un nuevo email de contacto" #email>
+            <input type="text" placeholder="Introduce una direccion" #localidad>
             
-            <input type="number" placeholder="Introduce un nuevo telefono de contacto">
-            <input type="email" placeholder="Introduce un nuevo email de contacto">
-            <input type="text" placeholder="Introduce una direccion">
-            <input type="text" placeholder="Acectas trueque">
             
             <!-- boton guarda modificaciones de perfil -->
-            <button  >Guardar cambios</button>
+            <button  (click)="saveChanges(username.value,tel.valueAsNumber,email.value,localidad.value)">Guardar cambios</button>
         </div>
 
     </div>

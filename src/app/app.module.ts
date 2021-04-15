@@ -33,6 +33,7 @@ import { PedidosActivosComponent } from './pages/pedidos-activos/pedidos-activos
 import { HistorialPedidosComponent } from './pages/historial-pedidos/historial-pedidos.component';
 import { ModalLaHuertaTiendaComponent } from './pages/modal-la-huerta-tienda/modal-la-huerta-tienda.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -76,7 +77,8 @@ import { LandingComponent } from './pages/landing/landing.component';
     MatInputModule,
     MatTableModule,
     MatExpansionModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
