@@ -1,7 +1,8 @@
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NavigationExtras, Router } from '@angular/router';
+import { Router } from '@angular/router';
+
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/shared/user.service';
 
@@ -15,37 +16,33 @@ export class RegistroComponent implements OnInit
 {
   
   public myRegister:FormGroup;
-  public currentUser:User;
-  constructor(private formBuilder: FormBuilder, private userService:UserService,private router: Router) 
+  // public mensaje
+  constructor(private formBuilder: FormBuilder, private userService:UserService,private router:Router) 
   { 
     this.buildForm();
   }
 
-  public logIn()
+  public iniciarSesion()
   {
-    const user = this.myRegister.value;
-    let _this = this;
 
-    this.userService.logIn(user.email,user.password).subscribe(
-      (res: HttpResponse<User>) => {
-          //_this.currentUser=res.body;
-          _this.gotoPerfil(res.body);
-      },
-      (res: HttpErrorResponse) => {
-          console.log(res.message);
+    const usuario1 = this.myRegister.value
+    
+     
+    this.userService.logIn(usuario1).subscribe((usuarioLogeado:User[])=>{
+      
+      
+      if (usuarioLogeado.length > 0) {
+        this.userService.user=usuarioLogeado[0]
+        this.router.navigate(['/', 'perfil'])
+        console.log(this.userService.user)
+      }else{
+        console.log("Datos incorrectos")
       }
-  );
+      console.log(usuarioLogeado)
+    })
   }
 
-  private gotoPerfil(user: User){
-    console.log(user);
-    let navigationExtras: NavigationExtras={
-      queryParams:{
-        "usuario": JSON.stringify(user),
-      }
-    };
-    this.router.navigate(['perfil'], navigationExtras);
-  }
+
 
   private buildForm()
   {
