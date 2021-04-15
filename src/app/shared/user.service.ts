@@ -29,7 +29,9 @@ export class UserService {
     return this.http.post(this.url,user)
   }
 
-
+  editProfile(user:User){
+    return this.http.put(this.url,user)
+  }
 
 }
 
