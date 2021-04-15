@@ -16,11 +16,7 @@ export class PerfilComponent implements OnInit {
    this.usuarioLogeado = this.userService.user
   }
 
-  // mostrarDatos(user:User){
-  //   this.userService.logIn(user).subscribe((data:any)=>{
-  //   this.usuarioLogeado=data
-  //   })
-  // }
+  
 
   ngOnInit(): void {
     
