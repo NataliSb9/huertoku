@@ -32,7 +32,10 @@ mostrarProducto (producto : Product){
 
 // ---> añade producto a BBDD
 añadirProducto (newProduct : Product){
+  console.log(newProduct);
+  
   return this.http.post( this.url, newProduct )
+  
 }
 
 // ---> EDITA producto en BBDD

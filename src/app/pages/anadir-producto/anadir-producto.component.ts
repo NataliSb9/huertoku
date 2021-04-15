@@ -46,14 +46,14 @@ export class AnadirProductoComponent implements OnInit {
   // ---> AÑADIR PRODUCTO
   public register()
   {
-    let data = this.myForm.value;
-    console.log(data)
+    let nuevoProducto = this.myForm.value;
+    console.log(nuevoProducto)
 
-    let product:Product = new Product(data.productName, data.productType, data.productAmount, data.productPrice, data.productEco, data.productChange, data.productLocality)
+    // let product:Product = new Product(data.productName, data.productType, data.productAmount, data.productPrice, data.productEco, data.productChange, data.productLocality)
 
-    this.apiService.añadirProducto(product).subscribe((res:any)=>{
+    this.apiService.añadirProducto(nuevoProducto).subscribe((res)=>{
 
-      // console.log(res);
+      console.log(res);
       // control de errores!!!!!!!!
 
     })
