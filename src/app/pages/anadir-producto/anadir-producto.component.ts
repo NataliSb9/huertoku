@@ -29,6 +29,8 @@ export class AnadirProductoComponent implements OnInit {
   { 
     this.buildForm();
     this.user = this.userService.user
+   
+
 
   }
 
@@ -49,16 +51,13 @@ export class AnadirProductoComponent implements OnInit {
   }
   
   // ---> AÑADIR PRODUCTO
-  public register()
+  public register(imgForm:HTMLInputElement)
   {
     
-    // let nuevoProducto = this.myForm.value;
-    // console.log(nuevoProducto)
-
     let datosForm = this.myForm.value
     console.log(datosForm);
     
-    let producto = new Product(datosForm.productName, datosForm.productType, datosForm.productAmount, datosForm.productLocality, datosForm.productPrice, datosForm.productEco, datosForm.productChange, this.user.iduser)
+    let producto = new Product(datosForm.productName, datosForm.productType, datosForm.productAmount, datosForm.productLocality, datosForm.productPrice, datosForm.productEco, datosForm.productChange, this.user.iduser, imgForm.value )
     console.log("USER ID:" + this.user.iduser);
    
 

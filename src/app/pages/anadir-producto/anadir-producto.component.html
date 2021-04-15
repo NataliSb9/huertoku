@@ -8,7 +8,13 @@
             <mat-card class="cards columnCards"> 
                 <img class = "imgCard" mat-card-image src="../../../assets/img/MmAaSs.png" alt="tomates">
                 <mat-card-content>
-                    <p class= "contentCard"> <span class="nameField">¡Añade una imagen de tu producto para que todos se mueran de ganas!</span></p>
+
+                    <!-- <form [formGroup]="imgForm"> -->
+                      <p class= "contentCard"> <span class="nameField">¡Añade una imagen de tu producto para que todos se mueran de ganas!</span></p>
+                      <label style="font-family: 'Roboto', sans-serif">Nombre del producto</label>
+                      <input type="text" #imgForm placeholder="Introduce imagen">
+                    <!-- </form> -->
+                    
                 </mat-card-content>
             </mat-card>
         </div>
@@ -20,6 +26,7 @@
         <mat-card-title class = "cardtitle">
             ¡Añade un producto!
         </mat-card-title>
+
             <mat-card-content>
                 <form [formGroup]="myForm">
                     <!-- <div class="form-row"> -->
@@ -105,7 +112,7 @@
                           </label>
                         </div>
                       </div> -->
-                    <mat-card-actions class = "rowButtons buttonsCards" id= "boton" (click)="register()">
+                    <mat-card-actions class = "rowButtons buttonsCards" id= "boton" (click)="register(imgForm)">
                         <button id="buy">Añadir producto</button>
                     </mat-card-actions>
                   </form>
