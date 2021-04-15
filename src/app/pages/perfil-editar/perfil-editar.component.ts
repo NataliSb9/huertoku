@@ -13,8 +13,11 @@ export class PerfilEditarComponent implements OnInit {
     this.usuarioLogeado=this.userService.user
   }
 
-  saveChanges(username:string,tel:number,email:string,localidad:string){
-    this.userService.editProfile(this.usuarioLogeado).subscribe
+  saveChanges( username:string,tel:number,email:string,localidad:string){
+    console.log(this.usuarioLogeado)
+    this.userService.editProfile(new User(email,this.usuarioLogeado.password,this.usuarioLogeado.iduser,this.usuarioLogeado.name,this.usuarioLogeado.surname1,this.usuarioLogeado.surname2,this.usuarioLogeado.birthyear,username,localidad,tel,this.usuarioLogeado.userImg)).subscribe((data:any)=>{
+      console.log("usuario modificado"+this.usuarioLogeado[0])
+    })
   }
 
   ngOnInit(): void {
