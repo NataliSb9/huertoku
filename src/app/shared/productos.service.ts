@@ -9,16 +9,18 @@ export class ProductosService {
 
   private url   :string
   private http  : HttpClient
+  public productos: Product 
 
   constructor(http : HttpClient) { 
 
     this.url = "https://lahuertapp.herokuapp.com/product"
     this.http = http
+    
   }
 
 // METODOS PARA PRODUCTO
 
-// ---> mostrara toos y por filtrado
+// ---> mostrara todos y por filtrado
 mostrarProducto (producto : Product){
   if(producto.productAmount == null && producto.productChange == null && producto.productEco ==  null && producto.productLocality == null && producto.productName == null && producto.productPrice == null && producto.productType == null)
   {
@@ -27,6 +29,13 @@ mostrarProducto (producto : Product){
   } else {
     return this.http.get( this.url + "/product" + producto.productAmount + "&" + producto.productChange + "&" + producto.productEco + "&" + producto.productLocality + "&" + producto.productName + "&" + producto.productPrice + "&" + producto.productType )
   }
+}
+
+
+public mostrarMisProductos(id:number){
+  let urlProductoUsuario = this.url+"?iduser="+ id
+  console.log(urlProductoUsuario)
+  return this.http.get(urlProductoUsuario)
 }
 
 
