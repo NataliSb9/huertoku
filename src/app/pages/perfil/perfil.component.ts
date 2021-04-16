@@ -13,7 +13,7 @@ export class PerfilComponent implements OnInit {
   public usuarioLogeado:User
   
   constructor(private userService: UserService) { 
-   this.usuarioLogeado=this.userService.user
+   this.usuarioLogeado = this.userService.user
   }
 
   
