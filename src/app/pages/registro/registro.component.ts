@@ -16,7 +16,7 @@ export class RegistroComponent implements OnInit
 {
   
   public myRegister:FormGroup;
-  // public mensaje
+  public mensaje:string;
   constructor(private formBuilder: FormBuilder, private userService:UserService,private router:Router) 
   { 
     this.buildForm();
@@ -36,7 +36,7 @@ export class RegistroComponent implements OnInit
         this.router.navigate(['/', 'perfil'])
         console.log(this.userService.user)
       }else{
-        console.log("Datos incorrectos")
+        this.mensaje="Email o contraseña incorrecta"
       }
       console.log(usuarioLogeado)
     })
