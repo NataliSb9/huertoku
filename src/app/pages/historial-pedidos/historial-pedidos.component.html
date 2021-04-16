@@ -1,6 +1,17 @@
-<h1 class = "cardtitle2" style="margin-top:10px">Historial de tus pedidos</h1>
+
+<!-- BANNER DE GUIA -->
+<div class="row">
+    <div class="col">
+      <h1 class = "cardtitle2" style="margin-top:20px">Historial de tus pedidos</h1>
+  </div>
+  <div class="col">
+      <h3 routerLink="/perfil" class = "cardtitle3" style="margin-top:20px">Volver a Perfil</h3>
+  </div>
+</div>
+<!-- lienea separacion -->
 <hr style="background-color: #e67e22;">
 
+<!-- DEPLEGABLE FILTRADO -->
 <div id="filtros" class="rowFiltros">
     <mat-expansion-panel id="lineExp" hideToggle>
       <mat-expansion-panel-header>
@@ -60,6 +71,7 @@
     </mat-expansion-panel>
   </div>
   
+  <!-- TATEJETAS DE PEDIDOS -->
   <div class="rowCards" id="collectCards">
     <mat-card class="cards columnCards">
       <img
