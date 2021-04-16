@@ -8,7 +8,10 @@
             <!-- imagen de perfil -->
             <img id="foto_perfil" src="../../../assets/img/foto_perfil.png" alt="imagen de perfil">
             <!-- boton para editar imagen de perfil -->
+            
             <button class = "row"id="edit_foto"><img src="../../../assets/img/lapiz.png"></button>
+            <input type="text" placeholder="Inserta url de imagen" #userImg>
+
         </div>
 
         <div class="col" id="dataprofile">  
@@ -19,8 +22,10 @@
             <input type="text" placeholder="Introduce una direccion" #localidad>
             
             
+            
             <!-- boton guarda modificaciones de perfil -->
-            <button  (click)="saveChanges(username.value,tel.valueAsNumber,email.value,localidad.value)">Guardar cambios</button>
+            <button  (click)="saveChanges(username.value,tel.valueAsNumber,email.value,localidad.value,userImg.value)">Guardar cambios</button>
+            <p style="font-family: 'Roboto', sans-serif; color:#E67E22;">{{message}}</p>
         </div>
 
     </div>
