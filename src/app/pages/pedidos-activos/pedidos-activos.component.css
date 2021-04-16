@@ -1,4 +1,18 @@
 /**titulo y vuelta a perfil***/
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+}
+.col{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-items: center;
+}
 
 .cardtitle2 {
   font-family: "Signika", sans-serif;
@@ -19,16 +33,12 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  align-items: center;
-  justify-content:flex-start;
 }
 .row {
   display: flex;
   flex-direction: row;
   justify-content: center;
   text-align: center;
-  align-items: center;
-  justify-content:flex-start;
 }
 
 .field {
