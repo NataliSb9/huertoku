@@ -9,7 +9,6 @@ export class ProductosService {
 
   private url   :string
   private http  : HttpClient
-  public productos: Product 
 
   constructor(http : HttpClient) { 
 
