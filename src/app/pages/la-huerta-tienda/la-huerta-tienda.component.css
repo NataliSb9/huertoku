@@ -41,7 +41,7 @@
   color: #e67e22;
 }
 
-input{
+input {
   margin-top: 2px;
 }
 #lupa {
@@ -60,7 +60,7 @@ input{
   margin-right: 10px;
 }
 
-label{
+label {
   margin-left: 5px;
 }
 #filtrosButton {
@@ -70,13 +70,13 @@ label{
   margin-left: 37%;
   margin-right: 37%;
 }
-mat-expansion-panel{
+mat-expansion-panel {
   width: 850px;
   margin-left: 235px;
 }
-#buscar{
- margin-right: 140px;
- margin-bottom: 30px
+#buscar {
+  margin-right: 140px;
+  margin-bottom: 30px;
 }
 button {
   border-radius: 25px;
@@ -98,13 +98,12 @@ button:hover {
   box-shadow: none;
 }
 
-
 ::ng-deep .mat-accent .mat-slider-thumb {
   background-color: #267172;
 }
 ::ng-deep .mat-accent .mat-slider-track-fill {
   background-color: #267172;
-} 
+}
 
 /*Titulos del body*/
 #titleUp {
@@ -122,11 +121,12 @@ h2 {
 /*tarjetas*/
 .cards {
   max-width: 265px;
+  max-height: 300px;
   border-radius: 25px;
   padding-bottom: 30px;
   border-color: #767676;
-  
 }
+
 
 #collectCards {
   padding: 12px;
@@ -140,20 +140,25 @@ h2 {
   box-shadow: 6px 6px 6px #267172;
 }
 .imgCard {
-  background-size: cover;
+  object-fit: cover; /*this makes the image in src fit to the size specified below*/
+  width: 265px; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
 }
 
 .rowCards {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-flow: wrap;
 }
 
 .columnCards {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
+  /*flex-basis: 100%;*/
   align-items: flex-start;
+  /*align-items: center;*/
 }
 
 .contentCard {
@@ -171,4 +176,9 @@ h2 {
   font-style: normal;
   font-weight: bold;
   color: #767676;
+}
+
+.marginCards{
+  margin-right: 20%;
+  margin-left: 20%;
 }

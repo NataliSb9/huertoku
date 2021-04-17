@@ -71,62 +71,19 @@
 
 <!-- TARJETAS -->
 
-<div class="rowCards" id="collectCards">
-<mat-card (click) = "openDialog()" class="cards columnCards">
-    <img
-    class="imgCard"
-    mat-card-image
-    src="./assets/fotos/manzanita.jpg"
-    alt="manzanas"
-    />
-    <mat-card-title class="cardtitle">Manzanas ecológicas</mat-card-title>
-    <mat-card-content>
-    <p class="contentCard"><span class="nameField">Precio:</span> 2€/kg</p>
-    <p class="contentCard">
-        <span class="nameField">Productor:</span> Antonio López
-    </p>
-    <p class="contentCard">
-        <span class="nameField">Adquirir por : </span> trueque
-    </p>
-    </mat-card-content>
-</mat-card>
-
-<mat-card (click) = "openDialog()" class="cards columnCards">
-    <img
-    class="imgCard"
-    mat-card-image
-    src="./assets/fotos/tomate.jpg"
-    alt="tomates"
-    />
-    <mat-card-title class="cardtitle">Tomates</mat-card-title>
-    <mat-card-content>
-    <p class="contentCard"><span class="nameField">Precio:</span> 2€/kg</p>
-    <p class="contentCard">
-        <span class="nameField">Productor:</span> Antonio López
-    </p>
-    <p class="contentCard">
-        <span class="nameField">Adquirir por : </span> trueque
-    </p>
-    </mat-card-content>
-</mat-card>
-
-<mat-card (click) = "openDialog()" class="cards columnCards">
-    <img
-    class="imgCard"
-    mat-card-image
-    src="./assets/fotos/zanahorias2.jpg"
-    alt="zanahorias"
-    />
-    <mat-card-title class="cardtitle">Zanahorias ecológicas</mat-card-title>
-    <mat-card-content>
-    <p class="contentCard"><span class="nameField">Precio:</span> 2€/kg</p>
-    <p class="contentCard">
-        <span class="nameField">Productor:</span> Antonio López
-    </p>
-    <p class="contentCard">
-        <span class="nameField">Adquirir por : </span> trueque
-    </p>
-    </mat-card-content>
-</mat-card>
-</div>
-
+<div class="rowCards marginCards" id="collectCards">
+    <mat-card (click) = "openDialog()" class="cards columnCards" *ngFor= "let productos of productosHuerta">
+        <img class="imgCard" style = "background-size: cover" mat-card-image src = "{{productos.productImg}}" onError="this.src='./assets/img/ICOfruitBAG.png'" alt="{{productos.productName}}"
+        />
+        <mat-card-title class="cardtitle">{{productos.productName}}</mat-card-title>
+        <mat-card-content>
+        <p class="contentCard"><span class="nameField">Precio:</span> {{productos.productPrice}} €/kg</p>
+        <!-- <p class="contentCard">
+            <span class="nameField">Productor:</span> {{product.}}
+        </p> -->
+        <p class="contentCard">
+            <span class="nameField">Adquirir por trueque: </span> {{productos.productChange}}
+        </p>
+        </mat-card-content>
+    </mat-card>
+</div>    

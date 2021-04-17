@@ -38,7 +38,7 @@ export class MisProductosComponent implements OnInit {
     this.productService.mostrarMisProductos(this.idUser).subscribe((respuesta: any[]) => {
       this.productosUsuarios = []
       for(let i = 0; i<respuesta.length ; i++){
-        let prodN: Product = new Product (respuesta[i].idproduct,respuesta[i].productName,respuesta[i].productType,respuesta[i].productAmount, respuesta[i].productLocality, respuesta[i].productPrice, respuesta[i].productEco, respuesta[i].productChange, respuesta[i].iduser, respuesta[i].productImg)
+        let prodN: Product = new Product (respuesta[i].idProduct,respuesta[i].productName,respuesta[i].productType,respuesta[i].productAmount, respuesta[i].productLocality, respuesta[i].productPrice, respuesta[i].productEco, respuesta[i].productChange, respuesta[i].iduser, respuesta[i].productImg)
         this.productosUsuarios.push(prodN)
       }
       console.log(this.productosUsuarios)
