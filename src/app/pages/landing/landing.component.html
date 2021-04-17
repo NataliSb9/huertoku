@@ -1,26 +1,24 @@
 <main>
-  <section class="row" id="cabecera">
+  <section class="row" id="body">
     <!-- <img src="assets/fotos/grapes-2000.jpg" alt=""> -->
     <div class="col">
         <h1 id="sub1">Bienvenidos </h1>
         <h1 id="sub2">a La Huerta</h1>
+        <h2 id="sub3">Recolecta de la huerta a tu casa</h2>
     </div>
-    <div class="col">
-        <h2>Recolecta de la huerta a tu casa</h2>
-    </div>
+   
       <!-- <div class="column-40"> -->
         <!--  <div class="image-div">
           <img id="cesta" src="assets/img/ICOfruitBAG.png" alt="cesta">
         </div> -->
       <!-- </div> -->
-    
   </section>
 
 
   <!-- TARJETA CON INFO -->
-  <section id="info">
-    <div class="container">
-      <div class="card">
+  <section id="info" >
+    <div class="row" id="container">
+      <div class="col card">
         <div class="icon">
           <img src="assets/img/team128.png" alt="easy to use icon">
         </div>
@@ -31,7 +29,7 @@
         </div>
       </div>
   
-      <div class="card">
+      <div  class="col card">
         <div class="icon">
           <img src="assets/img/ubicacion.png" alt="data privacy icon">
         </div>
@@ -42,7 +40,7 @@
         </div>
       </div>
   
-      <div class="card">
+      <div  class="col card">
         <div class="icon">
           <img src="assets/img/balanzaMano.png" alt="data privacy icon">
         </div>
@@ -53,6 +51,16 @@
       </div> 
     </div>
   </section>
+
+  <!-- BOTON PARA IR A HUERTA SIN LOGIN -->
+  <div class="row">
+    <a routerLink="huerta">Entra en la Huerta</a>
+  </div>
+
+  <!-- IMAGENES -->
+  <div id="espantapajaros1">
+    <img src="assets/img/winstonchurchill.png" alt="">
+  </div>
 
   <div id="espantapajaros">
     <img src="assets/img/winstonchurchill.png" alt="">

@@ -34,6 +34,7 @@ body {
   font-size: 3rem;
   font-family: "Signika", sans-serif;
   color: #f39c12;
+  margin-top: 50px;
   /* font-weight: 500; */
   /* position: absolute;
   top: 48%;
@@ -44,8 +45,15 @@ body {
   font-size: 2.5rem;
   font-family: "Signika", sans-serif;
   color: #f39c12;
-  margin-left: 20PX;
+ 
 }
+
+#sub3{
+  font-size: 1.5rem;
+  margin-top: 5px;
+  color: #267172;
+}
+
 
 
 @media (max-width: 650px) {
@@ -54,11 +62,6 @@ body {
   }
 }
 
-h2 {
-  margin-bottom: 5rem;
-  font-size: 2.4rem;
-  margin-top: 30px;
-}
 
 img {
   max-width: 100%;
@@ -113,26 +116,24 @@ iframe {
     margin: 0 auto;
   }
 }
-
+/* 
 .container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-}
+} */
 
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  flex-wrap: wrap;
   width: 240px;
+  height: 282px;
   margin: 0.4rem;
   padding: 2rem 1rem 2rem 1rem;
   border: 0.1px solid #b4bebe;
   border-radius: 5px;
+  color: #727272;
 }
+
 
 @media (max-width: 600px) {
   .container {
@@ -161,6 +162,7 @@ iframe {
 .desc h3 {
   font-family: "Signika";
   font-size: 1.3rem;
+  color: #f39c12;
 }
 
 /* cabecera */
@@ -231,10 +233,46 @@ iframe {
   /*padding: 20rem 10rem 10rem 20rem;*/
   text-align: center;
 }
+
+/* **** BOTON PARA ENTRAR EN LA HUERTA **** */
+a
+{
+    border-radius: 25px;
+    width: 180px;
+    height: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #fdffee;
+    font-size: 15px;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    text-decoration: none;
+    background-color:#f39c12;
+    transition: box-shadow 0.16s ease;
+    text-align: center;
+
+    margin-top: 20px;
+    padding-top: 3px;
+}
+
+a:hover 
+{
+    background: #408f91;
+    box-shadow: none;
+}
+
+/* **** IMAGENES **** */
 #espantapajaros {
   position: absolute;
-  margin-top: -176px;
+  margin-top: -160px;
   left: 78%;
+  width: 22%;
+}
+
+#espantapajaros1 {
+  position: absolute;
+  margin-top: -160px;
+  margin-left: 30px;
+  width: 22%;
 }
 
 @media (max-width: 650px) {
