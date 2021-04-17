@@ -118,6 +118,7 @@ iframe {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -125,16 +126,18 @@ iframe {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 100%;
+  flex-wrap: wrap;
+  width: 240px;
   margin: 0.4rem;
   padding: 2rem 1rem 2rem 1rem;
   border: 0.1px solid #b4bebe;
   border-radius: 5px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .container {
     flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .card {

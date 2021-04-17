@@ -13,7 +13,7 @@ export class UserService {
   public user:User;
   private url="https://lahuertapp.herokuapp.com/user"
   private urlogin="https://lahuertapp.herokuapp.com/login"
-  
+  private urlchat="https://lahuertapp.herokuapp.com/chat"
   constructor(private http: HttpClient) { 
     this.user = new User("","")
   }
@@ -31,7 +31,12 @@ export class UserService {
   }
 
   editProfile(user:User){
+    console.log(user)
     return this.http.put(this.url,user)
+  }
+
+  obtenerChat(id:number){
+    return this.http.get(this.urlchat+"?id="+id)
   }
 
 }
