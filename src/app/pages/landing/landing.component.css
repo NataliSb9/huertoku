@@ -13,17 +13,40 @@ body {
   line-height: 1.5;
   color: #37383a;
 }
-
-h1 {
-  font-size: 4rem;
-  font-weight: 500;
-  font-family: "Signika", sans-serif;
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  color: rgb(255, 255, 255);
-  transform: translate(-50%, -50%);
+/***** clases col y row ****/
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
 }
+.col{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+/**** CABECERA ****/
+#sub1 {
+  font-size: 3rem;
+  font-family: "Signika", sans-serif;
+  color: #f39c12;
+  /* font-weight: 500; */
+  /* position: absolute;
+  top: 48%;
+  left: 50%; 
+  transform: translate(-50%, -50%);*/
+}
+#sub2{
+  font-size: 2.5rem;
+  font-family: "Signika", sans-serif;
+  color: #f39c12;
+  margin-left: 20PX;
+}
+
 
 @media (max-width: 650px) {
   h1 {
@@ -48,12 +71,12 @@ iframe {
 }
 
 /* Global Classes */
-
+/* 
 .column-60 {
   float: left;
   width: 60%;
   padding: 0 10%;
-}
+} */
 
 .column-40 {
   float: left;
