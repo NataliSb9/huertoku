@@ -17,7 +17,73 @@
 }
 
 
-/****Tablas****/
+/***** TITULO *****/
+.cardtitle {
+  font-family: "Signika", sans-serif;
+  text-align: center;
+  color: #e67e22;
+}
+.cardtitle2 {
+  font-family: "Signika", sans-serif;
+  color: #e67e22; 
+  /* margin-left: 200px; */
+}
+.cardtitle3 {
+  font-family: "Signika", sans-serif;
+  color:  #267172;
+  margin-left: 100px;
+}
+.cardtitle3:hover{
+  color: #408f91;
+}
+
+/****** TARJETAS ******/
+.cards {
+  max-width: 250px;
+  border-radius: 25px;
+  padding-bottom: 30px;
+  border-color: #cac6c6;
+  border: solid, 1px;
+  border-width: 0.5px;
+}
+
+#collectCards > .cards {
+  margin: 12px;
+}
+
+.imgCard {
+  background-size: cover;
+}
+
+.rowCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.columnCards {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  align-items: flex-start;
+}
+
+.contentCard {
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  color: #767676;
+}
+
+.cardtitle {
+  font-family: "Signika", sans-serif;
+  text-align: left;
+  color: #e67e22;
+  
+}
+
+
+/* ***Tablas***
 
 #pedido {
   font-family: "Signika", sans-serif;
@@ -72,11 +138,11 @@
 
 .sep {
   margin: 55px;
-}
+} */
 
 /*Tabla*/
 
-h2 {
+/* h2 {
   margin-top: 150px;
   font-size: 28px;
 }
@@ -95,7 +161,7 @@ table {
 }
 
 /*celdas*/
-thead {
+/* thead {
   overflow: hidden;
 }
 table thead th {
@@ -123,11 +189,5 @@ thead {
 
 tr:nth-child(even) {
   background: rgb(235, 229, 229);
-}
+} */ 
 
-/*titulo*/
-.cardtitle {
-  font-family: "Signika", sans-serif;
-  text-align: center;
-  color: #e67e22;
-}

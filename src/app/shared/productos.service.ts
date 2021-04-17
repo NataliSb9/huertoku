@@ -8,19 +8,22 @@ import { User } from '../model/user';
 })
 export class ProductosService {
 
-  private url         :string
-  private url_User    : string
-  private url_pedidos : string
+  private url           : string
+  private url_User      : string
+  private url_pedidos   : string
+  private url_envios    : string
+
   private http        : HttpClient
   
 
   constructor(http : HttpClient) { 
 
-    this.url          = "https://lahuertapp.herokuapp.com/product"
-    this.url_User     = "https://lahuertapp.herokuapp.com/user"
-    this.url_pedidos  = "https://lahuertapp.herokuapp.com/pedidos"
-    
-    this.http         = http
+    this.url            = "https://lahuertapp.herokuapp.com/product"
+    this.url_User       = "https://lahuertapp.herokuapp.com/user"
+    this.url_pedidos    = "https://lahuertapp.herokuapp.com/pedidos"
+    this.url_envios     = "https://lahuertapp.herokuapp.com/envios"
+
+    this.http           = http
   }
 
 // METODOS PARA PRODUCTO
@@ -54,14 +57,19 @@ eliminarProducto (idProducto : number){
 }
 
 
-// ****** METODOS PARA HISTORIAL DE PEDIDOS *****
+// ****** METODOS PARA HISTORIAL DE PEDIDOS / ENVIOS *****
+
 // --> mostrar historial de pedidos
 mostrar_Historial_Pedidos(id_buyer: number){
   console.log(id_buyer);
 
   return this.http.get(this.url_pedidos  + "?id=" + id_buyer)
-
-
 }
 
+// --> mostrar historial envios
+historial_envios(id_seller: number){
+  console.log(id_seller);
+
+  return this.http.get(this.url_envios + "?id=" + id_seller )
+}
 }

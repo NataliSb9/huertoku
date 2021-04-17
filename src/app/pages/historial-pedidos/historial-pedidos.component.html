@@ -2,7 +2,7 @@
 <!-- BANNER DE GUIA -->
 <div class="row">
     <div class="col">
-      <h1 class = "cardtitle2" style="margin-top:20px">Historial de tus pedidos</h1>
+      <h1 class = "cardtitle2" style="margin-top:20px">Historial Pedidos</h1>
   </div>
   <div class="col">
       <h3 routerLink="/perfil" class = "cardtitle3" style="margin-top:20px">Volver a Perfil</h3>
@@ -74,7 +74,7 @@
         </div>
       -->
   
-  <!-- TATEJETAS DE PEDIDOS -->
+  <!-- TATEJETAS DE  HISTORIAL PEDIDOS -->
   <div *ngFor = "let producto of productos_arr"   class="rowCards" id="collectCards">
 
     <mat-card class="cards columnCards">
@@ -87,24 +87,25 @@
       <mat-card-title class="cardtitle">{{producto.productName}}</mat-card-title>
       <mat-card-content>
 
-        <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productAmount}}</p>
+        <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productAmount}} €/kg</p>
 
-        <p class="contentCard"><span class="nameField">Unidades pedidas:</span> {{producto.productAmount}}</p>
+        <p class="contentCard"><span class="nameField">Unidades Pedidas:</span> {{producto.productAmount}}</p>
 
-        <p class="contentCard">
+        <!-- <p class="contentCard">
           <span class="nameField">Productor:</span> {{producto.iduser}}
-        </p>
+        </p> -->
 
         <p class="contentCard"><span class="nameField">Localidad:</span> {{producto.productLocality}}</p>
 
         <p class="contentCard">
-          <span class="nameField">Adquirido por Tueque : </span> {{producto.productChange}}
+          <span class="nameField">Adquirido por Trueque : </span> {{producto.productChange}}
         </p>
 
+
       </mat-card-content>
-      <mat-card-actions class="rowButtons buttonsCards" id="boton">
+      <!-- <mat-card-actions class="rowButtons buttonsCards" id="boton">
         <button id="buy">Comprar</button>
-      </mat-card-actions>
+      </mat-card-actions> -->
     </mat-card>
   
   </div>

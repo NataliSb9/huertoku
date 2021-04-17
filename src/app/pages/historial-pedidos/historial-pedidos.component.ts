@@ -28,7 +28,7 @@ export class HistorialPedidosComponent implements OnInit {
 
   }
 
-  // METODO --> mostrar pedidos de usuario
+  // METODO --> mostrar pedidos de usuario --> el usuario es el comprador
   mostrar(){
     this.productService.mostrar_Historial_Pedidos(this.user).subscribe((res:any)=>{
       console.log(res);
@@ -37,6 +37,7 @@ export class HistorialPedidosComponent implements OnInit {
     })
   }
 
+  
   ngOnInit(): void {
    this.mostrar()
   }
