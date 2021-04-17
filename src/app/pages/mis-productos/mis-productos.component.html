@@ -34,10 +34,12 @@
         <p class="contentCard">
           <span class="nameField">Cantidad disponible:</span> {{productos.productAmount}} kg
         </p> 
+        
+        <p>{{productos.idProduct}}</p>
       </mat-card-content>
-      <mat-card-actions class = "rowButtons buttonsCards" id= "boton">    
+      <mat-card-actions class = "rowButtons buttonsCards" id= "boton">
         <button id="edit">Editar</button>
-        <button>Eliminar</button>
+        <button (click)= "deleteProducto(productos.idProduct)">Eliminar</button>
       </mat-card-actions>    
     </mat-card>
 <!-- 

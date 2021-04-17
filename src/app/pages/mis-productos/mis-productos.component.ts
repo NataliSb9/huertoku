@@ -12,23 +12,38 @@ import { User } from 'src/app/model/user'
 export class MisProductosComponent implements OnInit {
 
   public productosUsuarios: Product[]
-  public idUser: number
+  public produtoUsuario: Product
+  public idUser: number;
+  //public idProduct: number;
+  public delete: boolean;
+  public error: string
+
   constructor(private productService: ProductosService, private usuarioProductos: UserService) {
     this.idUser = this.usuarioProductos.user.iduser
-    
-    this.productService.mostrarMisProductos(this.idUser).subscribe((respuesta: Product[]) => {
-      this.productosUsuarios = respuesta
+  }
+
+  deleteProducto(idProducto: Number){
+    console.log("controlador: "+ idProducto)
+
+    this.productService.eliminarProducto(idProducto).subscribe((respuesta: any)=>{
+      console.log(respuesta)
+      this.ngOnInit();
+    },(error)=>{
+      console.log(error.error)
+      this.error = error.error
+    })
+  } 
+  
+  ngOnInit(): void {
+    this.productService.mostrarMisProductos(this.idUser).subscribe((respuesta: any[]) => {
+      this.productosUsuarios = []
+      for(let i = 0; i<respuesta.length ; i++){
+        let prodN: Product = new Product (respuesta[i].idproduct,respuesta[i].productName,respuesta[i].productType,respuesta[i].productAmount, respuesta[i].productLocality, respuesta[i].productPrice, respuesta[i].productEco, respuesta[i].productChange, respuesta[i].iduser, respuesta[i].productImg)
+        this.productosUsuarios.push(prodN)
+      }
       console.log(this.productosUsuarios)
     })
-    
-    
   }
-
-  
-
-  ngOnInit(): void {
-  }
-
 }
 
 /*mostrarProductos(id: number) {
