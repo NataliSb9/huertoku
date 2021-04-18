@@ -14,6 +14,8 @@ export class ProductosService {
   private url_envios    : string
 
   private http        : HttpClient
+
+  public producto : Product
   
 
   constructor(http : HttpClient) { 
@@ -24,6 +26,8 @@ export class ProductosService {
     this.url_envios     = "https://lahuertapp.herokuapp.com/envios"
 
     this.http           = http
+
+    this.producto       = new Product(0)
   }
 
 // METODOS PARA PRODUCTO
@@ -37,6 +41,14 @@ mostrarProducto (producto : Product){
   } else {
     return this.http.get( this.url + "/product" + producto.productAmount + "&" + producto.productChange + "&" + producto.productEco + "&" + producto.productLocality + "&" + producto.productName + "&" + producto.productPrice + "&" + producto.productType )
   }
+}
+
+// ---> mostrara producto pasado por id
+public obtenerProductoModal(idProduct: number){
+    
+  let urlProductoHuerta = this.url + "?id="+ idProduct
+  console.log(urlProductoHuerta)
+  return this.http.get(urlProductoHuerta)
 }
 
 // ---> añade producto a BBDD

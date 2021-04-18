@@ -9,9 +9,10 @@ export class Product {
     public productChange    : string;
     public iduser           : number;
     public productImg       : string
+    public idproduct        : number
     
 
-    constructor ( productName: string, productType :string, productAmount:number, productLocality: string, productPrice: number, productEco:string, productChange:string, iduser: number, productImg: string ){
+    constructor (idproduct: number, productName?: string, productType ?:string, productAmount?:number, productLocality?: string, productPrice?: number, productEco?:string, productChange?:string, iduser?: number,  productImg?: string ){
         this.productName        = productName
         this.productType        = productType
         this.productAmount      = productAmount
@@ -21,6 +22,7 @@ export class Product {
         this.productChange      = productChange
         this.iduser             = iduser
         this.productImg         = productImg
+        this.idproduct          = idproduct
     } 
 
 }
