@@ -43,7 +43,7 @@ mostrar_producto(){
 // modificar producto
 editar_producto(productName:string, productType:string, productAmount:number, productLocality:string, productPrice:number, productEco: string, productChange:string, productImg: string ){
   console.log(this.user);
-  console.log(this.productService.producto.idproduct);
+  console.log();
   
 
   this.productService.editarProducto(new Product(this.productService.producto.idproduct, productName, productType, productAmount, productLocality, productPrice, productEco, productChange, this.productService.producto.iduser, productImg )).subscribe((res:any)=>{
