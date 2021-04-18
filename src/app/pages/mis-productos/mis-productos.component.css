@@ -120,6 +120,29 @@ button:hover {
   margin-right: 10px;
 }
 
+  /* BOTON EDITAR */
+  .aEditar {
+    border-radius: 25px;
+    width: 85px;
+    height: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #fdffee;
+    font-size: 15px;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    text-decoration: none;
+    background-color: #267172;
+    transition: box-shadow 0.16s ease;
+    text-align: center;
+    padding-top: 3px;
+
+  }
+  
+  .aEditar:hover {
+    background: #408f91;
+    box-shadow: none;
+  }
+
 /*Tarjeta Agregar Porducto*/
 #cestaAdd {
   margin-top: 25px;
