@@ -179,6 +179,14 @@ h2 {
 }
 
 .marginCards{
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 12.8%;
+  margin-left: 12.8%;
+}
+
+@media (max-width: 1600px) {
+  .marginCards{
+    margin-right: 9.8%;
+    margin-left: 9.8%;
+  }
+  
 }

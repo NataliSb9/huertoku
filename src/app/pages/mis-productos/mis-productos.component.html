@@ -38,7 +38,7 @@
         <p>{{productos.idProduct}}</p>
       </mat-card-content>
       <mat-card-actions class = "rowButtons buttonsCards" id= "boton">
-        <button id="edit">Editar</button>
+        <a routerLink="/app-editar-producto" class="aEditar" id="edit">Editar</a>        
         <button (click)= "deleteProducto(productos.idProduct)">Eliminar</button>
       </mat-card-actions>    
     </mat-card>

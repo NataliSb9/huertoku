@@ -14,23 +14,35 @@ export class LaHuertaTiendaComponent implements OnInit {
 
   public productosHuerta: Product[]
   public producto: Product
+  public idProduct: number
 
   constructor(public modalDialogo: MatDialog, private productService: ProductosService) { }
  
 
   /******METODO PARA LLAMAR AL MODAL** */
-  openDialog() {
-    this.modalDialogo.open(ModalLaHuertaTiendaComponent);
+  openDialog(idProduct: number){
+    
+    console.log("Id productto indiv" +idProduct)
+    let producto: Product
+    this.productService.obtenerProductoModal(idProduct).subscribe((respuesta: any) =>{
+      producto = new Product(respuesta[0].idproduct,respuesta[0].productName,respuesta[0].productType,respuesta[0].productAmount, respuesta[0].productLocality, respuesta[0].productPrice, respuesta[0].productEco, respuesta[0].productChange, respuesta[0].iduser, respuesta[0].productImg)
+      
+      this.modalDialogo.open(ModalLaHuertaTiendaComponent,{
+        data: { productName: producto.productName, productType: producto.productType, productAmount: producto.productAmount, 
+          productLocality: producto.productLocality, productPrice: producto.productPrice, productChange: producto.productChange, productEco: producto.productEco,productImg: producto.productImg
+        }
+    })
+
+  });
+  
   }
 
 
   ngOnInit(): void {
-    this.productService.obtenerProductos().subscribe((respuesta: Product[]) => {
-      this.productosHuerta = []
-      for(let i = 0; i<respuesta.length ; i++){
-        let prodN: Product = new Product (respuesta[i].idProduct,respuesta[i].productName,respuesta[i].productType,respuesta[i].productAmount, respuesta[i].productLocality, respuesta[i].productPrice, respuesta[i].productEco, respuesta[i].productChange, respuesta[i].iduser, respuesta[i].productImg)
-        this.productosHuerta.push(prodN)
-      }
+    this.productService.obtenerProductos().subscribe((respuesta: any[]) => {
+      
+      this.productosHuerta = this.productService.convertir(respuesta)
+    
       console.log(this.productosHuerta)
     })
 

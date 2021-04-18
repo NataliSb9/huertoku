@@ -12,16 +12,7 @@
         <p>Localización</p>
         <div class="columnFilter">
             <div class="rowInsideFiltros">
-            <input type="checkbox" id="madrid"  name="madrid" value="Madrid" />
-            <label for="madrid" >Madrid</label><br />
-            </div>
-            <div class="rowInsideFiltros">
-            <input type="checkbox" id="castillaLaMancha" name="castillaLaMancha" value="CastillaLaMancha"/>
-            <label for="castillaLaMancha" class="rowInsideFiltros">Castilla La Mancha</label><br />
-            </div>
-            <div class="rowInsideFiltros">
-            <input type="checkbox"id="castillaLeon" name="castillaLeon"value="castillaLeon"/>
-            <label for="castillaLeon">Castilla y León</label><br />
+                <input matInput placeholder="BuscarLocalidad" />
             </div>
         </div>
         </div>
@@ -72,7 +63,7 @@
 <!-- TARJETAS -->
 
 <div class="rowCards marginCards" id="collectCards">
-    <mat-card (click) = "openDialog()" class="cards columnCards" *ngFor= "let productos of productosHuerta">
+    <mat-card (click)="openDialog(productos.idProduct)" class="cards columnCards" *ngFor= "let productos of productosHuerta">
         <img class="imgCard" style = "background-size: cover" mat-card-image src = "{{productos.productImg}}" onError="this.src='./assets/img/ICOfruitBAG.png'" alt="{{productos.productName}}"
         />
         <mat-card-title class="cardtitle">{{productos.productName}}</mat-card-title>
@@ -84,6 +75,7 @@
         <p class="contentCard">
             <span class="nameField">Adquirir por trueque: </span> {{productos.productChange}}
         </p>
+        <p>id Producto: {{productos.idProduct}}</p>
         </mat-card-content>
     </mat-card>
 </div>    

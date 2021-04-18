@@ -12,10 +12,9 @@ import { User } from 'src/app/model/user'
 export class MisProductosComponent implements OnInit {
 
   public productosUsuarios: Product[]
-  public produtoUsuario: Product
+  //public produtoUsuario: Product
   public idUser: number;
   //public idProduct: number;
-  public delete: boolean;
   public error: string
 
   constructor(private productService: ProductosService, private usuarioProductos: UserService) {
@@ -34,14 +33,14 @@ export class MisProductosComponent implements OnInit {
     })
   } 
   
+
   ngOnInit(): void {
     this.productService.mostrarMisProductos(this.idUser).subscribe((respuesta: any[]) => {
-      this.productosUsuarios = []
-      for(let i = 0; i<respuesta.length ; i++){
-        let prodN: Product = new Product (respuesta[i].idProduct,respuesta[i].productName,respuesta[i].productType,respuesta[i].productAmount, respuesta[i].productLocality, respuesta[i].productPrice, respuesta[i].productEco, respuesta[i].productChange, respuesta[i].iduser, respuesta[i].productImg)
-        this.productosUsuarios.push(prodN)
-      }
+      
+      this.productosUsuarios = this.productService.convertir(respuesta)
+
       console.log(this.productosUsuarios)
+      
     })
   }
 }
