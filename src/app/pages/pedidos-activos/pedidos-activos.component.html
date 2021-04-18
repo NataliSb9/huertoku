@@ -14,13 +14,14 @@
 
 
   <!-- TATEJETAS DE HISTORIAL ENVIOS -->
-  <div *ngFor = "let producto of productos_arr"   class="rowCards" id="collectCards">
+  <div   class="rowCards" id="collectCards">
 
-    <mat-card class="cards columnCards">
+    <mat-card *ngFor = "let producto of productos_arr" class="cards columnCards">
       <img
         class="imgCard"
         mat-card-image
         src="{{producto.productImg}}" 
+        onError="this.src='./assets/img/ICOfruitBAG.png'"
         alt="imagen producto"
       />
       <mat-card-title class="cardtitle">{{producto.productName}}</mat-card-title>

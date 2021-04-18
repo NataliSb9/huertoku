@@ -1,4 +1,5 @@
-/**titulo y vuelta a perfil***/
+
+/* GENERAL */
 .row{
   display: flex;
   flex-direction: row;
@@ -14,6 +15,8 @@
   align-items: center;
 }
 
+
+/**** titulo y vuelta a perfil *****/
 .cardtitle2 {
   font-family: "Signika", sans-serif;
   color: #e67e22; 
@@ -26,19 +29,6 @@
 }
 .cardtitle3:hover{
   color: #408f91;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
 }
 
 .field {
@@ -46,12 +36,13 @@
   font-size: 16px;
 }
 
-
+/****** TARJETAS ******/
 /***** TITULO *****/
 .cardtitle {
   font-family: "Signika", sans-serif;
   text-align: center;
   color: #e67e22;
+  margin-bottom: 15px;
 }
 .cardtitle2 {
   font-family: "Signika", sans-serif;
@@ -67,7 +58,7 @@
   color: #408f91;
 }
 
-/****** TARJETAS ******/
+/****** CONTENIDO TARJETAS ******/
 .cards {
   max-width: 250px;
   border-radius: 25px;
@@ -83,6 +74,7 @@
 
 .imgCard {
   background-size: cover;
+ 
 }
 
 .rowCards {
