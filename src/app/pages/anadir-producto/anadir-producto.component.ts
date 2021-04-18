@@ -23,15 +23,11 @@ export class AnadirProductoComponent implements OnInit {
   public producto  : Product
   public user      : User
 
-
-
   constructor(private formBuilder: FormBuilder, private apiService : ProductosService, private userService : UserService) 
   { 
     this.buildForm();
     this.user = this.userService.user
    
-
-
   }
 
 

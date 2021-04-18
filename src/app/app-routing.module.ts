@@ -12,6 +12,7 @@ import { HistorialPedidosComponent } from './pages/historial-pedidos/historial-p
 import { PedidosActivosComponent } from './pages/pedidos-activos/pedidos-activos.component';
 import { MisProductosComponent } from './pages/mis-productos/mis-productos.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { EditarProductoComponent } from './pages/editar-producto/editar-producto.component';
 
 
 const routes: Routes = 
@@ -54,6 +55,9 @@ const routes: Routes =
   },
   {
     path:"landing",component:LandingComponent
+  },
+  {
+    path:'app-editar-producto', component: EditarProductoComponent
   }
   /*{
     path: "**", component: PageNotFound
