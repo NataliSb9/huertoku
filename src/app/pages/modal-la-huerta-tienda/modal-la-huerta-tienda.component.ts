@@ -13,7 +13,7 @@ export class ModalLaHuertaTiendaComponent implements OnInit {
   public idProduct: number
   public productoModal: Product
   constructor(private productService: ProductosService, @Inject(MAT_DIALOG_DATA) public data:{productName: string, productType: string, productAmount: number, 
-    productLocality: string, productPrice:number, productChange: string, productImg: string, productEco: string}) {
+    productLocality: string, productPrice:number, productChange: string, productImg: string, productEco: string, productDescription: string}) {
       
   }
 
