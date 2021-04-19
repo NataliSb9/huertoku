@@ -37,6 +37,36 @@ export class ProductosService {
     return this.http.get(urlProductoHuerta)
   }
 
+  //Mostrar prodducto por filtro
+  mostrarProductoFiltro (producto : Product){
+    console.log(producto.productLocality)
+    let localidad= ""
+    let tipo = ""
+    if(producto !=undefined){
+      if(producto.productLocality != null){
+        localidad = `?productLocality=${producto.productLocality}`
+      } else{
+        localidad=null
+        console.log(localidad)
+      }
+      if(producto.productType !=null){
+        tipo = `?productType=${producto.productType}`
+      }else{
+        tipo=null
+        console.log(localidad)
+      }
+      console.log(this.url_productos+localidad)
+      return this.http.get( this.url_productos+localidad)
+    }
+   else{
+     (producto.productAmount == null && producto.productChange == null && producto.productEco ==  null && producto.productLocality == null && producto.productName == null && producto.productPrice == null && producto.productType == null)
+    {
+      return this.http.get( this.url_productos)
+  
+    } 
+  }  
+}
+
 //Mostrar todos los productos de la Huerta
 
   public obtenerProductos() {
@@ -111,15 +141,7 @@ export class ProductosService {
 
 // ---> mostrara todos y por filtrado
 /*
-mostrarProducto (producto : Product){
-  if(producto.productAmount == null && producto.productChange == null && producto.productEco ==  null && producto.productLocality == null && producto.productName == null && producto.productPrice == null && producto.productType == null)
-  {
-    return this.http.get( this.url + "/product" )
 
-  } else {
-    return this.http.get( this.url + "/product" + producto.productAmount + "&" + producto.productChange + "&" + producto.productEco + "&" + producto.productLocality + "&" + producto.productName + "&" + producto.productPrice + "&" + producto.productType )
-  }
-}
 */
 
 

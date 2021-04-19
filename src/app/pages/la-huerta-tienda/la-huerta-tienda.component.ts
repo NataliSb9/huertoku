@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl,FormBuilder, FormGroup } from '@angular/forms';
 import { ProductosService } from 'src/app/shared/productos.service'
 import { Product } from 'src/app/model/product';
 import { ModalLaHuertaTiendaComponent } from '../modal-la-huerta-tienda/modal-la-huerta-tienda.component';
@@ -24,10 +24,11 @@ export class LaHuertaTiendaComponent implements OnInit {
 
   private buildForm() {
     this.myFormFilter = this.fomularioFilter.group({
-      productLocality: [''],
-      productType: [''],
-      productEco: [''],
-      productChange: ['']
+      productLocality: '',
+      productTypeFruta: '',
+      productTypeVerdura: '',
+      productEco: '',
+      productChange: ''
     })
 
   }
@@ -42,6 +43,15 @@ export class LaHuertaTiendaComponent implements OnInit {
   }
 
   buscarPorFiltro(){
+    let data = this.myFormFilter.value
+    console.log(data)
+    
+    let productoFilter = new Product(0,"",data.productType, data.productAmount,data.productLocality ,data.productPrice, data.productEco, data.productChange, 0, data.productImg, data.productDescription)
+    
+    this.productService.mostrarProductoFiltro(productoFilter).subscribe((respuesta: any[]) =>{
+      this.productosHuerta = this.productService.convertir(respuesta)
+      console.log(this.productosHuerta)
+    })
 
 
   }
