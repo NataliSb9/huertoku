@@ -38,34 +38,50 @@ export class ProductosService {
   }
 
   //Mostrar prodducto por filtro
-  mostrarProductoFiltro (producto : Product){
-    console.log(producto.productLocality)
-    let localidad= ""
-    let tipo = ""
-    if(producto !=undefined){
-      if(producto.productLocality != null){
-        localidad = `?productLocality=${producto.productLocality}`
-      } else{
-        localidad=null
-        console.log(localidad)
-      }
-      if(producto.productType !=null){
-        tipo = `?productType=${producto.productType}`
-      }else{
-        tipo=null
-        console.log(localidad)
-      }
-      console.log(this.url_productos+localidad)
-      return this.http.get( this.url_productos+localidad)
+  mostrarProductoFiltro (productLocality: string, productPrice: number, productTypeFruta: string, productTypeVerdura:string, productEco: string, productChange: string){
+    let localidad: string= ""
+    let precio: number
+    let fruta:string = ""
+    let verdura: string = ""
+    let eco: string = ""
+    let change: string = ""
+    console.log(productLocality)
+   /*  if(productLocality !== ""){
+      localidad= `?productLocality=${productLocality}`
+      console.log(`?productLocality=${productLocality}`)
+    }else {
     }
-   else{
-     (producto.productAmount == null && producto.productChange == null && producto.productEco ==  null && producto.productLocality == null && producto.productName == null && producto.productPrice == null && producto.productType == null)
-    {
-      return this.http.get( this.url_productos)
+   if(productPrice !== 0){
+      precio= `?productPrice${productPrice}`
+    }else {
+      precio
+    }
+    if(productTypeFruta !== ""){
+      fruta = `?productType${productTypeFruta}`
+    }else {
+      fruta 
+    }
+    if(productTypeVerdura !== ""){
+      verdura = `?productType${productTypeVerdura}`
+    }else {
+      verdura
+    }
+    if(productEco !== ""){
+      eco = `?productEco${productTypeVerdura}`
+    }else {
+      eco    }
+    if(productChange !== ""){
+      change = `?productChange${productChange}`
+    }else {
+      change
+    } */
+
+    console.log( this.url_productos+localidad+precio+fruta+verdura+eco+change)
+
+    return this.http.get( this.url_productos+"?"+productLocality)
+   
   
-    } 
-  }  
-}
+  }    
 
 //Mostrar todos los productos de la Huerta
 
@@ -76,8 +92,8 @@ export class ProductosService {
   // METODOS PARA MIS PRODUCTOS
 
   // ---> Mostrar productos en "Mis Productos"
-  public mostrarMisProductos(id: number) {
-    let urlProductoUsuario = this.url_productos + "?id=" + id
+  public mostrarMisProductos(idUser: number) {
+    let urlProductoUsuario = this.url_productos+"?iduser=" +idUser
     return this.http.get(urlProductoUsuario)
   }
 
@@ -85,7 +101,7 @@ export class ProductosService {
   añadirProducto(newProduct: Product) {
     console.log(newProduct);
 
-    return this.http.post(this.url, newProduct)
+    return this.http.post(this.url_productos, newProduct)
   }
 
   // ---> EDITA producto en Mis productos 

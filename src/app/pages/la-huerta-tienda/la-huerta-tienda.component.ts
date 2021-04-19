@@ -45,12 +45,28 @@ export class LaHuertaTiendaComponent implements OnInit {
   buscarPorFiltro(){
     let data = this.myFormFilter.value
     console.log(data)
+    let localizacion = data.productLocality
+    let productTypeFruta = data.productTypeFruta
+    let productTypeVerdura = data.productTypeFruta
+    let productEco = data.productEco
+    let productChange = data.productChange
+    let productPrice = data.productPrice
+     
+    if(productTypeVerdura == true){
+      productTypeVerdura = "si"
+    }else{
+      productTypeVerdura = null
+    }
+
+    if(productTypeFruta == true){
+      productTypeFruta = "no"
+    }else{
+      productTypeFruta= null
+    }
     
-    let productoFilter = new Product(0,"",data.productType, data.productAmount,data.productLocality ,data.productPrice, data.productEco, data.productChange, 0, data.productImg, data.productDescription)
-    
-    this.productService.mostrarProductoFiltro(productoFilter).subscribe((respuesta: any[]) =>{
+    this.productService.mostrarProductoFiltro(localizacion,productPrice,productTypeFruta, productTypeVerdura, productEco, productChange).subscribe((respuesta: any[]) =>{
       this.productosHuerta = this.productService.convertir(respuesta)
-      console.log(this.productosHuerta)
+      console.log(localizacion,productPrice,productTypeFruta, productTypeVerdura, productEco, productChange)
     })
 
 
