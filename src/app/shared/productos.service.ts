@@ -19,6 +19,8 @@ export class ProductosService {
   public producto: Product
   public productoHuerta: Product
 
+  public produc_selec : Product
+
   constructor(http: HttpClient) {
     //this.url = "http://localhost:300/product"
     this.http = http
@@ -29,6 +31,8 @@ export class ProductosService {
     this.url_productos = "https://lahuertapp.herokuapp.com/product"
     this.productoHuerta = new Product (0,"","",0,"",0,"","",0,"","")
   }
+
+
 // ---> mostrara producto pasado por id
   public obtenerProductoModal(idProduct: number){
       
@@ -85,11 +89,12 @@ export class ProductosService {
 
 //Mostrar todos los productos de la Huerta
 
+
   public obtenerProductos() {
     return this.http.get(this.url_productos)
   }
 
-  // METODOS PARA MIS PRODUCTOS
+  // ******* METODOS PARA MIS PRODUCTOS *******
 
   // ---> Mostrar productos en "Mis Productos"
   public mostrarMisProductos(idUser: number) {
@@ -106,11 +111,14 @@ export class ProductosService {
 
   // ---> EDITA producto en Mis productos 
   editarProducto(producto: Product) {
-    return this.http.put(this.url, producto)
+    console.log(producto);
+    
+    return this.http.put(this.url_productos, producto)
   }
 
   // ---> ELIMINA producto en Mis productos
   eliminarProducto(idProducto: Number) {
+    
     const options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -123,15 +131,19 @@ export class ProductosService {
     return this.http.delete(this.url_productos, options)
   }
 
-  //convierte en un arrays de objetos de tipo producto lo que le pasamos por la Api
+  // ---> convierte en un arrays de objetos de tipo producto lo que le pasamos por la Api
   convertir(respuesta: any[]): Product[] {
+
     let arrayProduct: Product[] = []
+
     for (let i = 0; i < respuesta.length; i++) {
       let contenido: Product = new Product(respuesta[i].idproduct, respuesta[i].productName, respuesta[i].productType, respuesta[i].productAmount, respuesta[i].productLocality, respuesta[i].productPrice, respuesta[i].productEco, respuesta[i].productChange, respuesta[i].iduser, respuesta[i].productImg, respuesta[i].productDescription)
       arrayProduct.push(contenido)
     }
     return arrayProduct
   }
+
+
 
   // ****** METODOS PARA HISTORIAL DE PEDIDOS / ENVIOS *****
 
@@ -141,7 +153,6 @@ export class ProductosService {
 
     return this.http.get(this.url_pedidos + "?id=" + id_buyer)
   }
-
 
   // --> mostrar historial envios
   historial_envios(id_seller: number) {

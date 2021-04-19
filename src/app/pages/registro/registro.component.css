@@ -10,25 +10,56 @@ blanco ---------> #FdFFFF
 font-family: 'Roboto', sans-serif;
 font-family: 'Signika', sans-serif;
 */
+
+ /* GENERAL */
+ .row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+}
+.col{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-items: center;
+}
  
+  /* BANNER GUIA */
+  .cardtitle2 {
+    font-family: "Signika", sans-serif;
+    color: #e67e22; 
+  }
+  .cardtitle3 {
+    font-family: "Signika", sans-serif;
+    color:  #267172;
+    margin-left: 100px;
+    font-size: 1.2rem;
+  }
+  .cardtitle3:hover{
+    color: #408f91;
+  }
+  hr{
+    margin-top: 10px;
+  }
+
+
 /*/////////////TARJETAS////////////////*/
 
+/*** dimensiones ***/
 .cards {
     max-width: 350px;
     border-radius: 25px;
-    margin-right: 35px;
-    margin-left: 35px;
-    padding-bottom: 30px;
     border-color: #767676;
+    margin-top: 30px;
   }
-  .cardimg {
-    max-width: 300px;
-    border-radius: 25px;
-    margin-right: 35px;
-    margin-left: 35px;
-    padding-bottom: 30px;
-    border-color: #767676;
+  .card_registro{
+    height: 560px;
+    margin-left: -150px;
   }
+ 
   #collectCards{
     padding: 12px;
     margin-top: 30px;
@@ -40,42 +71,50 @@ font-family: 'Signika', sans-serif;
   .cards:hover{
     box-shadow: 6px 6px 6px  #267172;
   }
+ 
   .imgCard {
     background-size: cover;
+    
   }
-  
-  .rowCards {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  .columnCards {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    align-items: flex-start;
-  }
-  
+
+  /*** contenido  ***/
+  .cardtitle{
+    font-family: 'Signika', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #e67e22;
+    padding-top:50px ;
+   }
+
+   .card-subtitle{
+     color: #267172;
+     text-align: center;
+     margin-top: 10px;
+   }
+
   .contentCard {
    font-family: 'Roboto', sans-serif;
-   text-align: left;
+   text-align: center;
    color: #767676;
+   padding: 10px;
+
   }
+  .contentCard_resgistro{
+    margin-top: 40px;
+   }
   
-  .cardtitle{
-   font-family: 'Signika', sans-serif;
-   margin-left: 75px;
-   /* margin-bottom: 15px; */
-   padding:20px;
-   color: #e67e22;
-  }
   .nameField{
    font-style: normal;
    font-weight: bold;
    color: #767676;
   }
+
+
   /*///////////BOTÓN////////////*/
+
+#buy{
+ margin-top: 20px;
+}
 
 button 
 {

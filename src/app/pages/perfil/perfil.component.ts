@@ -20,8 +20,10 @@ export class PerfilComponent implements OnInit {
     
     this.userService.mostrar(this.usuarioLogeado.iduser).subscribe((data:any)=>
     {
-      data=this.usuarioLogeado
+      // data=this.usuarioLogeado
       console.log(data);
+      data = this.userService.user
+
     });
 
     
