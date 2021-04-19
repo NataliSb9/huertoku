@@ -20,7 +20,7 @@ export class ModalLaHuertaTiendaComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.idProduct = this.productService.productoHuerta.idProduct
+    this.idProduct = this.productService.productoHuerta.idproduct
     console.log("que es "+this.idProduct)
     this.productService.obtenerProductoModal(this.idProduct).subscribe((respuesta: Product) => {
       this.productoModal = respuesta

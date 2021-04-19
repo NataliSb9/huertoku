@@ -27,36 +27,17 @@
     font-family: "Signika", sans-serif;
     color:  #267172;
     margin-left: 100px;
+    margin-left: 100px;
+    font-size: 1.2rem;
   }
   .cardtitle3:hover{
     color: #408f91;
   }
 
-  /* FORM EDITAR PRODUCTO */
 
-  /* img */
-  #foto_producto{
-      width: 50%;
-      margin-left: 30%;
-  }
-  input{
-    width:30%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 3px;
-  }
-
-  /* input de modificacion de producto */
-  .input_modificar{
-      width:60%;
-      padding: 10px;
-      margin-top: 10px;  
-  }
-
- /* tarjeta de producto a modificar */
-
+/* CARDS */
  .cards {
-    max-width: 250px;
+    max-width: 350px;
     border-radius: 25px;
     padding-bottom: 30px;
     border-color: #cac6c6;
@@ -71,13 +52,7 @@
   .imgCard {
     background-size: cover;
   }
-  
-  .contentCard {
-    font-family: "Roboto", sans-serif;
-    text-align: left;
-    color: #767676;
-  }
-  
+
   .cardtitle {
     font-family: "Signika", sans-serif;
     text-align: left;
@@ -86,9 +61,60 @@
     
   }
   
+  .contentCard {
+    font-family: "Roboto", sans-serif;
+    text-align: left;
+    color: #767676;
+  }
+  
   .nameField {
     font-style: normal;
     font-weight: bold;
     color: #767676;
   }
+
+  /* tarjeta de producto a modificar */
+
+
+ /* FORM EDITAR PRODUCTO */
+
+  /* img */
+  #foto_producto{
+      width: 50%;
+      margin-left: 30%;
+  }
+
+  /* input de modificacion de producto */
+  .input_modificar{
+      width:60%;
+      padding: 10px;
+      margin-top: 20px;  
+      border-color: #cac6c6;
+      border: solid, 1px;
+      border-width: 0.5px;
+      width: 600px;
+  }
+
+
+
+   /* FORM -- boton */
+   button {
+    border-radius: 25px;
+    width: 300px;
+    height: 40px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #fdffee;
+    font-size: 15px;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    text-decoration: none;
+    background-color: #267172;
+    transition: box-shadow 0.16s ease;
+    margin-top: 30px;
+    
+  }
   
+  button:hover {
+    background: #408f91;
+    box-shadow: none;
+  }

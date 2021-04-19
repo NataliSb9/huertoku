@@ -15,12 +15,12 @@
 
 
 <!-- FORM EDITAR PRODUCTO -->
-
+{{producto.productName}}
 <div class="row">
 
     <!-- trajeta de producto a modificar -->
     <div class="col" >
-        <mat-card *ngFor = "let producto of producto_editar" class="cards columnCards">
+        <mat-card class="cards columnCards">
             <img
               class="imgCard"
               mat-card-image
@@ -41,37 +41,35 @@
               <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productType}} €/kg</p>
 
               <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productEco}} €/kg</p>
-
+              
               <p class="contentCard">
                 <span class="nameField">Adquirido por Trueque : </span> {{producto.productChange}}
               </p>
+
+              <p>ID PRODUCTO : {{producto.idproduct}}</p>
       
             </mat-card-content>
-        </mat-card> -->
+        </mat-card> 
       
     </div>
 
-    <!-- form que modifica los datos del producto -->
-    <div class="col" >
-
-        <!-- introduce img producto -->
-       
-        <!-- input para introducir link de nueva img -->
-        <input type="text" placeholder="Inserta url de imagen" #productImg>
-
-        <!-- modifica los datos del producto -->
-        <input #productName class="input_modificar" type="text" placeholder="Nombre de Producto">
-        <input #productType class="input_modificar"  type="text" placeholder="Tipo de Producto">
-        <input #productAmount class="input_modificar"  type="number" placeholder="Cantidad en Kg">
-        <input #productLocality class="input_modificar"  type="text" placeholder="Localidad">
-        <input #productPrice class="input_modificar"  type="number" placeholder="Precio del Producto €/kg">
-        <input #productEco class="input_modificar"  type="text" placeholder="Producto Ecológico">
-        <input #productChange class="input_modificar"  type="text" placeholder="Posibilidad de Trueque">
+    <!-- FORM que modifica los datos del producto -->
+    <div class="col">
+            <!-- input para introducir link de nueva img -->
+            <input #productImg type="text" placeholder="Inserta url de imagen" class="input_modificar" >
+            <!-- modifica los datos del producto -->
+            <input #productName class="input_modificar" type="text" placeholder="Nombre de Producto">
+            <input #productType class="input_modificar"  type="text" placeholder="Tipo de Producto">
+            <input #productAmount class="input_modificar"  type="number" placeholder="Cantidad en Kg">
+            <input #productLocality class="input_modificar"  type="text" placeholder="Localidad">
+            <input #productPrice class="input_modificar"  type="number" placeholder="Precio del Producto €/kg">
+            <input #productEco class="input_modificar"  type="text" placeholder="Producto Ecológico">
+            <input #productChange class="input_modificar"  type="text" placeholder="Posibilidad de Trueque">
 
         <!-- boton guarda modificaciones del producto -->
-        <button (click)="editar_producto(productName.value, productType.value, productAmount.valueAsNumber,
+        <button (click)="editar_producto( productName.value, productType.value, productAmount.valueAsNumber,
              productLocality.value, productPrice.valueAsNumber, productEco.value, productChange.value,
-             productImg.value)">Guardarcambios </button> 
+             productImg.value)">Guardarcambios</button> 
 
         <!-- <p style="font-family: 'Roboto', sans-serif; color:#E67E22;">{{message}}</p> -->
     </div>

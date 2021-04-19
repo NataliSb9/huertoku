@@ -3,6 +3,7 @@ import { Product } from 'src/app/model/product';
 import { ProductosService } from 'src/app/shared/productos.service'
 import { UserService } from 'src/app/shared/user.service'
 import { User } from 'src/app/model/user'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mis-productos',
@@ -15,7 +16,7 @@ export class MisProductosComponent implements OnInit {
   public idUser: number;
   public error: string
 
-  constructor(private productService: ProductosService, private usuarioProductos: UserService) {
+  constructor(private productService: ProductosService, private usuarioProductos: UserService, private router: Router) {
     this.idUser = this.usuarioProductos.user.iduser
   }
 
@@ -30,7 +31,15 @@ export class MisProductosComponent implements OnInit {
       this.error = error.error
     })
   } 
-  
+
+  producto_selec(product:Product){
+    this.productService.produc_selec = product
+    this.router.navigate(["/","app-editar-producto"])
+
+    console.log( this.productService.produc_selec);
+  }
+
+ 
 
   ngOnInit(): void {
     this.productService.mostrarMisProductos(this.idUser).subscribe((respuesta: any[]) => {

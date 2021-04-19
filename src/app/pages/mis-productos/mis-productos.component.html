@@ -35,10 +35,11 @@
           <span class="nameField">Cantidad disponible:</span> {{productos.productAmount}} kg
         </p> 
         
-        <p>{{productos.idProduct}}</p>
+        <p>{{productos.idproduct}}</p>
       </mat-card-content>
-      <mat-card-actions class = "rowButtons buttonsCards" id= "boton">    
-        <a routerLink="/app-editar-producto" class="aEditar" id="edit">Editar</a>
+      <mat-card-actions class = "rowButtons buttonsCards" id= "boton">  
+        <!-- <button (clikc)="edit_producto({{productos.producId}})">Editar</button>   -->
+        <a (click)="producto_selec(productos)" class="aEditar" id="edit">Editar</a>
         <button>Eliminar</button>
       </mat-card-actions>    
     </mat-card>
