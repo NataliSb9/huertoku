@@ -30,7 +30,7 @@ export class RegistroComponent implements OnInit
      
     this.userService.logIn(usuario1).subscribe((usuarioLogeado:User[])=>{
       
-      
+    
       if (usuarioLogeado.length > 0) {
 
         sessionStorage.setItem("iduser",JSON.stringify(usuarioLogeado[0].iduser))

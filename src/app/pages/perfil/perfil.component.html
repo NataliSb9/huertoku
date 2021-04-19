@@ -7,11 +7,11 @@
     <div class="row" id="profile">
 
 <!-- IMG DE PERFIL -->
-        <div class="colImg" *ngIf = "usuarioLogeado.userImg != undefined;else isImagen">
+        <div class="colImg"  *ngIf = "usuarioLogeado.userImg != undefined;else isImagen">
             <img class="colImg" id="imgPerfil" src={{usuarioLogeado.userImg}} alt="foto perfil">
             <!-- <img src="" alt="stars"> -->
         </div>
-        <ng-template #isImagen><img src="../../../assets/img/MAS.png" ></ng-template>
+        <ng-template #isImagen><img style="width: 67%; margin-top: 20px;" src="../../../assets/img/MAS.png" ></ng-template>
 <!-- DATOS PERFIL -->
         <div class="col" id="data">
             <h2 class = "row" id="UserName">{{usuarioLogeado.username}}</h2>
