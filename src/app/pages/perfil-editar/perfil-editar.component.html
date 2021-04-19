@@ -14,7 +14,7 @@
 
         </div>
 
-        <div class="col" id="dataprofile">  
+        <div class="col" id="dataprofile">
             <!-- input para modificar datos perfil -->
             <input type="email" placeholder="Introduce un nuevo email de contacto" #email>
             <input type="string" placeholder="Introduce un nuevo password" #password>
@@ -26,7 +26,7 @@
             <input type="number" placeholder="Introduce un nuevo telefono de contacto" #tel>
             <input type="text" placeholder="Inserta url de imagen" #userImg>
             <!-- boton guarda modificaciones de perfil -->
-            <button  (click)="saveChanges(email.value, password.value, name.value, surname1.value, birthYear.valueAsNumber, username.value, localidad.value, tel.valueAsNumber, userImg.value)">Guardar cambios</button>
+            <button routerLink="../registro" (click)="saveChanges(email.value, password.value, name.value, surname1.value, birthYear.valueAsNumber, username.value, localidad.value, tel.valueAsNumber, userImg.value)" >Guardar cambios</button>
             <p style="font-family: 'Roboto', sans-serif; color:#E67E22;">{{message}}</p>
         </div>
 
