@@ -34,27 +34,10 @@
         <p class="contentCard">
           <span class="nameField">Cantidad disponible:</span> {{productos.productAmount}} kg
         </p> 
-        
-        <p>{{productos.idProduct}}</p>
       </mat-card-content>
       <mat-card-actions class = "rowButtons buttonsCards" id= "boton">    
         <a routerLink="/app-editar-producto" class="aEditar" id="edit">Editar</a>
-        <button>Eliminar</button>
+        <button (click)= "deleteProducto(productos.idproduct)">Eliminar</button>
       </mat-card-actions>    
     </mat-card>
-<!-- 
-    <mat-card class="cards columnCards">
-        <img class="imgCard" mat-card-image src="./assets/fotos/tomate.jpg" alt="manzanas"/>
-        <mat-card-title class="cardtitle">Tomates</mat-card-title>
-        <mat-card-content>
-          <p class="contentCard"><span class="nameField">Precio:</span> 1.5€/kg</p>
-          <p class="contentCard">
-            <span class="nameField">Cantidad disponible:</span> 35kg
-          </p>
-        </mat-card-content>
-        <mat-card-actions class = "rowButtons buttonsCards" id= "boton">    
-          <button id="edit">Editar</button>
-          <button>Eliminar</button>
-        </mat-card-actions>    
-    </mat-card> -->
 </div>

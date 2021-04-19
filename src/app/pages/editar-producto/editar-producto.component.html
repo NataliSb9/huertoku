@@ -14,13 +14,12 @@
 
 
 
-<!-- FORM EDITAR PRODUCTO -->
-
+<!-- CARD CON PRODUCTO A EDITAR -->
 <div class="row">
 
     <!-- trajeta de producto a modificar -->
     <div class="col" >
-        <mat-card *ngFor = "let producto of producto_editar" class="cards columnCards">
+        <mat-card class="cards columnCards" style="height: 780px; margin-top: 40px; margin-left: 50%;">
             <img
               class="imgCard"
               mat-card-image
@@ -33,48 +32,112 @@
             <mat-card-content>
       
               <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productPrice}} €/kg</p>
-      
-              <p class="contentCard"><span class="nameField">Unidades Pedidas:</span> {{producto.productAmount}}</p>
+
+              <p class="contentCard"><span class="nameField">Tipo Producto:</span> {{producto.productType}} €/kg</p>   
+
+              <p class="contentCard"><span class="nameField">Unidades disponibles:</span> {{producto.productAmount}}</p>
             
               <p class="contentCard"><span class="nameField">Localidad:</span> {{producto.productLocality}}</p>
+
+              <p class="contentCard"><span class="nameField">Percio Producto:</span> {{producto.productPrice}} €/kg</p>
+
+              <p class="contentCard"><span class="nameField">Ecológico:</span> {{producto.productEco}} </p>
               
-              <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productType}} €/kg</p>
+              <p class="contentCard"><span class="nameField">Trueque</span> {{producto.productChange}}</p>
 
-              <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productEco}} €/kg</p>
-
-              <p class="contentCard">
-                <span class="nameField">Adquirido por Trueque : </span> {{producto.productChange}}
-              </p>
+              <p class="contentCard"><span class="nameField">ID Producto</span> {{producto.idproduct}}</p>
       
             </mat-card-content>
-        </mat-card> -->
+        </mat-card> 
       
     </div>
 
-    <!-- form que modifica los datos del producto -->
-    <div class="col" >
 
-        <!-- introduce img producto -->
-       
-        <!-- input para introducir link de nueva img -->
-        <input type="text" placeholder="Inserta url de imagen" #productImg>
+    
+<!-- ////////////////FORMULARIO///////////////////// -->
+<div class="col-sm" style="margin-top: 40px;">
+    <mat-card class="cards columnCards"> 
+        <mat-card-title class = "cardtitle">
+            Modifica tu producto aquí
+        </mat-card-title>
 
-        <!-- modifica los datos del producto -->
-        <input #productName class="input_modificar" type="text" placeholder="Nombre de Producto">
-        <input #productType class="input_modificar"  type="text" placeholder="Tipo de Producto">
-        <input #productAmount class="input_modificar"  type="number" placeholder="Cantidad en Kg">
-        <input #productLocality class="input_modificar"  type="text" placeholder="Localidad">
-        <input #productPrice class="input_modificar"  type="number" placeholder="Precio del Producto €/kg">
-        <input #productEco class="input_modificar"  type="text" placeholder="Producto Ecológico">
-        <input #productChange class="input_modificar"  type="text" placeholder="Posibilidad de Trueque">
+            <mat-card-content>
+                <form [formGroup]="myForm">
+                        
+                        <div class="form-group">
+                                <label style="font-family: 'Roboto', sans-serif">Imagen de Producto</label>
+                                <input type="text" class="form-control" formControlName="productImg">
+                        </div>
+                    
+                        <div class="form-group">
+                                <label style="font-family: 'Roboto', sans-serif">Nombre del producto</label>
+                                <input type="text" class="form-control" formControlName="productName"
+                                        [ngClass]="{'is-invalid': !myForm.get('productName').valid}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Tipo de producto</label>
+                            <select class="form-control" id="exampleFormControlSelect1" formControlName="productType"
+                            [ngClass]="{'is-invalid': !myForm.get('productType').valid}">
+                            <option>Fruta</option>
+                            <option>Verdura</option>
+                            <option>Otros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label style="font-family: 'Roboto', sans-serif">Cantidad disponible</label>
+                                <input type="number" class="form-control" formControlName="productAmount"
+                                [ngClass]="{'is-invalid': !myForm.get('productAmount').valid}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label style="font-family: 'Roboto', sans-serif">Precio por unidad (€/kg)</label>
+                                <input type="number" class="form-control" formControlName="productPrice"
+                                [ngClass]="{'is-invalid': !myForm.get('productPrice').valid}">
+                            </div>
+                        </div>
 
-        <!-- boton guarda modificaciones del producto -->
-        <button (click)="editar_producto(productName.value, productType.value, productAmount.valueAsNumber,
-             productLocality.value, productPrice.valueAsNumber, productEco.value, productChange.value,
-             productImg.value)">Guardarcambios </button> 
+                        <div class="form-row">
+                            <div class="form-group col-md-6" >
+                                <label style="font-family: 'Roboto', sans-serif">Localidad</label>
+                                <input style="width: 318px;" type="text" class="form-control" formControlName="productLocality"
+                                [ngClass]="{'is-invalid': !myForm.get('productLocality').valid}">
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Eco</label>
+                            <select class="form-control" id="exampleFormControlSelect1" class="form-control" formControlName="productEco"
+                            [ngClass]="{'is-invalid': !myForm.get('productEco').valid}">
+                            <option>Sí</option>
+                            <option>No</option>
+                            
+                            </select>
+                        </div>
 
-        <!-- <p style="font-family: 'Roboto', sans-serif; color:#E67E22;">{{message}}</p> -->
-    </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Trueque</label>
+                            <select class="form-control" id="exampleFormControlSelect1" class="form-control" formControlName="productChange"
+                            [ngClass]="{'is-invalid': !myForm.get('productChange').valid}">
+                            <option>Sí</option>
+                            <option>No</option>
+                            
+                            </select>
+                        </div>
+
+                        <mat-card-actions>
+
+                            <button (click)="editar_producto()">Guardar Cambios</button>
+
+                        </mat-card-actions>
+
+                  </form>
+                
+            </mat-card-content>
+        </mat-card>
+</div>
+
 
 
 </div>

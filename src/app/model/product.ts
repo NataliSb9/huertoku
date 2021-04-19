@@ -13,7 +13,7 @@ export class Product {
     public idproduct        : number
 
 
-    constructor (idproduct: number, productName?: string, productType ?:string, productAmount?:number, productLocality?: string, productPrice?: number, productEco?:string, productChange?:string, iduser?: number,  productImg?: string ,productDescription?: string ){
+    constructor (idproduct?: number, productName?: string, productType ?:string, productAmount?:number, productLocality?: string, productPrice?: number, productEco?:string, productChange?:string, iduser?: number,  productImg?: string ,productDescription?: string ){
 
         this.productName        = productName
         this.productType        = productType
