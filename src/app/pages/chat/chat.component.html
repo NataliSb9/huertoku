@@ -9,7 +9,7 @@
     
             <mat-selection-list #users [multiple]="false">
                 <mat-list-option *ngFor="let user of typesOfUser" [value]="user">
-                    <div class="row">
+                    <div class="row" (click)="mostrarChat()">
                         <div class="col-1"><img style=" width: 20px; height: 20px;" src="assets/img/ICOfruitBAG.png" ></div>
                         <div class="col-1"><p class="textoContactos">{{user}}</p></div>
                         
@@ -30,7 +30,7 @@
               
             </mat-card-header>
             
-            <mat-card class="cuerpoChat" ><p class="textoContactos">"Los huertos molan que te cagas"</p> </mat-card>
+            <mat-card class="cuerpoChat" ><p class="textoContactos">{{this.mensaje}}</p> </mat-card>
             <mat-card-actions>
                 <form class="example-form" style="margin: 10px;">
                     <mat-form-field class="example-full-width">
