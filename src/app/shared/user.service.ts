@@ -14,8 +14,11 @@ export class UserService {
   private url="https://lahuertapp.herokuapp.com/user"
   private urlogin="https://lahuertapp.herokuapp.com/login"
   private urlchat="https://lahuertapp.herokuapp.com/chat"
+  public iduser:number=Number(JSON.parse(sessionStorage.getItem("iduser")))
+  
   constructor(private http: HttpClient) { 
     this.user = new User("","")
+    this.iduser = Number(JSON.parse(sessionStorage.getItem("iduser")))
   }
 
   //Get USER
@@ -24,6 +27,10 @@ export class UserService {
       console.log(user)
       
       return this.http.post(this.urlogin,user)
+  }
+
+  mostrar(id:number){
+    return this.http.get(this.url+"?id="+id)
   }
 
   register(user:User){

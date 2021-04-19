@@ -7,14 +7,14 @@
     <div class="row" id="profile">
 
 <!-- IMG DE PERFIL -->
-        <div class="colImg" >
+        <div class="colImg" *ngIf = "usuarioLogeado.userImg != undefined;else isImagen">
             <img class="colImg" id="imgPerfil" src={{usuarioLogeado.userImg}} alt="foto perfil">
             <!-- <img src="" alt="stars"> -->
         </div>
-
+        <ng-template #isImagen><img src="../../../assets/img/MAS.png" ></ng-template>
 <!-- DATOS PERFIL -->
         <div class="col" id="data">
-            <h2 class = "row" id="UserName">{{usuarioLogeado.name}} {{usuarioLogeado.surname1}} </h2>
+            <h2 class = "row" id="UserName">{{usuarioLogeado.username}}</h2>
             <div class="row">
                 <img src="assets/img/24px_telefono-inteligente.png" >
                 <p>{{usuarioLogeado.telefono}}</p>

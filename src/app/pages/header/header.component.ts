@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ListaDeseosComponent} from 'src/app/pages/lista-deseos/lista-deseos.component'
+import { UserService } from 'src/app/shared/user.service';
 
 
 @Component({
@@ -10,15 +11,27 @@ import {ListaDeseosComponent} from 'src/app/pages/lista-deseos/lista-deseos.comp
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
-  openDialog() {
-   const dialogRef = this.dialog.open(ListaDeseosComponent);
+  public usuarioId:Number;
 
-   dialogRef.afterClosed().subscribe(result =>{
-     console.log('Dialog result: ${result}');
+  constructor(public dialog: MatDialog,private userService: UserService) { 
+
+  this.usuarioId = this.userService.user.iduser;
+
+  }
+  openDialog() {
+
+    const dialogRef = this.dialog.open(ListaDeseosComponent);
+
+    dialogRef.afterClosed().subscribe(result =>{
+      
+    console.log('Dialog result: ${result}');
+
    });
   }
-  ngOnInit(): void {
+
+  ngOnInit(): void 
+  {
+  
   }
 
 }
