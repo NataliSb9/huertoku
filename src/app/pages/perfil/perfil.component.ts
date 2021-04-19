@@ -16,12 +16,16 @@ export class PerfilComponent implements OnInit {
    this.usuarioLogeado = this.userService.user
   }
 
-  
-
   ngOnInit(): void {
     
-      
-  };
+    this.userService.mostrar(this.usuarioLogeado.iduser).subscribe((data:any)=>
+    {
+      data=this.usuarioLogeado
+      console.log(data);
+    });
+
+    
+    };
 
 
 

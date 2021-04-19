@@ -32,6 +32,9 @@ export class RegistroComponent implements OnInit
       
       
       if (usuarioLogeado.length > 0) {
+
+        sessionStorage.setItem("iduser",JSON.stringify(usuarioLogeado[0].iduser))
+        
         this.userService.user=usuarioLogeado[0]
         this.router.navigate(['/', 'perfil'])
         console.log(this.userService.user)
