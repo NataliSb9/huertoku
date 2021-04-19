@@ -13,57 +13,41 @@ export class ProductosService {
   private url_User: string
   private url_pedidos: string
   private url_envios: string
-  private url_LaHuerta: string
+  private url_productos: string
+  private url_laHuerta: string
   private http: HttpClient
   public producto: Product
-
+  public productoHuerta: Product
 
   constructor(http: HttpClient) {
-
-    this.url = "http://localhost:300/product"
-    //this.url_LaHuerta = "https://lahuertapp.herokuapp.com/huerta"
-    // this.url_User = "https://lahuertapp.herokuapp.com/user"
-    // this.url_pedidos = "https://lahuertapp.herokuapp.com/pedidos"
-    // this.url_envios = "https://lahuertapp.herokuapp.com/envios"
+    //this.url = "http://localhost:300/product"
     this.http = http
-    this.producto = new Product(0, "", "", 0, "", 0, "", "", 0, "")
-
+    this.producto       = new Product(0)
+    this.url_User = "https://lahuertapp.herokuapp.com/user"
+    this.url_pedidos = "https://lahuertapp.herokuapp.com/pedidos"
+    this.url_envios = "https://lahuertapp.herokuapp.com/envios"
+    this.url_productos = "https://lahuertapp.herokuapp.com/product"
+    this.productoHuerta = new Product (0,"","",0,"",0,"","",0,"","")
   }
-
-  // METODOS PARA PRODUCTO
-
-  // ---> mostrara todos y por filtrado
-  /*
-  mostrarProducto (producto : Product){
-    if(producto.productAmount == null && producto.productChange == null && producto.productEco ==  null && producto.productLocality == null && producto.productName == null && producto.productPrice == null && producto.productType == null)
-    {
-     return this.http.get( this.url + "/product" )
-  
-    } else {
-      return this.http.get( this.url + "/product" + producto.productAmount + "&" + producto.productChange + "&" + producto.productEco + "&" + producto.productLocality + "&" + producto.productName + "&" + producto.productPrice + "&" + producto.productType )
-    }
-  }
-  */
-
-  //METODOS PARA LA HUERTA
-  
-  // get para obtener la info que se plasma en el Modal de La Huerta
-  public obtenerProductoModal(idProduct: number) {
-    let urlProductoHuerta = this.url + "?id=" + idProduct
+// ---> mostrara producto pasado por id
+  public obtenerProductoModal(idProduct: number){
+      
+    let urlProductoHuerta = this.url_productos +"?id="+ idProduct
     console.log(urlProductoHuerta)
     return this.http.get(urlProductoHuerta)
   }
-  //Mostrar todos los productos de la Huerta
+
+//Mostrar todos los productos de la Huerta
 
   public obtenerProductos() {
-    return this.http.get(this.url)
+    return this.http.get(this.url_productos)
   }
 
-  // METODOS MPARA MIS PRODUCTOS
+  // METODOS PARA MIS PRODUCTOS
 
   // ---> Mostrar productos en "Mis Productos"
   public mostrarMisProductos(id: number) {
-    let urlProductoUsuario = this.url + "?id=" + id
+    let urlProductoUsuario = this.url_productos + "?id=" + id
     return this.http.get(urlProductoUsuario)
   }
 
@@ -90,7 +74,7 @@ export class ProductosService {
       }
     }
     console.log("servicio: " + idProducto)
-    return this.http.delete(this.url, options)
+    return this.http.delete(this.url_productos, options)
   }
 
   //convierte en un arrays de objetos de tipo producto lo que le pasamos por la Api
@@ -120,3 +104,23 @@ export class ProductosService {
     return this.http.get(this.url_envios + "?id=" + id_seller)
   }
 }
+
+  
+
+// METODOS PARA PRODUCTO
+
+// ---> mostrara todos y por filtrado
+/*
+mostrarProducto (producto : Product){
+  if(producto.productAmount == null && producto.productChange == null && producto.productEco ==  null && producto.productLocality == null && producto.productName == null && producto.productPrice == null && producto.productType == null)
+  {
+    return this.http.get( this.url + "/product" )
+
+  } else {
+    return this.http.get( this.url + "/product" + producto.productAmount + "&" + producto.productChange + "&" + producto.productEco + "&" + producto.productLocality + "&" + producto.productName + "&" + producto.productPrice + "&" + producto.productType )
+  }
+}
+*/
+
+
+

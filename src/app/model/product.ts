@@ -10,10 +10,11 @@ export class Product {
     public iduser           : number;
     public productImg       : string;
     public productDescription: string;
-    
+    public idproduct        : number
 
-    constructor ( idProduct: number,productName: string, productType :string, productAmount:number, productLocality: string, productPrice: number, productEco:string, productChange:string, iduser: number, productImg: string , productDescription?: string){
-        this.idProduct          = idProduct
+
+    constructor (idproduct: number, productName?: string, productType ?:string, productAmount?:number, productLocality?: string, productPrice?: number, productEco?:string, productChange?:string, iduser?: number,  productImg?: string ,productDescription?: string ){
+
         this.productName        = productName
         this.productType        = productType
         this.productAmount      = productAmount
@@ -24,6 +25,7 @@ export class Product {
         this.iduser             = iduser
         this.productImg         = productImg
         this.productDescription = productDescription
+        this.idproduct          = idproduct
     } 
 
 }
