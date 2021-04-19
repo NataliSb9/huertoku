@@ -2,57 +2,63 @@
 
 <div id="filtros" class="rowFiltros">
 <mat-expansion-panel id="lineExp" hideToggle>
-    <mat-expansion-panel-header id="lineExp1">
-    <mat-panel-title id="filtroName">
-        <p>Filtrar productos</p>
-    </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div class="rowInsideFiltros" >
+        <mat-expansion-panel-header id="lineExp1">
+            <mat-panel-title id="filtroName">
+                <p>Filtrar productos</p>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+    <form action="" class="rowInsideFiltros">
         <div class="columnFilter" id="localizacion">
-        <p>Localización</p>
-        <div class="columnFilter">
-            <div class="rowInsideFiltros">
-                <input matInput placeholder="BuscarLocalidad" />
+            <p>Localización</p>
+            <div class="columnFilter">
+                <div class="rowInsideFiltros">
+                    <input type="text" matInput placeholder="Localidad" formControlName="productLocality"/>
+                </div>
             </div>
-        </div>
         </div>
 
         <div class="columnFilter" id="precio">
-        <p>Precio</p>
-        <div>
-            <mat-slider>PONER INDICATIVO DE PRECIO CON js</mat-slider>
-        </div>
+            <p>Precio</p>
+            <div>
+                <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="100"min="1" max="100"></mat-slider>
+            </div>
         </div>
 
         <div class="columnFilter" id="product">
-        <p>Producto</p>
-        <div >
-            <input type="checkbox" id="fruta" name="fruta" value="fruta" />
-            <label for="fruta">Fruta</label><br />
-            <input type="checkbox" id="verdura" name="verdura" value="verdura" />
-            <label for="fruta">verdura</label><br /> 
-        </div>
+            <p>Producto</p>
+            <div>
+                <input type="checkbox" id="fruta" name="fruta" value="fruta" formControlName="productType" />
+
+                <label for="fruta">Fruta</label><br/>
+
+                <input type="checkbox" id="verdura" name="verdura" value="verdura" formControlName="productType" />
+                <label for="fruta">verdura</label><br/> 
+            </div>
         </div>
         <div class="columnFilter" id="eco">
             <p>Eco</p>
             <div>
-                <input type="checkbox" id="eco" name="eco" value="eco" />
-                <label for="fruta">Eco</label><br>
+                <input type="checkbox" id="eco" name="eco" value="yes" formControlName="productEco"/>
+                <label for="eco">Eco</label><br>
             </div>
         </div>
-
         <div class="columnFilter" id="trueque">
             <p>Trueque</p>
             <div>
-                <input type="checkbox" id="trueque" name="trueque" value="trueque" />
-                <label for="fruta">Acepta trueque</label><br />
+                <input type="checkbox" id="trueque" name="trueque" value="yes" formControlName="productChange"/>
+                <label for="productChange">Acepta trueque</label><br />
             </div>
         </div>
-    </div>
+           
+    </form>
     <div class= "rowFiltros" id="filtrosButton">
         <button>Filtrar</button>
-    </div>
-    </mat-expansion-panel>
+    </div>                 
+</mat-expansion-panel>
+
+<!-- BUSCAR INPUT -->
+
 <div id="buscar">
     <img id="lupa" src="./assets/img/lupa3.png" alt="" />
     <input matInput placeholder="Buscar" />

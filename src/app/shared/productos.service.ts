@@ -13,15 +13,18 @@ export class ProductosService {
   private url_User: string
   private url_pedidos: string
   private url_envios: string
+  private url_LaHuerta: string
   private http: HttpClient
   public producto: Product
 
+
   constructor(http: HttpClient) {
 
-    this.url = "https://lahuertapp.herokuapp.com/product"
-    this.url_User = "https://lahuertapp.herokuapp.com/user"
-    this.url_pedidos = "https://lahuertapp.herokuapp.com/pedidos"
-    this.url_envios = "https://lahuertapp.herokuapp.com/envios"
+    this.url = "http://localhost:300/product"
+    //this.url_LaHuerta = "https://lahuertapp.herokuapp.com/huerta"
+    // this.url_User = "https://lahuertapp.herokuapp.com/user"
+    // this.url_pedidos = "https://lahuertapp.herokuapp.com/pedidos"
+    // this.url_envios = "https://lahuertapp.herokuapp.com/envios"
     this.http = http
     this.producto = new Product(0, "", "", 0, "", 0, "", "", 0, "")
 
@@ -41,6 +44,10 @@ export class ProductosService {
     }
   }
   */
+
+  //METODOS PARA LA HUERTA
+  
+  // get para obtener la info que se plasma en el Modal de La Huerta
   public obtenerProductoModal(idProduct: number) {
     let urlProductoHuerta = this.url + "?id=" + idProduct
     console.log(urlProductoHuerta)
@@ -52,12 +59,11 @@ export class ProductosService {
     return this.http.get(this.url)
   }
 
-  //Mostrar producto con Filtro en la huerta
+  // METODOS MPARA MIS PRODUCTOS
 
   // ---> Mostrar productos en "Mis Productos"
   public mostrarMisProductos(id: number) {
     let urlProductoUsuario = this.url + "?id=" + id
-    console.log(urlProductoUsuario)
     return this.http.get(urlProductoUsuario)
   }
 
@@ -87,7 +93,7 @@ export class ProductosService {
     return this.http.delete(this.url, options)
   }
 
-
+  //convierte en un arrays de objetos de tipo producto lo que le pasamos por la Api
   convertir(respuesta: any[]): Product[] {
     let arrayProduct: Product[] = []
     for (let i = 0; i < respuesta.length; i++) {

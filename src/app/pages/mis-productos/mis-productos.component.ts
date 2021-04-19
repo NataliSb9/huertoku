@@ -12,9 +12,7 @@ import { User } from 'src/app/model/user'
 export class MisProductosComponent implements OnInit {
 
   public productosUsuarios: Product[]
-  //public produtoUsuario: Product
   public idUser: number;
-  //public idProduct: number;
   public error: string
 
   constructor(private productService: ProductosService, private usuarioProductos: UserService) {

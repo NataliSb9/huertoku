@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ProductosService } from 'src/app/shared/productos.service'
 import { Product } from 'src/app/model/product';
 import { ModalLaHuertaTiendaComponent } from '../modal-la-huerta-tienda/modal-la-huerta-tienda.component';
@@ -15,9 +16,36 @@ export class LaHuertaTiendaComponent implements OnInit {
   public productosHuerta: Product[]
   public producto: Product
   public idProduct: number
+  public myFormFilter: FormGroup
 
-  constructor(public modalDialogo: MatDialog, private productService: ProductosService) { }
+  constructor(private modalDialogo: MatDialog, private fomularioFilter: FormBuilder, private productService: ProductosService ) { 
+    this.buildForm()
+  }
+
+  private buildForm() {
+    this.myFormFilter = this.fomularioFilter.group({
+      productLocality: [''],
+      productType: [''],
+      productEco: [''],
+      productChange: ['']
+    })
+
+  }
  
+  /******Metodo slider Filtro */
+  formatLabel(value: number) {
+    if (value >= 100) {
+      return Math.round(value / 100) + '€';
+    }
+
+    return value;
+  }
+
+  buscarPorFiltro(){
+
+
+  }
+
 
   /******METODO PARA LLAMAR AL MODAL****/
 
