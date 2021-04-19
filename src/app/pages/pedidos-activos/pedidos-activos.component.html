@@ -1,17 +1,57 @@
+
+<!-- BANNER DE GUIA -->
 <div class="row">
   <div class="col">
-    <h1 class = "cardtitle2" style="margin-top:20px">Tus pedidos y envíos activos</h1>
+    <h1 class = "cardtitle2" style="margin-top:20px">Historial Envíos</h1>
 </div>
 <div class="col">
     <h3 routerLink="/perfil" class = "cardtitle3" style="margin-top:20px">Volver a Perfil</h3>
 </div>
 </div>
-
 <!-- lienea separacion -->
 <hr style="background-color: #e67e22;">
 
-<!-- tabla -->
-<div class="row">
+
+
+  <!-- TATEJETAS DE HISTORIAL ENVIOS -->
+  <div   class="rowCards" id="collectCards">
+
+    <mat-card *ngFor = "let producto of productos_arr" class="cards columnCards">
+      <img
+        class="imgCard"
+        mat-card-image
+        src="{{producto.productImg}}" 
+        onError="this.src='./assets/img/ICOfruitBAG.png'"
+        alt="imagen producto"
+      />
+      <mat-card-title class="cardtitle">{{producto.productName}}</mat-card-title>
+
+      <mat-card-content>
+
+        <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productAmount}} €/kg</p>
+
+        <p class="contentCard"><span class="nameField">Unidades Pedidas:</span> {{producto.productAmount}}</p>
+
+        <!-- <p class="contentCard">
+          <span class="nameField">Productor:</span> {{producto.iduser}}
+        </p> -->
+
+        <p class="contentCard"><span class="nameField">Localidad:</span> {{producto.productLocality}}</p>
+
+        <p class="contentCard"><span class="nameField">Adquirido por Trueque : </span> {{producto.productChange}}</p>
+
+
+      </mat-card-content>
+      <!-- <mat-card-actions class="rowButtons buttonsCards" id="boton">
+        <button id="buy">Comprar</button>
+      </mat-card-actions> -->
+    </mat-card>
+  
+  </div>
+
+
+<!-- CODIGO DE PARA FUTURA FUNCIONALIDAD (ENVIOS Y PEDIDOS ACTIVOS) -->
+<!-- <div class="row">
   <div class="column">
     <h2>Pedidos</h2>
 
@@ -42,6 +82,7 @@
       </tbody>
     </table>
   </div>
+
   <div class="column">
     <h2>Envíos</h2>
     <table class="pedidosEnvios" id="tablaPedido">
@@ -71,4 +112,4 @@
       </tbody>
     </table>
   </div>
-</div>
+</div> -->

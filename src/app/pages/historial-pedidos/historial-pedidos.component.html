@@ -2,7 +2,7 @@
 <!-- BANNER DE GUIA -->
 <div class="row">
     <div class="col">
-      <h1 class = "cardtitle2" style="margin-top:20px">Historial de tus pedidos</h1>
+      <h1 class = "cardtitle2" style="margin-top:20px">Historial Pedidos</h1>
   </div>
   <div class="col">
       <h3 routerLink="/perfil" class = "cardtitle3" style="margin-top:20px">Volver a Perfil</h3>
@@ -11,132 +11,103 @@
 <!-- lienea separacion -->
 <hr style="background-color: #e67e22;">
 
-<!-- DEPLEGABLE FILTRADO -->
-<div id="filtros" class="rowFiltros">
-    <mat-expansion-panel id="lineExp" hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title  id="filtroName">
-          <p>Filtrar productos</p>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      
-      <div class="rowInsideFiltros" id="dentroFiltrar">
-       
-        <div class="columnFilter" id="tipo">
-          <p>Tipo</p>
 
-          <div class="columnFilter">
-            <div class="rowInsideFiltros">
-              <input type="checkbox" id="fruta" name="fruta" value="fruta" />
-              <label for="fruta">Fruta</label><br />
+<!-- DEPLEGABLE FILTRADO --> 
+<!-- descartamos funcionalidad moemntaneamente, por tiempo: AÑADIR SI DA TIEMPO -->
+      <!-- <div id="filtros" class="rowFiltros">
+          <mat-expansion-panel id="lineExp" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title  id="filtroName">
+                <p>Filtrar productos</p>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            
+            <div class="rowInsideFiltros" id="dentroFiltrar">
+            
+              <div class="columnFilter" id="tipo">
+                <p>Tipo</p>
+
+                <div class="columnFilter">
+                  <div class="rowInsideFiltros">
+                    <input type="checkbox" id="fruta" name="fruta" value="fruta" />
+                    <label for="fruta">Fruta</label><br />
+                  </div>
+                  <div class="rowInsideFiltros">
+                    <input type="checkbox" id="verdura"name="verdura"value="verdura"/>
+                    <label for="verdura">Verdura</label><br />
+                  </div>
+                </div>
+              </div>
+
+              <div class="columnFilter" id="precio">
+                <p>Precio</p>
+                <div>
+                  <mat-slider min="1" max="5" step="0.5" value="1.5">PONER INDICATIVO DE PRECIO CON js</mat-slider>
+                </div>
+              </div>
+
+              <div class="columnFilter" id="eco">
+                <p>Eco</p>
+                <div>
+                  <input type="checkbox" id="eco" name="eco" value="eco" />
+                  <label for="fruta">Eco</label><br />
+                </div>
+              </div>
+
+              <div class="columnFilter" id="trueque">
+                <p>Trueque</p>
+                <div>
+                  <input type="checkbox" id="trueque" name="trueque" value="trueque" />
+                  <label for="fruta">Acepta trueque</label><br />
+                </div>
+              </div>
+              <div class="columnFilter" id="buscar">
+                <img id="lupa" src="./assets/img/lupa3.png" alt="" />
+                <input matInput placeholder="Buscar" />
+              </div>
+
             </div>
-            <div class="rowInsideFiltros">
-              <input type="checkbox" id="verdura"name="verdura"value="verdura"/>
-              <label for="verdura">Verdura</label><br />
+            <div id="filtrosButton">
+              <button>Filtrar</button>
             </div>
-          </div>
+          </mat-expansion-panel>
         </div>
-
-        <div class="columnFilter" id="precio">
-          <p>Precio</p>
-          <div>
-            <mat-slider min="1" max="5" step="0.5" value="1.5">PONER INDICATIVO DE PRECIO CON js</mat-slider>
-          </div>
-        </div>
-
-        <div class="columnFilter" id="eco">
-          <p>Eco</p>
-          <div>
-            <input type="checkbox" id="eco" name="eco" value="eco" />
-            <label for="fruta">Eco</label><br />
-          </div>
-        </div>
-
-        <div class="columnFilter" id="trueque">
-          <p>Trueque</p>
-          <div>
-            <input type="checkbox" id="trueque" name="trueque" value="trueque" />
-            <label for="fruta">Acepta trueque</label><br />
-          </div>
-        </div>
-        <div class="columnFilter" id="buscar">
-          <img id="lupa" src="./assets/img/lupa3.png" alt="" />
-          <input matInput placeholder="Buscar" />
-        </div>
-
-      </div>
-      <div id="filtrosButton">
-        <button>Filtrar</button>
-      </div>
-    </mat-expansion-panel>
-  </div>
+      -->
   
-  <!-- TATEJETAS DE PEDIDOS -->
-  <div class="rowCards" id="collectCards">
-    <mat-card class="cards columnCards">
+  <!-- TATEJETAS DE  HISTORIAL PEDIDOS -->
+  <div   class="rowCards" id="collectCards">
+
+    <mat-card *ngFor = "let producto of productos_arr" class="cards columnCards">
       <img
         class="imgCard"
         mat-card-image
-        src="./assets/fotos/manzanita.jpg"
-        alt="manzanas"
+        src="{{producto.productImg}}" 
+        onError="this.src='./assets/img/ICOfruitBAG.png'"
+        alt="imagen producto"
       />
-      <mat-card-title class="cardtitle">Manzanas ecológicas</mat-card-title>
+      <mat-card-title class="cardtitle">{{producto.productName}}</mat-card-title>
       <mat-card-content>
-        <p class="contentCard"><span class="nameField">Precio:</span> 2€/kg</p>
+
+        <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productAmount}} €/kg</p>
+
+        <p class="contentCard"><span class="nameField">Unidades Pedidas:</span> {{producto.productAmount}}</p>
+
+        <!-- <p class="contentCard">
+          <span class="nameField">Productor:</span> {{producto.iduser}}
+        </p> -->
+
+        <p class="contentCard"><span class="nameField">Localidad:</span> {{producto.productLocality}}</p>
+
         <p class="contentCard">
-          <span class="nameField">Productor:</span> Antonio López
+          <span class="nameField">Adquirido por Trueque : </span> {{producto.productChange}}
         </p>
-        <p class="contentCard">
-          <span class="nameField">Adquirir por : </span> trueque
-        </p>
+
+
       </mat-card-content>
-      <mat-card-actions class="rowButtons buttonsCards" id="boton">
+      <!-- <mat-card-actions class="rowButtons buttonsCards" id="boton">
         <button id="buy">Comprar</button>
-      </mat-card-actions>
+      </mat-card-actions> -->
     </mat-card>
   
-    <mat-card class="cards columnCards">
-      <img
-        class="imgCard"
-        mat-card-image
-        src="./assets/fotos/tomate.jpg"
-        alt="tomates"
-      />
-      <mat-card-title class="cardtitle">Tomates</mat-card-title>
-      <mat-card-content>
-        <p class="contentCard"><span class="nameField">Precio:</span> 2€/kg</p>
-        <p class="contentCard">
-          <span class="nameField">Productor:</span> Antonio López
-        </p>
-        <p class="contentCard">
-          <span class="nameField">Adquirir por : </span> trueque
-        </p>
-      </mat-card-content>
-      <mat-card-actions class="rowButtons buttonsCards" id="boton">
-        <button id="buy">Comprar</button>
-      </mat-card-actions>
-    </mat-card>
-  
-    <mat-card class="cards columnCards">
-      <img
-        class="imgCard"
-        mat-card-image
-        src="./assets/fotos/zanahorias2.jpg"
-        alt="zanahorias"
-      />
-      <mat-card-title class="cardtitle">Zanahorias ecológicas</mat-card-title>
-      <mat-card-content>
-        <p class="contentCard"><span class="nameField">Precio:</span> 2€/kg</p>
-        <p class="contentCard">
-          <span class="nameField">Productor:</span> Antonio López
-        </p>
-        <p class="contentCard">
-          <span class="nameField">Adquirir por : </span> trueque
-        </p>
-      </mat-card-content>
-      <mat-card-actions class="rowButtons buttonsCards" id="boton">
-        <button id="buy">Comprar</button>
-      </mat-card-actions>
-    </mat-card>
   </div>
   

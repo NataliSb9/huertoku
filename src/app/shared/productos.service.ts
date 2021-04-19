@@ -1,24 +1,38 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../model/product'
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
 
-  private url   :string
-  private http  : HttpClient
+  private url           : string
+  private url_User      : string
+  private url_pedidos   : string
+  private url_envios    : string
+
+  private http        : HttpClient
+
+  public producto : Product
+  
 
   constructor(http : HttpClient) { 
 
-    this.url = "https://lahuertapp.herokuapp.com/product"
-    this.http = http
+    this.url            = "https://lahuertapp.herokuapp.com/product"
+    this.url_User       = "https://lahuertapp.herokuapp.com/user"
+    this.url_pedidos    = "https://lahuertapp.herokuapp.com/pedidos"
+    this.url_envios     = "https://lahuertapp.herokuapp.com/envios"
+
+    this.http           = http
+
+    this.producto       = new Product(0)
   }
 
 // METODOS PARA PRODUCTO
 
-// ---> mostrara toos y por filtrado
+// ---> mostrara todos y por filtrado
 mostrarProducto (producto : Product){
   if(producto.productAmount == null && producto.productChange == null && producto.productEco ==  null && producto.productLocality == null && producto.productName == null && producto.productPrice == null && producto.productType == null)
   {
@@ -29,13 +43,19 @@ mostrarProducto (producto : Product){
   }
 }
 
+// ---> mostrara producto pasado por id
+public obtenerProductoModal(idProduct: number){
+    
+  let urlProductoHuerta = this.url + "?id="+ idProduct
+  console.log(urlProductoHuerta)
+  return this.http.get(urlProductoHuerta)
+}
 
 // ---> añade producto a BBDD
 añadirProducto (newProduct : Product){
   console.log(newProduct);
   
-  return this.http.post( this.url, newProduct )
-  
+  return this.http.post( this.url, newProduct ) 
 }
 
 // ---> EDITA producto en BBDD
@@ -46,7 +66,22 @@ editarProducto (producto : Product){
 // ---> ELIMINA producto en BBDD
 eliminarProducto (idProducto : number){
     return this.http.delete(this.url + "?id=" + idProducto)
-
 }
 
+
+// ****** METODOS PARA HISTORIAL DE PEDIDOS / ENVIOS *****
+
+// --> mostrar historial de pedidos
+mostrar_Historial_Pedidos(id_buyer: number){
+  console.log(id_buyer);
+
+  return this.http.get(this.url_pedidos  + "?id=" + id_buyer)
+}
+
+// --> mostrar historial envios
+historial_envios(id_seller: number){
+  console.log(id_seller);
+
+  return this.http.get(this.url_envios + "?id=" + id_seller )
+}
 }

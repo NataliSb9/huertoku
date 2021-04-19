@@ -34,6 +34,7 @@ import { HistorialPedidosComponent } from './pages/historial-pedidos/historial-p
 import { ModalLaHuertaTiendaComponent } from './pages/modal-la-huerta-tienda/modal-la-huerta-tienda.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditarProductoComponent } from './pages/editar-producto/editar-producto.component';
 
 
 
@@ -54,7 +55,8 @@ import { HttpClientModule } from '@angular/common/http';
     PedidosActivosComponent,
     HistorialPedidosComponent,
     ModalLaHuertaTiendaComponent,
-    LandingComponent
+    LandingComponent,
+    EditarProductoComponent
   ],
   entryComponents:[ListaDeseosComponent],
   imports: [

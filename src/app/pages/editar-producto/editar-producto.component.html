@@ -1,0 +1,80 @@
+<!-- <p> EDITAR PRODUCTO </p> -->
+
+<!-- BANNER DE GUIA -->
+<div class="row">
+    <div class="col">
+        <h1 class="cardtitle2" style="margin-top:20px">Editar Producto</h1>
+    </div>
+    <div class="col">
+        <h3 routerLink="/perfil" class="cardtitle3" style="margin-top:20px">Volver a Perfil</h3>
+    </div>
+</div>
+<!-- lienea separacion -->
+<hr style="background-color: #e67e22;">
+
+
+
+<!-- FORM EDITAR PRODUCTO -->
+
+<div class="row">
+
+    <!-- trajeta de producto a modificar -->
+    <div class="col" >
+        <mat-card *ngFor = "let producto of producto_editar" class="cards columnCards">
+            <img
+              class="imgCard"
+              mat-card-image
+              src="{{producto.productImg}}" 
+              onError="this.src='./assets/img/ICOfruitBAG.png'"
+              alt="imagen producto"
+            />
+            <mat-card-title class="cardtitle">{{producto.productName}}</mat-card-title>
+
+            <mat-card-content>
+      
+              <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productPrice}} €/kg</p>
+      
+              <p class="contentCard"><span class="nameField">Unidades Pedidas:</span> {{producto.productAmount}}</p>
+            
+              <p class="contentCard"><span class="nameField">Localidad:</span> {{producto.productLocality}}</p>
+              
+              <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productType}} €/kg</p>
+
+              <p class="contentCard"><span class="nameField">Precio:</span> {{producto.productEco}} €/kg</p>
+
+              <p class="contentCard">
+                <span class="nameField">Adquirido por Trueque : </span> {{producto.productChange}}
+              </p>
+      
+            </mat-card-content>
+        </mat-card>
+      
+    </div>
+
+    <!-- form que modifica los datos del producto -->
+    <div class="col" >
+
+        <!-- introduce img producto -->
+       
+        <!-- input para introducir link de nueva img -->
+        <input type="text" placeholder="Inserta url de imagen" #productImg>
+
+        <!-- modifica los datos del producto -->
+        <input #productName class="input_modificar" type="text" placeholder="Nombre de Producto">
+        <input #productType class="input_modificar"  type="text" placeholder="Tipo de Producto">
+        <input #productAmount class="input_modificar"  type="number" placeholder="Cantidad en Kg">
+        <input #productLocality class="input_modificar"  type="text" placeholder="Localidad">
+        <input #productPrice class="input_modificar"  type="number" placeholder="Precio del Producto €/kg">
+        <input #productEco class="input_modificar"  type="text" placeholder="Producto Ecológico">
+        <input #productChange class="input_modificar"  type="text" placeholder="Posibilidad de Trueque">
+
+        <!-- boton guarda modificaciones del producto -->
+        <button (click)="editar_producto(productName.value, productType.value, productAmount.valueAsNumber,
+             productLocality.value, productPrice.valueAsNumber, productEco.value, productChange.value,
+             productImg.value)">Guardarcambios </button> 
+
+        <!-- <p style="font-family: 'Roboto', sans-serif; color:#E67E22;">{{message}}</p> -->
+    </div>
+
+
+</div>

@@ -23,15 +23,11 @@ export class AnadirProductoComponent implements OnInit {
   public producto  : Product
   public user      : User
 
-
-
   constructor(private formBuilder: FormBuilder, private apiService : ProductosService, private userService : UserService) 
   { 
     this.buildForm();
     this.user = this.userService.user
    
-
-
   }
 
 
@@ -57,7 +53,7 @@ export class AnadirProductoComponent implements OnInit {
     let datosForm = this.myForm.value
     console.log(datosForm);
     
-    let producto = new Product(datosForm.productName, datosForm.productType, datosForm.productAmount, datosForm.productLocality, datosForm.productPrice, datosForm.productEco, datosForm.productChange, this.user.iduser, imgForm.value )
+    let producto = new Product(0,datosForm.productName, datosForm.productType, datosForm.productAmount, datosForm.productLocality, datosForm.productPrice, datosForm.productEco, datosForm.productChange, this.user.iduser, imgForm.value )
     console.log("USER ID:" + this.user.iduser);
    
 
