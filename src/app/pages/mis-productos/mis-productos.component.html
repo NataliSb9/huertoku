@@ -14,11 +14,11 @@
 
 <div class="rowCards" id="collectCards">
     
-    <mat-card class="cards columnCards" id="agregarProduct">
+    <mat-card routerLink="/anaproducto" class="cards columnCards" id="agregarProduct">
         <mat-card-content  class="cardtitle" >
             <div id="addProducto">
                 <a style="text-decoration: none; color:#E67E22">
-                    <img routerLink="/anaproducto" class="imgCard" id="cestaAdd" mat-card-image src="./assets/img/ICOfruitBAG.png" alt="cesta"/>
+                    <img  class="imgCard" id="cestaAdd" mat-card-image src="./assets/img/ICOfruitBAG.png"  alt="cesta"/>
                     <p>Agregar producto</p>
                 </a>
             </div>
@@ -26,21 +26,23 @@
     </mat-card>
 
 
-    <mat-card class="cards columnCards">
-      <img class="imgCard" mat-card-image src="./assets/fotos/manzanita.jpg" alt="manzanas"/>
-      <mat-card-title class="cardtitle">Manzanas ecológicas</mat-card-title>
+    <mat-card class="cards columnCards" *ngFor= "let productos of productosUsuarios">
+      <img class="imgCard" mat-card-image src= "{{productos.productImg}}" onError="this.src='./assets/img/ICOfruitBAG.png'" alt="{{productos.productName}}"/>
+      <mat-card-title class="cardtitle">{{productos.productName}}</mat-card-title>
       <mat-card-content>
-        <p class="contentCard"><span class="nameField">Precio:</span> 2€/kg</p>
+        <p class="contentCard"><span class="nameField">Precio:</span> {{productos.productPrice}} /kg</p>
         <p class="contentCard">
-          <span class="nameField">Cantidad disponible:</span> 20kg
-        </p>
+          <span class="nameField">Cantidad disponible:</span> {{productos.productAmount}} kg
+        </p> 
+        
+        <p>{{productos.idProduct}}</p>
       </mat-card-content>
       <mat-card-actions class = "rowButtons buttonsCards" id= "boton">    
         <a routerLink="/app-editar-producto" class="aEditar" id="edit">Editar</a>
         <button>Eliminar</button>
       </mat-card-actions>    
     </mat-card>
-
+<!-- 
     <mat-card class="cards columnCards">
         <img class="imgCard" mat-card-image src="./assets/fotos/tomate.jpg" alt="manzanas"/>
         <mat-card-title class="cardtitle">Tomates</mat-card-title>
@@ -54,5 +56,5 @@
           <button id="edit">Editar</button>
           <button>Eliminar</button>
         </mat-card-actions>    
-    </mat-card>
+    </mat-card> -->
 </div>

@@ -1,21 +1,27 @@
 <mat-dialog-content>
-  <h1 mat-dialog-title>Manzanas Ecologicas</h1>
-  <img id="fotoProduct" src="../../../assets/fotos/manzanita.jpg" alt="">
+  <h1 mat-dialog-title>{{data.productName}}</h1>
+  <img id="fotoProduct" src="{{data.productImg}}" onError="this.src='./assets/img/ICOfruitBAG.png'" alt="">
   <div id="cuerpoTexto">
-    <p class="contentCard"><span class="nameField">Precio:</span> 2€/kg</p>
+    <p class="contentCard"><span class="nameField">Precio:</span> {{data.productPrice}}€/kg</p>
     <p class="contentCard">
-      <span class="nameField">Productor:</span> Antonio López
+      <span class="nameField">Acepta trueque : </span> {{data.productChange}}
     </p>
     <p class="contentCard">
-      <span class="nameField">Trueque por : </span> lechuga y pera
+      <span class="nameField">Tipo de producto : </span> {{data.productType}}
     </p>
     <p class="contentCard">
-      <span class="nameField">Descripcion : </span> La manzana Royal Gala es una
-      de las más apreciadas por los consumidores de frutas y verduras. Es una
-      manzana muy dulce y muy crujiente.
+      <span class="nameField">Localidad : </span> {{data.productLocality}}
     </p>
+    <p class="contentCard">
+      <span class="nameField">Producto Eco : </span> {{data.productEco}}
+    </p>
+    <p class="contentCard">
+      <span class="nameField">Descripción: </span> {{data.productDescription}}
+    </p>
+   
   </div>
   <mat-dialog-actions>
-    <button id="buy">Añadir al carrito</button>
+    <button id="buy">Reservar producto</button>
   </mat-dialog-actions>
+
 </mat-dialog-content>

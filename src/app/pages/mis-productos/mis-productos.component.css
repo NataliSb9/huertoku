@@ -52,6 +52,7 @@
 
 .imgCard {
   background-size: cover;
+  object-fit: fill;
 }
 
 .rowCards {

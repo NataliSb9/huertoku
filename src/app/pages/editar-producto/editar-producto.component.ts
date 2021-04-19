@@ -52,11 +52,13 @@ editar_producto(productName:string, productType:string, productAmount:number, pr
     console.log(res);
     
   })
+    
+  
 }
  
-
-  ngOnInit(): void {
-    this.mostrar_producto()
-  }
+ngOnInit(): void {
+  this.mostrar_producto()
+}
+  
 
 }
