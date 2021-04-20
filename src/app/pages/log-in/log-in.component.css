@@ -11,6 +11,36 @@ font-family: 'Roboto', sans-serif;
 font-family: 'Signika', sans-serif;
 */
 
+.col{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-items: center;
+}
+ 
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: inherit;
+}
+
+/* BANNER GUIA */
+.colBanner{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+  width: 93%;
+}
+.cardtitle2 {
+  font-family: "Signika", sans-serif;
+  color: #e67e22; 
+  font-size: 1.7rem;
+}
+
 /* /////////////////////TARJEEETAAAAS//////////////////////// */
 .cards {
     max-width: 325px;
@@ -52,19 +82,33 @@ font-family: 'Signika', sans-serif;
    font-family: 'Roboto', sans-serif;
    text-align: left;
    color: #767676;
+
   }
   
   .cardtitle{
    font-family: 'Signika', sans-serif;
    text-align: center;
-   margin-left: 75px;
+   margin-left: 65px;
    color: #e67e22;
+   padding: 15px;
   }
   .nameField{
    font-style: normal;
    font-weight: bold;
    color: #767676;
   }
+
+.inputs{
+  margin-top: 7px;
+}
+
+h3{
+  font-size:small;
+  color: #267172;
+  text-align: center;
+  margin-left: 20px;
+  margin-top: -10px;
+}
 /*///////////BOTÓN////////////*/
 
 button 
@@ -80,16 +124,15 @@ button
     text-decoration: none;
     background-color: #267172;
     transition: box-shadow 0.16s ease;
+    margin-top: 5px;
+}
+button:hover{
+  background: #e67e22;
+  box-shadow: none;
 }
 
-button:hover 
-{
-    background: #408f91;
-    box-shadow: none;
-}
 .buttonsCards 
 {
     margin-right: 72px;
     margin-left: 75px;
 }
-  

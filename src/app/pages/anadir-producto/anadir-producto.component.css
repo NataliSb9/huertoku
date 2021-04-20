@@ -26,21 +26,39 @@ font-family: 'Signika', sans-serif;
     justify-content:flex-start;
     align-items: center;
   }
+  .colBanner{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 93%;
+  }
+  #container {
+    width: 100%;
+  }
+  /* decoracion general */
+  a{
+    text-decoration:none;
+    color: #FdFFFF;
+  }
+  a:hover{
+    color:#F39C12
+  }
   
+  
+  /* BANNER GUIA */
   .cardtitle2 {
-    font-family: "Signika", sans-serif;
-    color: #e67e22; 
-    /* margin-left: 200px; */
+      font-family: "Signika", sans-serif;
+      color: #e67e22; 
+      font-size: 1.7rem;
+    }
+  
+  /* NAVEGACION */
+  .navegacion {
+    margin-top: 15px;
+    background-color: #267172;
+    padding: 20px;
   }
-  .cardtitle3 {
-    font-family: "Signika", sans-serif;
-    color:  #267172;
-    margin-left: 100px;
-  }
-  .cardtitle3:hover{
-    color: #408f91;
-  }
-
 
 /*//////////////TARJETAS///////////////*/
 .cards {
