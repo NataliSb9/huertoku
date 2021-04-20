@@ -1,4 +1,5 @@
 export class Product {
+
     public productName      : string;
     public productType      : string;
     public productAmount    : number;

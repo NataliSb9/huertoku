@@ -9,24 +9,24 @@
 							<th style="width:10%"></th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody *ngFor="let productito of productos">
 						<tr>
-							<td data-th="Product">
+							<td data-th="Product" >
 								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="assets/img/ICOfruitBAG.png" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-2 hidden-xs"><img src="{{productito.productImg}}" alt="..." class="img-responsive"/></div>
 									<div class="col-sm-10">
-										<h4 class="nomargin" style= "font-family: 'Signika', sans-serif;">Tomates</h4>
-										<p style= "font-family: 'Roboto', sans-serif;">Tomates de la huerta de tus muertos</p>
+										<h4 class="nomargin" style= "font-family: 'Signika', sans-serif;">{{productito.productName}}</h4>
+										<p style= "font-family: 'Roboto', sans-serif;">{{productito.productDescription}}</p>
 									</div>
 								</div>
 							</td>
-							<td data-th="Price">35.00€</td>
+							<td data-th="Price">{{productito.productPrice}}</td>
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="1">
 							</td>
 							<td data-th="Subtotal" class="text-center">36.90€</td>
 							<td class="actions" data-th="">
-								<button style="margin: 1px;" class="btn btn-info btn-sm"><i class="fa fa-refresh"><mat-icon routerLink="chat" class="icon" type="button">message</mat-icon></i></button>
+								<button style="margin: 1px;" class="btn btn-info btn-sm"><i class="fa fa-refresh"><mat-icon (click)="abrirChat(productito.iduser)" class="icon" type="button">message</mat-icon></i></button>
 								<button style="margin: 1px;" class="btn btn-info btn-sm"><i class="fa fa-refresh"><mat-icon class="icon" type="button">payment</mat-icon></i></button>						
 							</td>
 						</tr>

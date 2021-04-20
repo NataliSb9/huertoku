@@ -16,20 +16,24 @@ export class ProductosService {
   private url_productos: string
   private url_laHuerta: string
   private http: HttpClient
+  public productos:Product[]
   public producto: Product
   public productoHuerta: Product
+  
 
   public produc_selec : Product
 
   constructor(http: HttpClient) {
     //this.url = "http://localhost:300/product"
     this.http = http
+    
     this.producto       = new Product(0)
     this.url_User = "https://lahuertapp.herokuapp.com/user"
     this.url_pedidos = "https://lahuertapp.herokuapp.com/pedidos"
     this.url_envios = "https://lahuertapp.herokuapp.com/envios"
     this.url_productos = "https://lahuertapp.herokuapp.com/product"
-    this.productoHuerta = new Product (0,"","",0,"",0,"","",0,"","")
+    this.productoHuerta = new Product (0,"","",0,"",0,"","",0,"")
+    this.productos=[]
   }
 
 
@@ -120,6 +124,16 @@ export class ProductosService {
 
     return this.http.get(this.url_envios + "?id=" + id_seller)
   }
+
+
+
+  // public obtenerProductosModal(idProduct: number){
+      
+  //   let urlProductoHuerta = this.url_productos +"?id="+ idProduct
+  //   console.log(urlProductoHuerta)
+  //   return this.http.get(urlProductoHuerta)
+  // }
+
 }
 
   

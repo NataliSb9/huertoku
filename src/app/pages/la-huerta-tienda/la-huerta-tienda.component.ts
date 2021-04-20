@@ -121,7 +121,16 @@ export class LaHuertaTiendaComponent implements OnInit {
     })
   
   }
-
+  meterEnCarrito(id:number){
+    
+    this.productService.obtenerProductoModal(id).subscribe((data:Product)=>{
+      this.productService.productos.push(data[0])
+      
+    })
+    console.log(this.productService.productos);
+    
+    
+  }
 
   ngOnInit(): void {
     this.productService.obtenerProductos().subscribe((respuesta: any[]) => {
