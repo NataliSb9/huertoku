@@ -31,7 +31,7 @@ export class ProductosService {
     this.url_pedidos = "https://lahuertapp.herokuapp.com/pedidos"
     this.url_envios = "https://lahuertapp.herokuapp.com/envios"
     this.url_productos = "https://lahuertapp.herokuapp.com/product"
-    //this.url_productos = "http://localhost:300/product"
+    // this.url_productos = "http://localhost:300/product"
 
     this.productoHuerta = new Product (0,"","",0,"",0,"","",0,"")
     this.productos=[]

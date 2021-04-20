@@ -44,12 +44,12 @@ export class LaHuertaTiendaComponent implements OnInit {
  
   /******Metodo slider Filtro */
   formatLabel(value: number) {
-    console.log("valor del slider: "+ value)
+    
     this.value = value
     if (this.value >= 100) {
       return Math.round(this.value / 100) + '€';
     }
-    console.log("valor del slider: "+ value)
+    
 
     return this.value;
   }
