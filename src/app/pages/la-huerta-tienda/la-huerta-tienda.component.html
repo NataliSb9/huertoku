@@ -21,7 +21,7 @@
             <div class="columnFilter" id="precio">
                 <p>Precio</p>
                 <div>
-                 <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="0"min="0" max="100" formControlName= "productPrice" (input)="changeValue($event)"></mat-slider>
+                 <mat-slider class="average" thumbLabel [displayWith]="formatLabel" tickInterval="0"min="0" max="100" formControlName= "productPrice" (input)="changeValue($event)"></mat-slider>
                 </div>
             </div>
 
@@ -34,7 +34,11 @@
 
                     <input class ="form-group" type="checkbox" id="verdura" name="verdura" value="verdura" formControlName="productTypeVerdura" />
 
-                    <label for="verdura">verdura</label><br/> 
+                    <label for="Verdura">Verdura</label><br/>
+                    
+                    <input class ="form-group" type="checkbox" id="otros" name="otros" value="otros" formControlName="productTypeOtros" />
+
+                    <label for="otros">Otros</label><br/> 
                 </div>
             </div>
             <div class="columnFilter" id="eco">
@@ -53,15 +57,15 @@
             </div> 
         </form>
         <div class= "rowFiltros" id="filtrosButton">
-            <button (click)="buscarPorFiltro()">Aplicar Filtro</button>
+            <button class ="buttonhuerta" (click)="buscarPorFiltro()">Aplicar Filtro</button>
         </div>                 
     </mat-expansion-panel>
 
 
     <div id="buscar" class= "rowFiltros" [formGroup]="myFormFilter">
-        <input matInput placeholder="Buscar" formControlName="productName" />
-        <div class= "rowFiltros" id="buscarButton">
-            <button (click)="buscarPorFiltro()">Buscar</button>
+        <input id="iputBuscar" matInput placeholder="Buscar" formControlName="productName" />
+        <div class= "rowFiltros" >
+            <button id="buscarButton" (click)="buscarPorFiltro()">Buscar</button>
         </div>  
     </div>
 </div>
@@ -82,7 +86,7 @@
         <p class="contentCard">
             <span class="nameField">Adquirir por trueque: </span> {{productos.productChange}}
         </p>
-        <button  (click)="meterEnCarrito(productos.idproduct)" id="buy">Reservar producto</button>
+        <button class ="buttonhuerta" (click)="meterEnCarrito(productos.idproduct)" id="buy">Reservar producto</button>
         </mat-card-content>
     </mat-card>
 </div>    

@@ -48,12 +48,12 @@
 input {
   margin-top: 2px;
 }
-#lupa {
-  width: 14px;
-  height: 15px;
-  margin-right: 5px;
-  padding-top: 2px;
+#iputBuscar {
+  border: 1px #ca803f;
+  border-style:solid; 
+  margin-top: 10px;
 }
+
 
 #localizacion {
   margin-left: 10px;
@@ -76,20 +76,30 @@ label {
 }
 mat-expansion-panel {
   width: 850px;
-  margin-left: 235px;
+  margin-left: 170px;
+  margin-right: 20px;
+}
+
+::ng-deep .mat-accent .mat-slider-thumb {
+  background-color: black;
+} 
+
+:host ::ng-deep .average .mat-slider-thumb-label {
+  background-color: #267172;
 }
 #buscar {
-  margin-right: 140px;
+  margin-top: 5px;
+  margin-right: 150px;
   margin-bottom: 30px;
 }
-button {
+.buttonhuerta {
   border-radius: 25px;
-  width: 85px;
+  width: 105px;
   height: 30px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: #fdffee;
-  font-size: 15px;
+  font-size: 14px;
   border: 0.16em solid rgba(255, 255, 255, 0);
   text-decoration: none;
   background-color: #267172;
@@ -97,7 +107,11 @@ button {
   margin-left: 55px;
 }
 
-button:hover {
+#buy{
+  width: 170px;
+}
+
+.buttonhuerta:hover {
   background: #408f91;
   box-shadow: none;
 }
@@ -160,9 +174,7 @@ h2 {
 .columnCards {
   display: flex;
   flex-direction: column;
-  /*flex-basis: 100%;*/
   align-items: flex-start;
-  /*align-items: center;*/
 }
 
 .contentCard {
@@ -198,6 +210,20 @@ h2 {
 /****Buscar****/
 
 #buscarButton{
-  margin-left: -25px;
+  border-radius: 25px;
+  width: 95px;
+  height: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #267172;
+  font-size: 16px;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  text-decoration: none;
+  margin-top: 10px;
+  background-color: transparent;
+}
 
+#buscarButton:hover {
+  color: #e67e22;
+  box-shadow: none;
 }

@@ -60,7 +60,15 @@ a:hover{
 }
 #collectCards {
   padding: 12px;
-  margin-top: 150px;
+  margin-right: 12.8%;
+  margin-left: 12.8%; 
+}
+
+@media (max-width: 1600px) {
+  #collectCards{
+    margin-right: 9.8%;
+    margin-left: 9.8%;
+  }
 }
 #collectCards > .cards {
   margin: 12px;

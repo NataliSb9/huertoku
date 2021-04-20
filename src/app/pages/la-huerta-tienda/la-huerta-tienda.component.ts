@@ -29,6 +29,7 @@ export class LaHuertaTiendaComponent implements OnInit {
       productLocality: '',
       productTypeFruta: '',
       productTypeVerdura: '',
+      productTypeOtros: '',
       productEco: '',
       productChange: '',
       productName: ''
@@ -68,6 +69,11 @@ export class LaHuertaTiendaComponent implements OnInit {
     } else {
       data.productTypeFruta = ""
     }
+    if (data.productTypeOtros == true) {
+      data.productTypeOtros = "otros"
+    } else {
+      data.productTypeFruta = ""
+    }
     if (data.productChange == true) {
       data.productChange = "yes"
     } else {
@@ -89,19 +95,20 @@ export class LaHuertaTiendaComponent implements OnInit {
     let localizacion: Filtros = new Filtros("productLocality",data.productLocality ) 
     let productTypeFruta: Filtros = new Filtros("productType",data.productTypeFruta)
     let productTypeVerdura: Filtros = new Filtros("productType",data.productTypeVerdura)
+    let productTypeOtros: Filtros = new Filtros("productType",data.productTypeOtros)
     let productEco: Filtros = new Filtros("productEco",data.productEco)
     let productChange: Filtros = new Filtros("productChange",data.productChange)
     let productPrice: Filtros = new Filtros("productPrice",numberString)
     let productName: Filtros = new Filtros ("productName", data.productName)
     
-    let filtros: Filtros[] = [localizacion,productTypeFruta, productTypeVerdura, productEco, productChange, productPrice, productName]
+    let filtros: Filtros[] = [localizacion,productTypeFruta, productTypeVerdura,productTypeOtros ,productEco, productChange, productPrice, productName]
     let filtrosQuerie: string = ""  
     for(let i=0; i< filtros.length; i++){
       if(filtros[i].valorFiltro !== "" && filtros[i].valorFiltro !== undefined){
         filtrosQuerie +=`&${filtros[i].nombreFiltro}=${filtros[i].valorFiltro}` 
       }
     }
-    console.log( "QUERY DE LOS COJONES: " +filtrosQuerie)
+    console.log( "QUERY: " +filtrosQuerie)
     this.productService.mostrarProductoFiltro(filtrosQuerie).subscribe((respuesta: any []) => {
       this.productosHuerta = this.productService.convertir(respuesta)
       console.log(this.productosHuerta)
