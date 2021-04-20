@@ -97,7 +97,7 @@ export class LaHuertaTiendaComponent implements OnInit {
     let filtros: Filtros[] = [localizacion,productTypeFruta, productTypeVerdura, productEco, productChange, productPrice, productName]
     let filtrosQuerie: string = ""  
     for(let i=0; i< filtros.length; i++){
-      if(filtros[i].valorFiltro !== "" && filtros[i].valorFiltro !== undefined ){
+      if(filtros[i].valorFiltro !== "" && filtros[i].valorFiltro !== undefined){
         filtrosQuerie +=`&${filtros[i].nombreFiltro}=${filtros[i].valorFiltro}` 
       }
     }
