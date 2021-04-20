@@ -36,7 +36,6 @@ export class LogInComponent implements OnInit
     ({
       // name: [, Validators.required],
       // surname1: [,Validators.required],
-      // surname2: [,Validators.required],
       // birthYear: [,Validators.required],
       // username: [,Validators.required],
       // localidad: [,Validators.required],
