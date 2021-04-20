@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/model/product';
 import { User } from 'src/app/model/user';
 import {ListaDeseosComponent} from 'src/app/pages/lista-deseos/lista-deseos.component'
+import { ProductosService } from 'src/app/shared/productos.service';
 import { UserService } from 'src/app/shared/user.service';
 
 
@@ -12,17 +14,16 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  public productosNumero:Product[]
   public usuarioId:Number;
-  public usuarioLogeado:User;
-  
-  constructor(public dialog: MatDialog,private userService: UserService, private router: Router) { 
+
+  constructor(public dialog: MatDialog,private userService: UserService, private router: Router,private productoService:ProductosService) { 
 
   this.usuarioId = this.userService.user.iduser;
 
-  this.usuarioLogeado = this.userService.user;
 
   console.log(this.usuarioId);
+  this.productosNumero = this.productoService.productos
 
   }
   openDialog() {
@@ -60,6 +61,7 @@ export class HeaderComponent implements OnInit {
   
   ngOnInit(): void 
   {
+    this.productosNumero = this.productoService.productos
     
   }
 
