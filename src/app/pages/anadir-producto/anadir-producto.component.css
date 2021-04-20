@@ -138,3 +138,9 @@ button:hover
     /* margin-right: 72px;
     margin-left: 75px; */
 }
+
+#mensajeProducto{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
