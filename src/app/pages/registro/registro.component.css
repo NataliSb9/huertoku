@@ -27,20 +27,59 @@ font-family: 'Signika', sans-serif;
   align-items: center;
 }
  
-  /* BANNER GUIA */
-  .cardtitle2 {
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: inherit;
+}
+.colImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.colBanner{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+  width: 93%;
+}
+
+/* decoracion general */
+a{
+  text-decoration:none;
+  color: #FdFFFF;
+}
+a:hover{
+  color:#F39C12
+}
+
+
+/* BANNER GUIA */
+.cardtitle2 {
     font-family: "Signika", sans-serif;
     color: #e67e22; 
+    font-size: 1.7rem;
   }
-  .cardtitle3 {
-    font-family: "Signika", sans-serif;
-    color:  #267172;
-    margin-left: 100px;
-    font-size: 1.2rem;
-  }
-  .cardtitle3:hover{
-    color: #408f91;
-  }
+
+/* NAVEGACION */
+.navegacion {
+  margin-top: 15px;
+  background-color: #267172;
+  padding: 20px;
+}
+
   hr{
     margin-top: 10px;
   }
@@ -56,7 +95,7 @@ font-family: 'Signika', sans-serif;
     margin-top: 30px;
   }
   .card_registro{
-    height: 560px;
+    height: 558px;
     margin-left: -150px;
   }
  
