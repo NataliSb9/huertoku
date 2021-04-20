@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import {ListaDeseosComponent} from 'src/app/pages/lista-deseos/lista-deseos.component'
 import { UserService } from 'src/app/shared/user.service';
 
@@ -13,9 +14,11 @@ export class HeaderComponent implements OnInit {
 
   public usuarioId:Number;
 
-  constructor(public dialog: MatDialog,private userService: UserService) { 
+  constructor(public dialog: MatDialog,private userService: UserService, private router: Router) { 
 
   this.usuarioId = this.userService.user.iduser;
+  console.log(this.usuarioId);
+  
 
   }
   openDialog() {
@@ -29,9 +32,28 @@ export class HeaderComponent implements OnInit {
    });
   }
 
+  registroPerfil()
+  {
+    this.usuarioId = this.userService.user.iduser;
+    if(this.usuarioId != undefined)
+    {
+      this.router.navigate(["/","perfil"])
+    }
+    else
+    {
+      this.router.navigate(["/","registro"])
+    }
+  }
+
+  cerrarSesion()
+  {
+    sessionStorage.removeItem("iduser");
+    this.router.navigate(["/","registro"]);
+  }
+  
   ngOnInit(): void 
   {
-  
+    
   }
 
 }

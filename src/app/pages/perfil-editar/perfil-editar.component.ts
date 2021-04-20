@@ -14,8 +14,6 @@ export class PerfilEditarComponent implements OnInit {
   public error;
   constructor(private userService: UserService) { 
     this.usuarioLogeado=this.userService.user
-    this.edit = false
-    this.error = false
   }
 
   // saveChanges(email:string, password:string, name:string, surname1:string, birthYear:number, username:string, localidad:string, tel:number, userImg:string){
@@ -132,8 +130,9 @@ export class PerfilEditarComponent implements OnInit {
       })
   }  else 
       {
+        console.log(this.usuarioLogeado.iduser)
         console.log("No se puede editar")
-        this.edit = false
+        
       }
   }
 
