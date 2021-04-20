@@ -22,42 +22,53 @@ export class EditarProductoComponent implements OnInit {
   public producto     : Product
   public user         : number
 
-  public producto_editar : Product []
-  public newProduct : Product
-  public idProduct : number
+  public myForm    : FormGroup
 
-  constructor(private productService : ProductosService, private userService : UserService) 
+
+  constructor(private formBuilder: FormBuilder, private productService : ProductosService, private userService : UserService) 
   { 
+    this.producto = this.productService.produc_selec
     this.user = this.userService.user.iduser
-    this.idProduct = this.productService.producto.idproduct
-
+    this.buildForm();
+    console.log(this.user);
+  
   }
 
-// mostrar producto a modificar --> pasado un id
-mostrar_producto(){
-  this.productService.obtenerProductoModal(this.user).subscribe((res:any)=>{
-    this.producto_editar = res
+// ---> VALIDACIONES DE FORMULARIO
+private buildForm()
+{
+  this.myForm = this.formBuilder.group
+  ({
+    productName:[,Validators.required],
+    productType:[,Validators.required],
+    productAmount:[,Validators.required],
+    productPrice:[,Validators.required],
+    productEco:[,Validators.required],
+    productChange:[,Validators.required],
+    productLocality:[,Validators.required]
+    // productoImg:[,Validators.required]
   })
 }
 
 // modificar producto
-editar_producto(productName:string, productType:string, productAmount:number, productLocality:string, productPrice:number, productEco: string, productChange:string, productImg: string ){
-  console.log(this.user);
-  console.log();
-  
-
-  this.productService.editarProducto(new Product(this.productService.producto.idproduct, productName, productType, productAmount, productLocality, productPrice, productEco, productChange, this.productService.producto.iduser, productImg )).subscribe((res:any)=>{
-    this.producto = res
-
-    console.log(res);
+editar_producto(){
     
-  })
+    let datosForm = this.myForm.value
+
+    let newProduct = new Product(this.producto.idproduct, datosForm.productName, datosForm.productType, datosForm.productAmount, datosForm.productLocality, datosForm.productPrice, datosForm.productEco, datosForm.productChange, this.productService.producto.iduser, datosForm.productImg )
     
+    this.productService.editarProducto(newProduct).subscribe((res:any)=>{
+      this.producto = newProduct
+
+      console.log(this.producto); 
+      console.log(res);
+    
+    })
   
 }
  
 ngOnInit(): void {
-  this.mostrar_producto()
+ 
 }
   
 

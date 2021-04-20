@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl,FormBuilder, FormGroup } from '@angular/forms';
 import { ProductosService } from 'src/app/shared/productos.service'
 import { Product } from 'src/app/model/product';
 import { ModalLaHuertaTiendaComponent } from '../modal-la-huerta-tienda/modal-la-huerta-tienda.component';
@@ -24,10 +24,11 @@ export class LaHuertaTiendaComponent implements OnInit {
 
   private buildForm() {
     this.myFormFilter = this.fomularioFilter.group({
-      productLocality: [''],
-      productType: [''],
-      productEco: [''],
-      productChange: ['']
+      productLocality: '',
+      productTypeFruta: '',
+      productTypeVerdura: '',
+      productEco: '',
+      productChange: ''
     })
 
   }
@@ -42,6 +43,31 @@ export class LaHuertaTiendaComponent implements OnInit {
   }
 
   buscarPorFiltro(){
+    let data = this.myFormFilter.value
+    console.log(data)
+    let localizacion = data.productLocality
+    let productTypeFruta = data.productTypeFruta
+    let productTypeVerdura = data.productTypeFruta
+    let productEco = data.productEco
+    let productChange = data.productChange
+    let productPrice = data.productPrice
+     
+    if(productTypeVerdura == true){
+      productTypeVerdura = "si"
+    }else{
+      productTypeVerdura = null
+    }
+
+    if(productTypeFruta == true){
+      productTypeFruta = "no"
+    }else{
+      productTypeFruta= null
+    }
+    
+    this.productService.mostrarProductoFiltro(localizacion,productPrice,productTypeFruta, productTypeVerdura, productEco, productChange).subscribe((respuesta: any[]) =>{
+      this.productosHuerta = this.productService.convertir(respuesta)
+      console.log(localizacion,productPrice,productTypeFruta, productTypeVerdura, productEco, productChange)
+    })
 
 
   }
@@ -58,7 +84,16 @@ export class LaHuertaTiendaComponent implements OnInit {
     })
   
   }
-
+  meterEnCarrito(id:number){
+    
+    this.productService.obtenerProductoModal(id).subscribe((data:Product)=>{
+      this.productService.productos.push(data[0])
+      
+    })
+    console.log(this.productService.productos);
+    
+    
+  }
 
   ngOnInit(): void {
     this.productService.obtenerProductos().subscribe((respuesta: any[]) => {

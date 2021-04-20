@@ -53,7 +53,7 @@ export class AnadirProductoComponent implements OnInit {
     let datosForm = this.myForm.value
     console.log(datosForm);
     
-    let producto = new Product(0,datosForm.productName, datosForm.productType, datosForm.productAmount, datosForm.productLocality, datosForm.productPrice, datosForm.productEco, datosForm.productChange, this.user.iduser, imgForm.value )
+    let producto = new Product(0,datosForm.productName, datosForm.productType, datosForm.productAmount, datosForm.productLocality, datosForm.productPrice, datosForm.productEco, datosForm.productChange, this.user.iduser, imgForm.value, datosForm.description )
     console.log("USER ID:" + this.user.iduser);
    
 
