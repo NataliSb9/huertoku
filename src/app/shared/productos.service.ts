@@ -39,57 +39,17 @@ export class ProductosService {
 
 // ---> mostrara producto pasado por id
   public obtenerProductoModal(idProduct: number){
-      
     let urlProductoHuerta = this.url_productos +"?id="+ idProduct
     console.log(urlProductoHuerta)
     return this.http.get(urlProductoHuerta)
   }
 
   //Mostrar prodducto por filtro
-  mostrarProductoFiltro (productLocality: string, productPrice: number, productTypeFruta: string, productTypeVerdura:string, productEco: string, productChange: string){
-    let localidad: string= ""
-    let precio: number
-    let fruta:string = ""
-    let verdura: string = ""
-    let eco: string = ""
-    let change: string = ""
-    console.log(productLocality)
-   /*  if(productLocality !== ""){
-      localidad= `?productLocality=${productLocality}`
-      console.log(`?productLocality=${productLocality}`)
-    }else {
-    }
-   if(productPrice !== 0){
-      precio= `?productPrice${productPrice}`
-    }else {
-      precio
-    }
-    if(productTypeFruta !== ""){
-      fruta = `?productType${productTypeFruta}`
-    }else {
-      fruta 
-    }
-    if(productTypeVerdura !== ""){
-      verdura = `?productType${productTypeVerdura}`
-    }else {
-      verdura
-    }
-    if(productEco !== ""){
-      eco = `?productEco${productTypeVerdura}`
-    }else {
-      eco    }
-    if(productChange !== ""){
-      change = `?productChange${productChange}`
-    }else {
-      change
-    } */
+  mostrarProductoFiltro(querieFiltro: string) {
+    console.log(this.url_productos + "?" + querieFiltro)
+    return this.http.get(this.url_productos + "?" + querieFiltro)
 
-    console.log( this.url_productos+localidad+precio+fruta+verdura+eco+change)
-
-    return this.http.get( this.url_productos+"?"+productLocality)
-   
-  
-  }    
+  }
 
 //Mostrar todos los productos de la Huerta
 

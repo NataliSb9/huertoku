@@ -10,8 +10,8 @@ TIPOGRAFIAS
     > Headers: font-family: 'Signika', sans-serif;
     > Textos: font-family: 'Roboto', sans-serif; */
 
-
-    
+/*** GENERAL  ***/
+/* flex space */
 .row {
   display: flex;
   flex-direction: row;
@@ -19,7 +19,6 @@ TIPOGRAFIAS
   text-align: center;
   align-items: inherit;
 }
-
 .colImg {
   display: flex;
   flex-direction: column;
@@ -27,8 +26,6 @@ TIPOGRAFIAS
   text-align: center;
   align-items: center;
 }
-
-
 .col {
   display: flex;
   flex-direction: column;
@@ -36,19 +33,39 @@ TIPOGRAFIAS
   text-align: center;
   align-items: center;
 }
-
-.rowNav {
+.colBanner{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  text-align: center;
-  align-items: inherit;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+  width: 93%;
 }
-
 #container {
   width: 100%;
 }
+/* decoracion general */
+a{
+  text-decoration:none;
+  color: #FdFFFF;
+}
+a:hover{
+  color:#F39C12
+}
 
+
+/* BANNER GUIA */
+.cardtitle2 {
+    font-family: "Signika", sans-serif;
+    color: #e67e22; 
+    font-size: 1.7rem;
+  }
+
+/* NAVEGACION */
+.navegacion {
+  margin-top: 15px;
+  background-color: #267172;
+  padding: 20px;
+}
 
 /* IMAGEN DE PERFIL */
 #imgPerfil {
@@ -90,14 +107,6 @@ TIPOGRAFIAS
   margin-top: 8px;
 }
 
-a{
-  text-decoration:none;
-  color: #767676;
-}
-a:hover{
-  color:#267172
- 
-}
 
 /* RESPONISVE */
 /*
@@ -165,31 +174,4 @@ a:hover{
   }
 }
 */
-/*  NAVEGACION */
 
-#separador {
-  border-bottom: solid 2px #f39c12; 
-  width: 875px;
-  margin-right: 25px;
-  margin-left: 25px;
-  margin-top: 20px;
-  background-color: #f39c12;
-}
-
-#navBar {
-  width: 500px;
-  margin-right: 100px;
-}
-
-#navBar a {
-  text-decoration: none;
-  color: #767676;
-  font-family: "Roboto", sans-serif;
-  font-size: medium;
-  padding: 10px;
-  margin-left: 10%;
-}
-
-#navBar a:hover {
-  color: #267172;
-}

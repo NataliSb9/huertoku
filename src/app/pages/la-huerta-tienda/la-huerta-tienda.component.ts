@@ -4,6 +4,7 @@ import { FormControl,FormBuilder, FormGroup } from '@angular/forms';
 import { ProductosService } from 'src/app/shared/productos.service'
 import { Product } from 'src/app/model/product';
 import { ModalLaHuertaTiendaComponent } from '../modal-la-huerta-tienda/modal-la-huerta-tienda.component';
+import { Filtros } from 'src/app/model/filtros';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class LaHuertaTiendaComponent implements OnInit {
   public producto: Product
   public idProduct: number
   public myFormFilter: FormGroup
+  public value: number
 
   constructor(private modalDialogo: MatDialog, private fomularioFilter: FormBuilder, private productService: ProductosService ) { 
     this.buildForm()
@@ -28,47 +30,82 @@ export class LaHuertaTiendaComponent implements OnInit {
       productTypeFruta: '',
       productTypeVerdura: '',
       productEco: '',
-      productChange: ''
+      productChange: '',
+      productName: ''
     })
 
+  }
+
+  changeValue(event: any) {
+    
+    this.value = event.value;
+    return this.value
   }
  
   /******Metodo slider Filtro */
   formatLabel(value: number) {
-    if (value >= 100) {
-      return Math.round(value / 100) + '€';
+    console.log("valor del slider: "+ value)
+    this.value = value
+    if (this.value >= 100) {
+      return Math.round(this.value / 100) + '€';
     }
+    console.log("valor del slider: "+ value)
 
-    return value;
+    return this.value;
   }
 
   buscarPorFiltro(){
+
     let data = this.myFormFilter.value
-    console.log(data)
-    let localizacion = data.productLocality
-    let productTypeFruta = data.productTypeFruta
-    let productTypeVerdura = data.productTypeFruta
-    let productEco = data.productEco
-    let productChange = data.productChange
-    let productPrice = data.productPrice
-     
-    if(productTypeVerdura == true){
-      productTypeVerdura = "si"
-    }else{
-      productTypeVerdura = null
+    console.log("formulario + precio "+ this.value)
+    if (data.productTypeVerdura == true) {
+      data.productTypeVerdura = "verdura"
+    } else {
+      data.productTypeVerdura = ""
     }
+    if (data.productTypeFruta == true) {
+      data.productTypeFruta = "fruta"
+    } else {
+      data.productTypeFruta = ""
+    }
+    if (data.productChange == true) {
+      data.productChange = "yes"
+    } else {
+      data.productChange = ""
+    }
+    if (data.productEco == true) {
+      data.productEco= "yes"
+    } else {
+      data.productEco = ""
+    }
+    data.productPrice= this.value
 
-    if(productTypeFruta == true){
-      productTypeFruta = "no"
-    }else{
-      productTypeFruta= null
-    }
+    let numberString: string = data.productPrice
+    console.log("fruta -"+ data.productTypeFruta)
+    console.log("verdura - "+ data.productTypeVerdura)
+    console.log("precio - "+ data.productPrice)
+    console.log("verdura - "+ data.productChange)
+
+    let localizacion: Filtros = new Filtros("productLocality",data.productLocality ) 
+    let productTypeFruta: Filtros = new Filtros("productType",data.productTypeFruta)
+    let productTypeVerdura: Filtros = new Filtros("productType",data.productTypeVerdura)
+    let productEco: Filtros = new Filtros("productEco",data.productEco)
+    let productChange: Filtros = new Filtros("productChange",data.productChange)
+    let productPrice: Filtros = new Filtros("productPrice",numberString)
+    let productName: Filtros = new Filtros ("productName", data.productName)
     
-    this.productService.mostrarProductoFiltro(localizacion,productPrice,productTypeFruta, productTypeVerdura, productEco, productChange).subscribe((respuesta: any[]) =>{
+    let filtros: Filtros[] = [localizacion,productTypeFruta, productTypeVerdura, productEco, productChange, productPrice, productName]
+    let filtrosQuerie: string = ""  
+    for(let i=0; i< filtros.length; i++){
+      if(filtros[i].valorFiltro !== "" && filtros[i].valorFiltro !== undefined){
+        filtrosQuerie +=`&${filtros[i].nombreFiltro}=${filtros[i].valorFiltro}` 
+      }
+    }
+    console.log( "QUERY DE LOS COJONES: " +filtrosQuerie)
+    this.productService.mostrarProductoFiltro(filtrosQuerie).subscribe((respuesta: any []) => {
       this.productosHuerta = this.productService.convertir(respuesta)
-      console.log(localizacion,productPrice,productTypeFruta, productTypeVerdura, productEco, productChange)
+      console.log(this.productosHuerta)
     })
-
 
   }
 
