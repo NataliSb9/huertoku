@@ -20,7 +20,7 @@
   </div>
   
   <div class="col">
-      <a  routerLink="../pedidosactivos">Envios activos</a>
+      <a  routerLink="../pedidosactivos">Historial de Envíos</a>
   </div>
 
   <div class="col">
@@ -37,7 +37,7 @@
   <!-- TATEJETAS DE HISTORIAL ENVIOS -->
   <div   class="rowCards" id="collectCards">
 
-    <mat-card *ngFor = "let producto of productos_arr" class="cards columnCards">
+    <mat-card *ngFor = "let producto of productos_arr" class="cards columnCards sombraCards">
       <img
         class="imgCard"
         mat-card-image
@@ -45,7 +45,7 @@
         onError="this.src='./assets/img/ICOfruitBAG.png'"
         alt="imagen producto"
       />
-      <mat-card-title class="cardtitle">{{producto.productName}}</mat-card-title>
+      <mat-card-title class="cardtitle ">{{producto.productName}}</mat-card-title>
 
       <mat-card-content>
 

@@ -47,6 +47,7 @@ a:hover{
 }
 
 /****** TARJETAS ******/
+
 /***** TITULO *****/
 .cardtitle {
   font-family: "Signika", sans-serif;
@@ -78,6 +79,10 @@ a:hover{
   border-width: 0.5px;
 }
 
+#collectCards {
+  padding: 12px;
+  margin-top: 50px;
+}
 #collectCards > .cards {
   margin: 12px;
 }
@@ -117,5 +122,10 @@ a:hover{
 .field {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+}
+
+/** Efecto color borde TARJETAS **/
+.sombraCards:hover {
+  box-shadow: 6px 6px 6px #267172;
 }
 

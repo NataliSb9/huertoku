@@ -148,6 +148,11 @@ mat-slider{
   
 }
 /****** TARJETAS ******/
+
+/** Efecto color borde TARJETAS **/
+.sombraCards:hover {
+  box-shadow: 6px 6px 6px #267172;
+}
 .cards {
   max-width: 250px;
   border-radius: 25px;
@@ -155,6 +160,10 @@ mat-slider{
   border-color: #cac6c6;
   border: solid, 1px;
   border-width: 0.5px;
+}
+#collectCards {
+  padding: 12px;
+  margin-top: 50px;
 }
 
 #collectCards > .cards {

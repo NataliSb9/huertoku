@@ -16,24 +16,37 @@
     justify-content:flex-start;
     align-items: center;
   }
-
-
+  .colBanner{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 93%;
+  }
+  
+  /* decoracion general */
+  a{
+    text-decoration:none;
+    color: #fdffee;
+  }
+  a:hover{
+    color:#F39C12
+  }
+  
+  
   /* BANNER GUIA */
   .cardtitle2 {
-    font-family: "Signika", sans-serif;
-    color: #e67e22; 
+      font-family: "Signika", sans-serif;
+      color: #e67e22; 
+      font-size: 1.7rem;
+    }
+  
+  /* NAVEGACION */
+  .navegacion {
+    margin-top: 15px;
+    background-color: #267172;
+    padding: 20px;
   }
-  .cardtitle3 {
-    font-family: "Signika", sans-serif;
-    color:  #267172;
-    margin-left: 100px;
-    margin-left: 100px;
-    font-size: 1.2rem;
-  }
-  .cardtitle3:hover{
-    color: #408f91;
-  }
-
 
 /* CARDS */
  .cards {
@@ -80,7 +93,12 @@
     color: #767676;
   }
 
-  /* tarjeta de producto a modificar */
+/** Efecto color borde TARJETAS **/
+.sombraCards:hover {
+  box-shadow: 6px 6px 6px #267172;
+}
+
+
 
 
  /* FORM EDITAR PRODUCTO */
