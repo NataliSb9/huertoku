@@ -24,14 +24,15 @@ export class ProductosService {
   public produc_selec : Product
 
   constructor(http: HttpClient) {
-    //this.url = "http://localhost:300/product"
     this.http = http
     
     this.producto       = new Product(0)
     this.url_User = "https://lahuertapp.herokuapp.com/user"
     this.url_pedidos = "https://lahuertapp.herokuapp.com/pedidos"
     this.url_envios = "https://lahuertapp.herokuapp.com/envios"
-    this.url_productos = "https://lahuertapp.herokuapp.com/product"
+    //this.url_productos = "https://lahuertapp.herokuapp.com/product"
+    this.url_productos = "http://localhost:300/product"
+
     this.productoHuerta = new Product (0,"","",0,"",0,"","",0,"")
     this.productos=[]
   }
@@ -68,7 +69,8 @@ export class ProductosService {
 
   // ---> añade producto a BBDD
   añadirProducto(newProduct: Product) {
-    console.log(newProduct);
+
+    console.log(newProduct.productDescription);
 
     return this.http.post(this.url_productos, newProduct)
   }

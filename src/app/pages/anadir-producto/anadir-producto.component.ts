@@ -22,6 +22,8 @@ export class AnadirProductoComponent implements OnInit {
   public myForm    : FormGroup
   public producto  : Product
   public user      : User
+  public mensaje   : string
+  public productoAgregado : boolean
 
   constructor(private formBuilder: FormBuilder, private apiService : ProductosService, private userService : UserService) 
   { 
@@ -29,7 +31,6 @@ export class AnadirProductoComponent implements OnInit {
     this.user = this.userService.user
    
   }
-
 
  // ---> VALIDACIONES DE FORMULARIO
   private buildForm()
@@ -42,7 +43,8 @@ export class AnadirProductoComponent implements OnInit {
       productPrice:[,Validators.required],
       productEco:[,Validators.required],
       productChange:[,Validators.required],
-      productLocality:[,Validators.required]
+      productLocality:[,Validators.required],
+      productDescription: [""]
     })
   }
   
@@ -53,23 +55,22 @@ export class AnadirProductoComponent implements OnInit {
     let datosForm = this.myForm.value
     console.log(datosForm);
     
-    let producto = new Product(0,datosForm.productName, datosForm.productType, datosForm.productAmount, datosForm.productLocality, datosForm.productPrice, datosForm.productEco, datosForm.productChange, this.user.iduser, imgForm.value, datosForm.description )
+    let producto = new Product(0,datosForm.productName, datosForm.productType, datosForm.productAmount, datosForm.productLocality, datosForm.productPrice, datosForm.productEco, datosForm.productChange, this.user.iduser, imgForm.value, datosForm.productDescription)
     console.log("USER ID:" + this.user.iduser);
    
-
     // let product:Product = new Product(data.productName, data.productType, data.productAmount, data.productPrice, data.productEco, data.productChange, data.productLocality)
-
-    this.apiService.añadirProducto(producto).subscribe((res)=>{
-
-      console.log(res);
-      // control de errores!!!!!!!!
+    this.apiService.añadirProducto(producto).subscribe((res: any) => {
+      let mensaje = res.mensaje
+      this.mensaje = mensaje.toString()
+      if (this.mensaje == "Producto añadido") {
+        this.productoAgregado = true
+      } else {
+        this.productoAgregado = false
+      }
 
     })
-
-    }
-
-
-
-    ngOnInit(): void {}
-
   }
+
+  ngOnInit(): void { }
+
+}

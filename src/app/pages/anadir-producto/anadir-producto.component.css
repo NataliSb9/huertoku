@@ -138,3 +138,23 @@ button:hover
     /* margin-right: 72px;
     margin-left: 75px; */
 }
+
+/*****MENSAJE OCULTO Y BOTON****/
+#mensajeProducto{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#volverProductos{
+   font-family: "Signika", sans-serif;
+   color:  #267172;
+   font-size: 15px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+#volverProductos:hover{
+   color: #408f91;
+}
