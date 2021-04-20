@@ -21,7 +21,7 @@
             <div class="columnFilter" id="precio">
                 <p>Precio</p>
                 <div>
-                    <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="100"min="1" max="100"></mat-slider>
+                 <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="0"min="0" max="20" value="2" formControlName= "productPrice" (input)="changeValue($event)"></mat-slider>
                 </div>
             </div>
 
@@ -51,17 +51,18 @@
                     <label for="trueque">Acepta trueque</label><br />
                 </div>
             </div> 
-            
         </form>
         <div class= "rowFiltros" id="filtrosButton">
-            <button (click)="buscarPorFiltro()">Filtrar</button>
+            <button (click)="buscarPorFiltro()">Aplicar Filtro</button>
         </div>                 
     </mat-expansion-panel>
 
 
-    <div id="buscar">
-        <img id="lupa" src="./assets/img/lupa3.png" alt="" />
-        <input matInput placeholder="Buscar" />
+    <div id="buscar" class= "rowFiltros" [formGroup]="myFormFilter">
+        <input matInput placeholder="Buscar" formControlName="productName" />
+        <div class= "rowFiltros" id="buscarButton">
+            <button (click)="buscarPorFiltro()">Buscar</button>
+        </div>  
     </div>
 </div>
 

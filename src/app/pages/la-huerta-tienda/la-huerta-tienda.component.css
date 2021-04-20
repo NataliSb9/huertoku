@@ -35,6 +35,10 @@
   box-shadow: none;
 }
 
+.mat-slider-thumbLabel{
+ background-color: #267172;
+}
+
 #filtros p {
   font-family: "Signika", sans-serif;
   font-size: 20px;
@@ -189,4 +193,11 @@ h2 {
     margin-left: 9.8%;
   }
   
+}
+
+/****Buscar****/
+
+#buscarButton{
+  margin-left: -25px;
+
 }
