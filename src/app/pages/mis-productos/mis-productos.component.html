@@ -1,14 +1,36 @@
-<div class="row">
-  <div class="col">
-    <h1 class = "cardtitle2" style="margin-top:20px">Mis productos</h1>
-</div>
-<div class="col">
-    <h3 routerLink="/perfil" class = "cardtitle3" style="margin-top:20px">Volver a Perfil</h3>
-</div>
-</div>
 
+<!-- BANNER DE GUIA -->
+<div class="row">
+  <div class="colBanner">
+      <h1 class="cardtitle2" style="margin-top:20px; margin-bottom: -5px;">Mis productos</h1>
+  </div>
+</div>
 <!-- lienea separacion -->
-<hr style="background-color: #e67e22;">
+<!-- <hr style="background-color: #e67e22;"> -->
+
+ <!-- NAVEGACION -->
+ <div class="row navegacion">
+
+    <div class="col">
+        <a routerLink="../historialpedidos">Historial de tus pedidos</a>
+    </div>
+    
+    <div class="col">
+        <a routerLink="../pedidosactivos">Envios activos</a>
+    </div>
+
+    <div class="col">
+        <a routerLink="/huerta">La Huerta</a>
+    </div>
+
+    <div class="col">
+      <a  routerLink="/perfil">Mi Perfil</a>
+    </div>
+  
+</div>
+<!-- lienea separacion -->
+<!-- <hr style="background-color: #e67e22;"> -->
+
 
 <!-- TARJETAS -->
 
@@ -35,8 +57,9 @@
           <span class="nameField">Cantidad disponible:</span> {{productos.productAmount}} kg
         </p> 
       </mat-card-content>
-      <mat-card-actions class = "rowButtons buttonsCards" id= "boton">    
-        <a routerLink="/app-editar-producto" class="aEditar" id="edit">Editar</a>
+      <mat-card-actions class = "rowButtons buttonsCards" id= "boton"> 
+        <a (click)="producto_selec(productos)" style="color:#fdffee; margin-right: 10px" class="aEditar">Editar</a>   
+        <!-- <a routerLink="/app-editar-producto" class="aEditar" id="edit">Editar</a> -->
         <button (click)= "deleteProducto(productos.idproduct)">Eliminar</button>
       </mat-card-actions>    
     </mat-card>

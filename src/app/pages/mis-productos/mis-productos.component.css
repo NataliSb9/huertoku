@@ -13,20 +13,36 @@
   justify-content:flex-start;
   align-items: center;
 }
+.colBanner{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+  width: 93%;
+}
 
+/* BANNER GUIA */
 .cardtitle2 {
   font-family: "Signika", sans-serif;
   color: #e67e22; 
-  /* margin-left: 200px; */
+  font-size: 1.7rem;
 }
-.cardtitle3 {
-  font-family: "Signika", sans-serif;
-  color:  #267172;
-  margin-left: 100px;
+
+/* NAVEGACION */
+.navegacion {
+margin-top: 15px;
+background-color: #267172;
+padding: 20px;
 }
-.cardtitle3:hover{
-  color: #408f91;
+
+a{
+  text-decoration:none;
+  color: #FdFFFF;
 }
+a:hover{
+  color:#F39C12
+}
+
 
 
 /*tarjetas*/
@@ -159,15 +175,8 @@ button:hover {
   font-size: 25px;
 }
 
-/**Efecto color borde**/
-
+/** Efecto color borde TARJETAS **/
 #agregarProduct:hover {
   box-shadow: 6px 6px 6px #267172;
 }
 
-/*titulo*/
-.cardtitle2 {
-  font-family: "Signika", sans-serif;
-  text-align: center;
-  color: #e67e22;
-}
