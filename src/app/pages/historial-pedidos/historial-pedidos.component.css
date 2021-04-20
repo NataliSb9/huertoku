@@ -1,3 +1,6 @@
+
+/* ***** GENERAL **** */
+/* FLEX SPACE */
 .row{
   display: flex;
   flex-direction: row;
@@ -38,6 +41,38 @@
   align-items: flex-start;
   flex-wrap: nowrap;
 }
+.colBanner{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+  width: 93%;
+}
+
+/* BANNER GUIA */
+.cardtitle2 {
+  font-family: "Signika", sans-serif;
+  color: #e67e22; 
+  font-size: 1.7rem;
+}
+
+/* NAVEGACION */
+.navegacion {
+margin-top: 15px;
+background-color: #267172;
+padding: 20px;
+}
+
+a{
+  text-decoration:none;
+  color: #FdFFFF;
+}
+a:hover{
+  color:#F39C12
+}
+
+
+
 
 #lineExp {
   margin-right: 355px;
