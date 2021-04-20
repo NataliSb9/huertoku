@@ -16,17 +16,8 @@ export class PerfilEditarComponent implements OnInit {
     this.usuarioLogeado=this.userService.user
   }
 
-  // saveChanges(email:string, password:string, name:string, surname1:string, birthYear:number, username:string, localidad:string, tel:number, userImg:string){
-  //   console.log(this.usuarioLogeado)
-  //   this.userService.editProfile(new User(email, password, this.usuarioLogeado.iduser, name, surname1, birthYear, username, localidad, tel, userImg)).subscribe((data:any)=>{
-        
-  //       this.usuarioLogeado=data
-  //       this.message="Dato/s modificados"
-  //       console.log(data);
-      
-  //   })
-  // }
-  ////////////////////////////////////////////////
+  ///////////////////Método editar perfil//////////////////////
+
   saveChanges(email:string, password:string, name:string, surname1:string, birthYear:number, username:string, localidad:string, tel:number, userImg:string) 
   {
     if (this.usuarioLogeado.iduser !== undefined) 
