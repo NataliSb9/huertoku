@@ -1,5 +1,36 @@
-<h1 class = "cardtitle" style="margin-top:10px">Edita tu perfil</h1>
-<hr style="background-color: #e67e22;">
+
+<!-- BANNER DE GUIA -->
+<div class="row">
+    <div class="colBanner">
+        <h1 class="cardtitle2" style="margin-top:20px; margin-bottom: -5px;">Editar Perfil</h1>
+    </div>
+</div>
+<!-- lienea separacion -->
+<!-- <hr style="background-color: #e67e22;"> -->
+
+ <!-- NAVEGACION -->
+<div class="row navegacion">
+    <div class="col">
+        <a routerLink="../misproductos">Mis productos</a>
+    </div>
+
+    <div class="col">
+        <a routerLink="../historialpedidos">Historial de pedidos</a>
+    </div>
+    
+    <div class="col">
+        <a routerLink="../pedidosactivos">Historial de Envíos</a>
+    </div>
+
+    <div class="col">
+        <a routerLink="/huerta">La Huerta</a>
+    </div>
+    
+</div>
+<!-- lienea separacion -->
+<!-- <hr style="background-color: #e67e22;"> -->
+
+
 <div class="col" id="container">
 
     <div id="edit-profile" class="row">
@@ -7,28 +38,24 @@
         <div class="col">
 
             <!-- imagen de perfil -->
-
-            <img id="foto_perfil" src="../../../assets/img/foto_perfil.png" alt="imagen de perfil">
-
-            <!-- boton para editar imagen de perfil -->
-            
-            <button class = "row"id="edit_foto"><img src="../../../assets/img/lapiz.png"></button>
-
+            <img id="foto_perfil" src="../../../assets/img/error-imgPerfil2.png" alt="imagen de perfil">
+        
         </div>
 
-        <div class="col" id="dataprofile">
+        <div class="col dataprofile">
 
             <!-- input para modificar datos perfil -->
             
-            <input type="email" placeholder="Introduce un nuevo email de contacto" #email>
-            <input type="string" placeholder="Introduce un nuevo password" #password>
-            <input type="text" placeholder="Introduce un nombre de usuario" #name> 
-            <input type="text" placeholder="Introduce un nuevo apellido de usuario" #surname1>
-            <input type="number" placeholder="Introduce un nuevo año de nacimiento del usuario" #birthYear>  
-            <input type="text" placeholder="Introduce un nuevo nombre de usuario" #username>  
-            <input type="text" placeholder="Introduce una direccion" #localidad>         
-            <input type="number" placeholder="Introduce un nuevo telefono de contacto" #tel>
-            <input type="text" placeholder="Inserta url de imagen" #userImg>
+            <input class="sombraCards" type="email" placeholder="Introduce un nuevo email de contacto" #email>
+            <input class="sombraCards" type="string" placeholder="Introduce un nuevo password" #password>
+            <input class="sombraCards" type="text" placeholder="Introduce un nombre de usuario" #name> 
+            <input class="sombraCards" type="text" placeholder="Introduce un nuevo apellido de usuario" #surname1>
+            <input class="sombraCards" type="number" placeholder="Introduce un nuevo año de nacimiento del usuario" #birthYear>  
+            <input class="sombraCards" type="text" placeholder="Introduce un nuevo nombre de usuario" #username>  
+            <input class="sombraCards" type="text" placeholder="Introduce una direccion" #localidad>         
+            <input class="sombraCards" type="number" placeholder="Introduce un nuevo telefono de contacto" #tel>
+            <input class="sombraCards" type="text" placeholder="Inserta url de imagen" #userImg>
+           
             <!-- boton guarda modificaciones de perfil -->
             <button routerLink="../registro" (click)="saveChanges(email.value, password.value, name.value, surname1.value, birthYear.valueAsNumber, username.value, localidad.value, tel.valueAsNumber, userImg.value)" >Guardar cambios</button>
             <p style="font-family: 'Roboto', sans-serif; color:#E67E22;">{{message}}</p>
