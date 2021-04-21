@@ -1,0 +1,93 @@
+/* /* 
+COLORES
+    > naranja claro --> #F39C12
+    > naranja ocuro --> #E67E22
+    > verde ----------> #267172
+    > gris -----------> #767676
+    > blanco ---------> #FdFFFF
+ 
+TIPOGRAFIAS
+    > Headers: font-family: 'Signika', sans-serif;
+    > Textos: font-family: 'Roboto', sans-serif; */
+
+/*** GENERAL  ***/
+#container {
+    width: 100%;
+  }
+  /* flex space */
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+    align-items: center;
+  }
+  .colBanner{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 93%;
+  }
+ .datosPerfil{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align:center;
+    align-items:flex-start;
+    padding: 15px;  
+ }
+
+  /* decoracion general */
+  a{
+    text-decoration:none;
+    color: #FdFFFF;
+  }
+  a:hover{
+    color:#F39C12
+  }
+  
+  /* BANNER GUIA */
+  .cardtitle2 {
+      font-family: "Signika", sans-serif;
+      color: #e67e22; 
+      font-size: 1.7rem;
+    }
+  
+  /* NAVEGACION */
+  .navegacion {
+    margin-top: 15px;
+    background-color: #267172;
+    padding: 20px;
+  }
+
+/* img Perfiles */
+.imgPerfil{
+    border-radius: 25px;
+    width: 250px;
+    margin-bottom: 15px;
+}
+
+/* datos PERFILES */
+h1{
+    color: #e67e22;
+    margin-left: 15px;
+}
+h3{
+    color: #267172;
+    margin-top: -20px;
+    margin-left: 15px;
+}
+p{
+    color:#767676 ;
+    width: 240px;
+    text-align: left;
+    margin-left: 15px;
+}
