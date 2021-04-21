@@ -11,6 +11,7 @@ import { User } from "../model/user"
 export class UserService {
 
   public user:User;
+  public userProduct:User
   private url="https://lahuertapp.herokuapp.com/user"
   private urlogin="https://lahuertapp.herokuapp.com/login"
   private urlchat="https://lahuertapp.herokuapp.com/chat"

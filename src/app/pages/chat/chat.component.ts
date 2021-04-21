@@ -30,14 +30,14 @@ export class ChatComponent implements OnInit {
     
    }
 
-   enviarMensaje(id:number,message:string){
-     console.log(this.productService.producto.iduser)
-    this.chatService.enviarMensaje(new Mensaje(id,message,this.userService.user.iduser,this.productService.producto.iduser)).subscribe((data:Mensaje)=>{
+   enviarMensaje(id:number,message:string,idmessenger2:number){
+     console.log(idmessenger2)
+    this.chatService.enviarMensaje(new Mensaje(id,message,this.userService.user.iduser,idmessenger2)).subscribe((data:Mensaje)=>{
       this.mensaje=data
     })
    }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     
     console.log(this.userService.user.iduser)
     this.chatService.mostrarChats(this.userService.user.iduser,this.productService.producto.iduser).subscribe((data:Chat[])=>{

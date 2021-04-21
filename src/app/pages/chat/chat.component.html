@@ -45,9 +45,9 @@
             <mat-selection-list #users [multiple]="false">
                 <mat-list-option  *ngFor="let chat of chats" >
                     <div class="row" (click)="mostrarMensajes(chat.idchat)">
-                        <div class="col-1"><img style=" width: 20px; height: 20px;" src="assets/img/ICOfruitBAG.png" ></div>
+                        <div class="col-1"><img style=" width: 20px; height: 20px;" src="" ></div>
                         
-                        <div class="col-1"><p class="textoContactos">{{chat.idmessenger2}} </p></div>
+                        <div class="col-1"><p class="textoContactos"> </p></div>
                         
                     </div>
                     
@@ -61,12 +61,12 @@
     <div class="col-6">
         <mat-card class="example-card">
             <mat-card-header style="margin: 10px;">
-              <div mat-card-avatar class="example-header-image"></div>
+              
               <mat-card-title class="cardTitle">{{users.selectedOptions.selected[0]?.value}}</mat-card-title>
               
             </mat-card-header>
             
-            <mat-card class="cuerpoChat"  ><p class="textoContactos" *ngFor="let mensaje of mensajes">{{mensaje.messageText}}</p> </mat-card>
+            <mat-card class="cuerpoChat" style="overflow-y: scroll;"  ><p class="textoContactos" *ngFor="let mensaje of mensajes"></p> </mat-card>
             <mat-card-actions>
                 <form class="example-form" style="margin: 10px;">
                     <mat-form-field class="example-full-width">
@@ -76,7 +76,7 @@
                       <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
                     </mat-form-field>
                   </form>
-              <button mat-button *ngFor="let chat of chats" (click)="enviarMensaje(chat.idchat, message.value)" >Send</button>
+              <button mat-button *ngFor="let chat of chats" (click)="enviarMensaje(chat.idchat, message.value, chat.idmessenger2)" >Send</button>
               
             </mat-card-actions>
           </mat-card>
