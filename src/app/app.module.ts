@@ -35,6 +35,7 @@ import { ModalLaHuertaTiendaComponent } from './pages/modal-la-huerta-tienda/mod
 import { LandingComponent } from './pages/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditarProductoComponent } from './pages/editar-producto/editar-producto.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 
 
@@ -56,7 +57,8 @@ import { EditarProductoComponent } from './pages/editar-producto/editar-producto
     HistorialPedidosComponent,
     ModalLaHuertaTiendaComponent,
     LandingComponent,
-    EditarProductoComponent
+    EditarProductoComponent,
+    AboutUsComponent
   ],
   entryComponents:[ListaDeseosComponent],
   imports: [

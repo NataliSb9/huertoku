@@ -58,58 +58,75 @@ export class LaHuertaTiendaComponent implements OnInit {
   buscarPorFiltro(){
 
     let data = this.myFormFilter.value
-    console.log("formulario + precio "+ this.value)
-    if (data.productTypeVerdura == true) {
-      data.productTypeVerdura = "verdura"
-    } else {
-      data.productTypeVerdura = ""
-    }
-    if (data.productTypeFruta == true) {
-      data.productTypeFruta = "fruta"
-    } else {
-      data.productTypeFruta = ""
-    }
-    if (data.productTypeOtros == true) {
-      data.productTypeOtros = "otros"
-    } else {
-      data.productTypeFruta = ""
-    }
-    if (data.productChange == true) {
-      data.productChange = "yes"
-    } else {
-      data.productChange = ""
-    }
-    if (data.productEco == true) {
-      data.productEco= "yes"
-    } else {
-      data.productEco = ""
-    }
-    data.productPrice= this.value
+    console.log("formulario  precio "+ this.value)
 
-    let numberString: string = data.productPrice
-    console.log("fruta -"+ data.productTypeFruta)
-    console.log("verdura - "+ data.productTypeVerdura)
-    console.log("precio - "+ data.productPrice)
-    console.log("verdura - "+ data.productChange)
-
-    let localizacion: Filtros = new Filtros("productLocality",data.productLocality ) 
-    let productTypeFruta: Filtros = new Filtros("productType",data.productTypeFruta)
-    let productTypeVerdura: Filtros = new Filtros("productType",data.productTypeVerdura)
-    let productTypeOtros: Filtros = new Filtros("productType",data.productTypeOtros)
-    let productEco: Filtros = new Filtros("productEco",data.productEco)
-    let productChange: Filtros = new Filtros("productChange",data.productChange)
-    let productPrice: Filtros = new Filtros("productPrice",numberString)
-    let productName: Filtros = new Filtros ("productName", data.productName)
+    let filtros: Filtros[] = []
     
-    let filtros: Filtros[] = [localizacion,productTypeFruta, productTypeVerdura,productTypeOtros ,productEco, productChange, productPrice, productName]
-    let filtrosQuerie: string = ""  
-    for(let i=0; i< filtros.length; i++){
-      if(filtros[i].valorFiltro !== "" && filtros[i].valorFiltro !== undefined){
-        filtrosQuerie +=`&${filtros[i].nombreFiltro}=${filtros[i].valorFiltro}` 
+    if (data.productTypeVerdura == true) {
+      console.log(data.productTypeVerdura)
+      let productTypeVerdura = new Filtros("productType", "verdura")
+      console.log(productTypeVerdura)
+      filtros.push(productTypeVerdura)
+      console.log(filtros)
+    }
+
+    if (data.productTypeFruta == true) {
+      let productTypeFruta = new Filtros("productType", "fruta")
+      filtros.push(productTypeFruta)
+    }
+
+    if (data.productTypeOtros == true) {
+      let productTypeOtros = new Filtros("productType", "otros")
+      filtros.push(productTypeOtros)
+
+    }
+
+    if (data.productLocality !== undefined) {
+      let localidad: string = data.productLocality
+      let localizacion = new Filtros("productLocality", localidad)
+      filtros.push(localizacion)
+
+    }
+
+    if (data.productChange == true) {
+      let productChange = new Filtros("productChange", "si")
+      filtros.push(productChange)
+    }
+
+    if (data.productEco == true) {
+      let productEco = new Filtros("productEco", "si")
+      filtros.push(productEco)
+    }
+
+    if (this.value !== 0) {
+      let price = this.value
+      let productPrice = new Filtros("productPrice", price)
+      filtros.push(productPrice)
+    }
+
+    if (data.productName !== undefined) {
+      let nameProduct = data.productName
+      let productName = new Filtros("productName", nameProduct)
+      filtros.push(productName)
+    }
+
+    console.log("fruta -" + data.productTypeFruta)
+    console.log("verdura - " + data.productTypeVerdura)
+    console.log("precio - " + data.productPrice)
+    console.log("verdura - " + data.productChange)
+
+
+    let filtrosQuerie: string = ""
+
+    for (let i = 0; i < filtros.length; i++) {
+      if (filtros[i].valorFiltro !== "" && filtros[i].valorFiltro !== undefined) {
+        filtrosQuerie += `&${filtros[i].nombreFiltro}=${filtros[i].valorFiltro}`
       }
     }
-    console.log( "QUERY: " +filtrosQuerie)
-    this.productService.mostrarProductoFiltro(filtrosQuerie).subscribe((respuesta: any []) => {
+
+    console.log("QUERY: " + filtrosQuerie)
+
+    this.productService.mostrarProductoFiltro(filtrosQuerie).subscribe((respuesta: any[]) => {
       this.productosHuerta = this.productService.convertir(respuesta)
       console.log(this.productosHuerta)
     })

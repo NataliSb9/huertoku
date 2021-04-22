@@ -13,6 +13,7 @@ import { PedidosActivosComponent } from './pages/pedidos-activos/pedidos-activos
 import { MisProductosComponent } from './pages/mis-productos/mis-productos.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { EditarProductoComponent } from './pages/editar-producto/editar-producto.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 
 const routes: Routes = 
@@ -58,6 +59,9 @@ const routes: Routes =
   },
   {
     path:'app-editar-producto', component: EditarProductoComponent
+  },
+  {
+    path:'app-about-us', component: AboutUsComponent
   }
   /*{
     path: "**", component: PageNotFound
