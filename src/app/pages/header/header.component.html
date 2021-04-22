@@ -9,19 +9,14 @@
   />
   <h1 routerLink="huerta">La Huerta</h1>
     <div class="spacer"></div>
-    <!-- <div class="contenedor">
-      <mat-icon class="icon" type="button" matBadge="3"  (click)="openDialog()">shopping_basket</mat-icon>
-      <mat-icon routerLink="perfil" class="icon" type="button">person</mat-icon>
-      <mat-icon routerLink="registro" class="icon" type="button">exit_to_app</mat-icon>
-      <mat-icon routerLink="chat" class="icon" type="button">message</mat-icon>
-  </div> -->
 
   <div class="contenedor">
+      
     <mat-icon class="icon" type="button" matBadge="{{productosNumero.length}}" (click)="openDialog()">shopping_basket</mat-icon>
-
-      <mat-icon (click)="registroPerfil()" routerLink="registro" class="icon" type="button">person</mat-icon>
-      <mat-icon (click)="cerrarSesion()" class="icon" type="button">exit_to_app</mat-icon>
+    <mat-icon (click)="registroPerfil()" routerLink="registro" class="icon" type="button">person</mat-icon>
+    <mat-icon (click)="cerrarSesion()" class="icon" type="button">exit_to_app</mat-icon>
     <mat-icon routerLink="chat" class="icon" type="button">message</mat-icon>
+
   </div>
 
 </div>
