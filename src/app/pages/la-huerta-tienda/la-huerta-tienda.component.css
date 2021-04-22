@@ -108,7 +108,11 @@ mat-expansion-panel {
 }
 
 #buy{
-  width: 170px;
+  width: 145px;
+  display: flex;
+  flex-direction: center;
+  justify-content: center; 
+  margin-left: 35px; 
 }
 
 .buttonhuerta:hover {
@@ -138,11 +142,22 @@ h2 {
 
 /*tarjetas*/
 .cards {
-  max-width: 265px;
-  max-height: 300px;
+  max-width: 255px;
   border-radius: 25px;
+  margin-right: 35px;
+  margin-left: 35px;
   padding-bottom: 30px;
-  border-color: #767676;
+  border-color: #cac6c6;
+  border: solid, 1px;
+  border-style: solid;
+  border-width: 0.5px;
+}
+
+img{
+  height: 205px;
+}
+.testDiv{
+  border-radius: 25px;
 }
 
 
@@ -157,10 +172,13 @@ h2 {
 .cards:hover {
   box-shadow: 6px 6px 6px #267172;
 }
+/* 
 .imgCard {
-  object-fit: cover; /*this makes the image in src fit to the size specified below*/
-  width: 265px; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
-}
+  object-fit:cover;
+  height: auto;
+} */
+
+
 
 .rowCards {
   display: flex;
@@ -185,6 +203,7 @@ h2 {
 
 .cardtitle {
   font-family: "Signika", sans-serif;
+  text-transform: capitalize;  
   text-align: left;
   color: #e67e22;
 }
@@ -227,3 +246,4 @@ h2 {
   color: #e67e22;
   box-shadow: none;
 }
+

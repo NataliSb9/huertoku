@@ -75,18 +75,18 @@
 
 <div class="rowCards marginCards" id="collectCards">
     <mat-card (click)="openDialog(productos)" class="cards columnCards" *ngFor= "let productos of productosHuerta">
-        <img class="imgCard" style = "background-size: cover" mat-card-image src = "{{productos.productImg}}" onError="this.src='./assets/img/ICOfruitBAG.png'" alt="{{productos.productName}}"
-        />
+        <div class ="testDiv">
+            <img class="imgCard" mat-card-image src = "{{productos.productImg}}" onError="this.src='./assets/img/ICOfruitBAG.png'" alt="{{productos.productName}}"/>    
+        </div>
         <mat-card-title class="cardtitle">{{productos.productName}}</mat-card-title>
         <mat-card-content>
         <p class="contentCard"><span class="nameField">Precio:</span> {{productos.productPrice}} €/kg</p>
-        <!-- <p class="contentCard">
-            <span class="nameField">Productor:</span> {{product.}}
-        </p> -->
         <p class="contentCard">
             <span class="nameField">Adquirir por trueque: </span> {{productos.productChange}}
         </p>
-        <button class ="buttonhuerta" (click)="meterEnCarrito(productos.idproduct)" id="buy">Reservar producto</button>
+        <div  class="rowCards">
+            <button class ="buttonhuerta" (click)="meterEnCarrito(productos.idproduct)" id="buy">Reservar producto</button>
+        </div>
         </mat-card-content>
     </mat-card>
 </div>    
