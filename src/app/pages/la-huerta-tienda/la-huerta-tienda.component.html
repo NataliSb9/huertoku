@@ -75,12 +75,13 @@
 
 <div class="rowCards marginCards" id="collectCards">
     <mat-card class="cards columnCards" *ngFor= "let productos of productosHuerta">
-        <div class ="testDiv">
+        <div class ="testDiv" (click)="openDialog(productos)">
             <img class="imgCard" mat-card-image src = "{{productos.productImg}}" onError="this.src='./assets/img/ICOfruitBAG.png'" alt="{{productos.productName}}"/>    
         </div>
         <mat-card-title (click)="openDialog(productos)" class="cardtitle">{{productos.productName}}</mat-card-title>
         <mat-card-content>
         <p class="contentCard"><span class="nameField">Precio:</span> {{productos.productPrice}} €/kg</p>
+        <p class="contentCard"><span class="nameField">Localidad:</span> {{productos.productLocality}}</p>
         <p class="contentCard">
             <span class="nameField">Adquirir por trueque: </span> {{productos.productChange}}
         </p>

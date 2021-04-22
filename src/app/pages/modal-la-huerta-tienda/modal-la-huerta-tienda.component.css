@@ -59,6 +59,7 @@ button:hover {
   font-family: "Roboto", sans-serif;
   text-align: left;
   color: #767676;
+  text-transform: capitalize;
 }
 
 h1 {
@@ -66,6 +67,7 @@ h1 {
   text-align: left;
   color: #e67e22;
   margin-left: 10px;
+  text-transform: capitalize;
 }
 .nameField {
   font-style: normal;

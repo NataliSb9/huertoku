@@ -87,11 +87,6 @@ a:hover{
   margin: 12px;
 }
 
-.imgCard {
-  background-size: cover;
- 
-}
-
 .rowCards {
   display: flex;
   flex-direction: row;
@@ -116,12 +111,27 @@ a:hover{
   font-family: "Signika", sans-serif;
   text-align: left;
   color: #e67e22;
+  text-transform: capitalize;
   
+}
+
+.nameField {
+  font-style: normal;
+  font-weight: bold;
+  color: #767676;
 }
 
 .field {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+}
+
+/**AJUSTE IMG TARJETAS***/
+img{
+  height: 205px;
+}
+.testDiv{
+  border-radius: 25px;
 }
 
 /** Efecto color borde TARJETAS **/

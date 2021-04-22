@@ -176,11 +176,14 @@ h2 {
 mat-card-title{
   cursor: pointer
 }
+/**AJUSTE IMG TARJETAS***/
 img{
   height: 205px;
 }
 .testDiv{
   border-radius: 25px;
+  cursor: pointer
+
 }
 
 #collectCards {
@@ -205,7 +208,7 @@ img{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items:center;
   align-content: center;
   flex-flow: wrap;
 }
@@ -237,7 +240,6 @@ img{
 .marginCards{
   margin-right: 12.8%;
   margin-left: 12.8%;
-  margin-bottom: 425px;
 }
 
 @media (max-width: 1600px) {

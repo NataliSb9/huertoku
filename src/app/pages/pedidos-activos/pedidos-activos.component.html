@@ -38,13 +38,16 @@
   <div   class="rowCards" id="collectCards">
 
     <mat-card *ngFor = "let producto of productos_arr" class="cards columnCards sombraCards">
-      <img
-        class="imgCard"
-        mat-card-image
-        src="{{producto.productImg}}" 
-        onError="this.src='./assets/img/ICOfruitBAG.png'"
-        alt="imagen producto"
-      />
+      <div class ="testDiv">
+          <img
+          class="imgCard"
+          mat-card-image
+          src="{{producto.productImg}}" 
+          onError="this.src='./assets/img/ICOfruitBAG.png'"
+          alt="imagen producto"
+        />
+      </div>
+      
       <mat-card-title class="cardtitle ">{{producto.productName}}</mat-card-title>
 
       <mat-card-content>
