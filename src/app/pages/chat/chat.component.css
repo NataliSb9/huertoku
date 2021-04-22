@@ -61,6 +61,12 @@ a:hover{
   }
   .textoContactos{
       font-family: 'Roboto', sans-serif;
+      color: white;
+      background-color:#267172;
+      border-radius: 3px;
+      text-align: left;
+      width: fit-content;
+      padding: 8px;
   }
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
