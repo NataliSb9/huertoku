@@ -2,76 +2,87 @@
 
 <!-- BANNER DE GUIA -->
 <div class="row">
-    <div class="colBanner">
-        <h1 class="cardtitle2" style="margin-top:20px; margin-bottom: -5px;">Mi Perfil</h1>
-    </div>
+  <div class="colBanner">
+    <h1 class="cardtitle2" style="margin-top: 20px; margin-bottom: -5px">
+      Mi Perfil
+    </h1>
+  </div>
 </div>
 <!-- lienea separacion -->
 <!-- <hr style="background-color: #e67e22;"> -->
 
- <!-- NAVEGACION -->
-<div class="row navegacion">
-    <div class="col">
-        <a routerLink="../misproductos">Mis productos</a>
-    </div>
+<!-- NAVEGACION -->
+<div class="row1 navegacion">
+  <div class="col">
+    <a routerLink="../misproductos">Mis productos</a>
+  </div>
 
-    <div class="col">
-        <a routerLink="../historialpedidos">Historial de pedidos</a>
-    </div>
-    
-    <div class="col">
-        <a routerLink="../pedidosactivos">Historial de Envíos</a>
-    </div>
+  <div class="col">
+    <a routerLink="../historialpedidos">Historial de pedidos</a>
+  </div>
 
-    <div class="col">
-        <a routerLink="/huerta">La Huerta</a>
-    </div>
-    
+  <div class="col">
+    <a routerLink="../pedidosactivos">Historial de Envíos</a>
+  </div>
+
+  <div class="col">
+    <a routerLink="/huerta">La Huerta</a>
+  </div>
 </div>
 <!-- lienea separacion -->
 <!-- <hr style="background-color: #e67e22;"> -->
-
-
 
 <!-- PERFIL -->
 <div class="col" id="container">
-
-    <div class="row" style="margin-top: 50px;">
-
-<!-- IMG DE PERFIL -->
-        <div class="col imgPerfil "  *ngIf = "usuarioLogeado.userImg != undefined;else isImagen">
-            <img class="sombraCards" style="width: 500px; border-radius: 25px;" src={{usuarioLogeado.userImg}} onError="this.src='./assets/img/error-imgPerfil.png'" alt="foto perfil">
-        </div>
-
-        <ng-template #isImagen><img  src="../../../assets/img/MAS.png" ></ng-template>
-
-<!-- DATOS PERFIL -->
-        <div class="col data">
-
-            <h2 class = "row datosPerfil" id="UserName">{{usuarioLogeado.username}}</h2>
-
-            <div class="row datosPerfil">
-                <img class="icondata"  src="assets/img/24px_telefono-inteligente.png" >
-                <p>{{usuarioLogeado.telefono}}</p>
-            </div> 
-
-            <div class="row datosPerfil">
-                <img class="icondata"  src="assets/img/24px_email.png" >
-                <p>{{usuarioLogeado.email}}</p>
-            </div>
-
-            <div class="row datosPerfil">
-                <img class="icondata" src="assets/img/24px_mapa-con-un-pequeno-simbolo-de-alfiler-dentro-de-un-circulo.png" >
-                <p>{{usuarioLogeado.localidad}}</p>
-            </div>
-
-            <div class = "row datosPerfil">
-                <a class = "row" routerLink="../perfileditar"><img id="edit-profileIcon" src="assets/img/24pxORANGE_editar.png"><p id="editPerfil">Editar perfil</p></a>
-            </div>
-
-        </div>
-
+  <div class="row" style="margin-top: 50px">
+    <!-- IMG DE PERFIL -->
+    <div
+      class="col imgPerfil"
+      *ngIf="usuarioLogeado.userImg != undefined; else isImagen"
+    >
+      <img
+        class="sombraCards"
+        style="width: 500px; border-radius: 25px"
+        src="{{ usuarioLogeado.userImg }}"
+        onError="this.src='./assets/img/error-imgPerfil.png'"
+        alt="foto perfil"
+      />
     </div>
 
-</div>
+    <ng-template #isImagen
+      ><img src="../../../assets/img/MAS.png"
+    /></ng-template>
 
+    <!-- DATOS PERFIL -->
+    <div class="col data">
+      <h2 class="row datosPerfil" id="UserName">
+        {{ usuarioLogeado.username }}
+      </h2>
+
+      <div class="row datosPerfil">
+        <img class="icondata" src="assets/img/24px_telefono-inteligente.png" />
+        <p>{{ usuarioLogeado.telefono }}</p>
+      </div>
+
+      <div class="row datosPerfil">
+        <img class="icondata" src="assets/img/24px_email.png" />
+        <p>{{ usuarioLogeado.email }}</p>
+      </div>
+
+      <div class="row datosPerfil">
+        <img
+          class="icondata"
+          src="assets/img/24px_mapa-con-un-pequeno-simbolo-de-alfiler-dentro-de-un-circulo.png"
+        />
+        <p>{{ usuarioLogeado.localidad }}</p>
+      </div>
+
+      <div class="row datosPerfil">
+        <a class="row" routerLink="../perfileditar"
+          ><img id="edit-profileIcon" src="assets/img/24pxORANGE_editar.png" />
+          <p id="editPerfil">Editar perfil</p></a
+        >
+      </div>
+    </div>
+  </div>
+</div>
