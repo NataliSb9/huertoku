@@ -42,7 +42,9 @@
             <mat-card-content  class="cardtitle" >
                 <div id="addProducto">
                     <a style="text-decoration: none; color:#E67E22">
+                      <div class ="testDiv">
                         <img  class="imgCard" id="cestaAdd" mat-card-image src="./assets/img/ICOfruitBAG.png"  alt="cesta"/>
+                      </div>
                         <p>Agregar producto</p>
                     </a>
                 </div>
@@ -51,11 +53,10 @@
 
         <!-- trajetas DE PRODUCTO -->
         <mat-card class="cards columnCards sombraCards" *ngFor= "let productos of productosUsuarios">
-
+          <div class ="testDiv">
             <img class="imgCard" mat-card-image src= "{{productos.productImg}}" onError="this.src='./assets/img/ICOfruitBAG.png'" alt="{{productos.productName}}"/>
-            
+          </div>
             <mat-card-title class="cardtitle">{{productos.productName}}</mat-card-title>
-
             <mat-card-content>
               <p class="contentCard"><span class="nameField">Precio:</span> {{productos.productPrice}} /kg</p>
               <p class="contentCard">

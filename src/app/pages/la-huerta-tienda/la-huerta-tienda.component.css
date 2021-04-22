@@ -39,6 +39,7 @@
  background-color: #267172;
 }
 
+
 #filtros p {
   font-family: "Signika", sans-serif;
   font-size: 20px;
@@ -71,8 +72,8 @@ label {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-left: 37%;
-  margin-right: 37%;
+  margin-left: 52%;
+  margin-right: 28%;
 }
 mat-expansion-panel {
   width: 850px;
@@ -86,6 +87,24 @@ mat-expansion-panel {
 
 :host ::ng-deep .average .mat-slider-thumb-label {
   background-color: #267172;
+}
+
+
+@media (max-width: 1600px) {  
+  #filtrosButton{
+    margin-right: 22.8%;
+    margin-left: 47.8%;
+  }
+  
+}
+
+
+@media (max-width: 1600px) {
+  #filtrosButton{
+    margin-right: 22.8%;
+    margin-left: 47.8%;
+  }
+  
 }
 #buscar {
   margin-top: 5px;
@@ -105,6 +124,7 @@ mat-expansion-panel {
   background-color: #267172;
   transition: box-shadow 0.16s ease;
   margin-left: 55px;
+  padding-top: 3px;
 }
 
 #buy{
@@ -153,13 +173,15 @@ h2 {
   border-width: 0.5px;
 }
 
+mat-card-title{
+  cursor: pointer
+}
 img{
   height: 205px;
 }
 .testDiv{
   border-radius: 25px;
 }
-
 
 #collectCards {
   padding: 12px;
@@ -177,7 +199,6 @@ img{
   object-fit:cover;
   height: auto;
 } */
-
 
 
 .rowCards {
@@ -216,6 +237,7 @@ img{
 .marginCards{
   margin-right: 12.8%;
   margin-left: 12.8%;
+  margin-bottom: 425px;
 }
 
 @media (max-width: 1600px) {
@@ -246,4 +268,3 @@ img{
   color: #e67e22;
   box-shadow: none;
 }
-

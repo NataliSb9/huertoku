@@ -65,6 +65,15 @@ a:hover{
   margin-left: 13.8%; 
 }
 
+/***IMG TARJETAS****/
+img{
+  height: 205px;
+}
+.testDiv{
+  border-radius: 25px;
+}
+
+
 @media (max-width: 1600px) {
   #collectCards{
     margin-right: 10%;
@@ -76,10 +85,6 @@ a:hover{
   margin: 12px;
 }
 
-.imgCard {
-  background-size: cover;
-  object-fit: fill;
-}
 
 .rowCards {
   display: flex;
@@ -106,6 +111,7 @@ a:hover{
   font-family: "Signika", sans-serif;
   text-align: left;
   color: #e67e22;
+  text-transform: capitalize;
 }
 
 .nameField {
