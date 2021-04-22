@@ -71,7 +71,7 @@ img {
 
 /* CARDS */
 .icon {
-  width: 40%;
+  width: 68px;
 }
 
 .desc > h3 {
@@ -118,8 +118,6 @@ a:hover
     background: #408f91;
     box-shadow: none;
 }
-
-
 
 /* @media (max-width: 650px) {
   h1 {
