@@ -16,6 +16,7 @@ export class ChatComponent implements OnInit {
   public user:User
   public mensajes:Mensaje[]
   public mensaje:Mensaje
+  public feedback:String
   constructor(public chatService:ChatService, public userService:UserService, public productService:ProductosService) {
     this.mensajes=[]
    }
@@ -34,6 +35,7 @@ export class ChatComponent implements OnInit {
      console.log(idmessenger2)
     this.chatService.enviarMensaje(new Mensaje(id,message,this.userService.user.iduser,idmessenger2)).subscribe((data:Mensaje)=>{
       this.mensaje=data
+      this.feedback="Mensaje enviado con éxito"
     })
    }
 

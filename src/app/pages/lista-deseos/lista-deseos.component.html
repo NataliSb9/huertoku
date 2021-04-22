@@ -5,7 +5,7 @@
 							<th style="width:50%">Product</th>
 							<th style="width:10%">Price</th>
 							<th style="width:8%">Quantity</th>
-							<th style="width:22%" class="text-center">Subtotal</th>
+							
 							<th style="width:10%"></th>
 						</tr>
 					</thead>
@@ -15,8 +15,8 @@
 								<div class="row">
 									<div class="col-sm-2 hidden-xs"><img src="{{productito.productImg}}" alt="..." class="img-responsive"/></div>
 									<div class="col-sm-10">
-										<h4 class="nomargin" style= "font-family: 'Signika', sans-serif;">{{productito.productName}}</h4>
-										<p style= "font-family: 'Roboto', sans-serif;">{{productito.productDescription}}</p>
+										<h4 class="nomargin" style= "padding: 10px; font-family: 'Signika', sans-serif;">{{productito.productName}}</h4>
+										<p style= "padding: 10px; font-family: 'Roboto', sans-serif;">{{productito.productDescription}}</p>
 									</div>
 								</div>
 							</td>
@@ -24,7 +24,7 @@
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="1">
 							</td>
-							<td data-th="Subtotal" class="text-center">36.90€</td>
+							
 							<td class="actions" data-th="">
 								<button style="margin: 1px;" class="btn btn-info btn-sm"><i class="fa fa-refresh"><mat-icon (click)="abrirChat(productito.iduser)" class="icon" type="button">message</mat-icon></i></button>
 								<button style="margin: 1px;" class="btn btn-info btn-sm"><i class="fa fa-refresh"><mat-icon class="icon" type="button">payment</mat-icon></i></button>						
@@ -32,14 +32,12 @@
 						</tr>
 					</tbody>
 					<tfoot>
-						<tr class="visible-xs">
-							<td class="text-center"><strong>Total 36.90</strong></td>
-						</tr>
+						
 						<tr>
-							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuar comprando </a></td>
+							<td><button mat-button mat-dialog-close class="btn btn-warning btn-block" style="color: white; width: 200px;">Continuar comprando<i class="fa fa-angle-right"></i></button></td>
 							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong> Total 36.90€</strong></td>
-							<td><button mat-button mat-dialog-close class="btn btn-danger btn-block"> Cerrar <i class="fa fa-angle-right"></i></button></td>
+							<td class="hidden-xs text-center"><strong></strong></td>
+							
 						</tr>
 					</tfoot>
 				</table>
