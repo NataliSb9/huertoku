@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from '../model/product'
 import { User } from '../model/user';
+import { Transaction } from '../model/transaction';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,12 @@ export class ProductosService {
   private url_envios: string
   private url_productos: string
   private url_laHuerta: string
+  private url_transaction : string
   private http: HttpClient
   public productos:Product[]
   public producto: Product
   public productoHuerta: Product
-  
+  public transaction: Transaction
 
   public produc_selec : Product
 
@@ -31,6 +33,7 @@ export class ProductosService {
     this.url_pedidos = "https://lahuertapp.herokuapp.com/pedidos"
     this.url_envios = "https://lahuertapp.herokuapp.com/envios"
     this.url_productos = "https://lahuertapp.herokuapp.com/product"
+    this.url_transaction = "https://lahuertapp.herokuapp.com/transaction"
     // this.url_productos = "http://localhost:300/product"
 
     this.productoHuerta = new Product (0,"","",0,"",0,"","",0,"")
@@ -127,6 +130,10 @@ export class ProductosService {
     return this.http.get(this.url_envios + "?id=" + id_seller)
   }
 
+  meterTransaction(transaction:Transaction)
+  {
+    return this.http.post(this.url_transaction,transaction)
+  }
 
 
   // public obtenerProductosModal(idProduct: number){

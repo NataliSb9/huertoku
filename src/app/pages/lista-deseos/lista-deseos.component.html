@@ -27,7 +27,7 @@
 							
 							<td class="actions" data-th="">
 								<button style="margin: 1px;" class="btn btn-info btn-sm"><i class="fa fa-refresh"><mat-icon (click)="abrirChat(productito.iduser)" class="icon" type="button">message</mat-icon></i></button>
-								<button style="margin: 1px;" class="btn btn-info btn-sm"><i class="fa fa-refresh"><mat-icon class="icon" type="button">payment</mat-icon></i></button>						
+								<button style="margin: 1px;" class="btn btn-info btn-sm"><i class="fa fa-refresh"><mat-icon (click)="meterDeseos(productito.iduser,productito.idproduct,productito.productAmount)" class="icon" type="button">payment</mat-icon></i></button>						
 							</td>
 						</tr>
 					</tbody>
@@ -35,6 +35,7 @@
 						
 						<tr>
 							<td><button mat-button mat-dialog-close class="btn btn-warning btn-block" style="color: white; width: 200px;">Continuar comprando<i class="fa fa-angle-right"></i></button></td>
+							<p style="color: #e67e22;font-family: 'Roboto',sans-serif;">{{mensaje}}</p>
 							<td colspan="2" class="hidden-xs"></td>
 							<td class="hidden-xs text-center"><strong></strong></td>
 							

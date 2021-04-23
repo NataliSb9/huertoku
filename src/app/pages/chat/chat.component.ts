@@ -17,25 +17,31 @@ export class ChatComponent implements OnInit {
   public mensajes:Mensaje[]
   public mensaje:Mensaje
   public feedback:String
+  public idchat: number
+  public idMessenger2:number
   constructor(public chatService:ChatService, public userService:UserService, public productService:ProductosService) {
     this.mensajes=[]
+    this.idchat=0
    }
 
    mostrarMensajes(id:number){
      console.log(id)
-    this.chatService.mostrarMensajes(id).subscribe((data:any[])=>{
+      this.idchat=id
+      this.chatService.mostrarMensajes(id).subscribe((data:any[])=>{
       this.mensajes=data
+      this.idMessenger2=this.productService.producto.iduser
       console.log(this.mensajes);
     })
     
     
    }
 
-   enviarMensaje(id:number, message:string, idmessenger2:number){
-     console.log(idmessenger2)
-    this.chatService.enviarMensaje(new Mensaje(id,message,this.userService.user.iduser,idmessenger2)).subscribe((data:Mensaje)=>{
+   enviarMensaje(message:string){
+    
+    this.chatService.enviarMensaje(new Mensaje(this.idchat,message,this.userService.user.iduser,this.idMessenger2)).subscribe((data:Mensaje)=>{
       this.mensaje=data
       this.feedback="Mensaje enviado con éxito"
+      this.mostrarMensajes(this.idchat);
     })
    }
 

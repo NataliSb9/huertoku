@@ -76,7 +76,7 @@
                       <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
                     </mat-form-field>
                   </form>
-              <button mat-button *ngFor="let chat of chats"  (click)="enviarMensaje(chat.idchat, message.value, chat.idmessenger2)" >Send</button>
+              <button mat-button (click)="enviarMensaje(message.value)" >Send</button>
               <p style="color: #E67E22;">{{feedback}}</p>
             </mat-card-actions>
           </mat-card>
