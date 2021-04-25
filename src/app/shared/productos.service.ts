@@ -150,12 +150,3 @@ export class ProductosService {
 
   
 
-// METODOS PARA PRODUCTO
-
-// ---> mostrara todos y por filtrado
-/*
-
-*/
-
-
-
