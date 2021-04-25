@@ -106,7 +106,10 @@ export class ProductosService {
     let arrayProduct: Product[] = []
 
     for (let i = 0; i < respuesta.length; i++) {
-      let contenido: Product = new Product(respuesta[i].idproduct, respuesta[i].productName, respuesta[i].productType, respuesta[i].productAmount, respuesta[i].productLocality, respuesta[i].productPrice, respuesta[i].productEco, respuesta[i].productChange, respuesta[i].iduser, respuesta[i].productImg, respuesta[i].productDescription)
+      let contenido: Product = new Product(respuesta[i].idproduct, respuesta[i].productName, 
+        respuesta[i].productType, respuesta[i].productAmount, respuesta[i].productLocality, 
+        respuesta[i].productPrice, respuesta[i].productEco, respuesta[i].productChange, 
+        respuesta[i].iduser, respuesta[i].productImg, respuesta[i].productDescription)
       arrayProduct.push(contenido)
     }
     return arrayProduct
