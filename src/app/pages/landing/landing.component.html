@@ -10,55 +10,46 @@
    
   </section>
 
-
   <!-- TARJETA CON INFO -->
-  <section id="info" >
-    <div class="row" id="container">
-      <div class="col card">
-        <div class="icon">
-          <img src="assets/img/team128.png" alt="easy to use icon">
-        </div>
-        <div class="desc">
-          <h3>Para todos</h3>
-          <p>Compra, vende o intercambia productos agrícolas desde tu casa.
-          </p>
-        </div>
-      </div>
-  
-      <div  class="col card">
-        <div class="icon">
-          <img src="assets/img/ubicacion.png" alt="data privacy icon">
-        </div>
-        <div class="desc">
-          <h3>En todas partes</h3>
-          <p>La huerta llega a todos los lugares,busca por provincia o localidad y decide si envías o recoges.
-          </p>
-        </div>
-      </div>
-  
-      <div  class="col card">
-        <div class="icon">
-          <img src="assets/img/balanzaMano.png" alt="data privacy icon">
-        </div>
-        <div class="desc">
-          <h3>Justo</h3>
-          <p>Cada vendedor fija libremente los precios de sus productos y se lleva el beneficio total de la venta.</p>
-        </div>
-      </div> 
-    </div>
-  </section>
+  <div class="row" id= "collectCards">
+
+    <mat-card class="col cards">
+      <mat-card-header>
+        <mat-card-title >Para todos</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="icon" src="assets/img/team.png" alt="">
+      <mat-card-content>
+        <p>
+          Compra, vende o intercambia productos agrícolas desde tu casa y acuerda con el productor las condiciones.
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="col cards">
+      <mat-card-header>
+        <mat-card-title>En todas partes</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="icon" src="assets/img/ubicacion.png" alt="">
+      <mat-card-content>
+        <p>La huerta llega a todos los lugares,busca por provincia o localidad y decide si envías o recoges.</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="col cards">
+      <mat-card-header>
+        <mat-card-title>Justo</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="icon" src="assets/img/balanzaMano.png"alt="">
+      <mat-card-content>
+        <p>El vendedor fija libremente los precios de sus productos y se lleva el beneficio total de la venta.</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+
 
   <!-- BOTON PARA IR A HUERTA SIN LOGIN -->
   <div class="row">
     <a routerLink="huerta">Entra en la Huerta</a>
   </div>
-
-  <!-- IMAGENES -->
-  <!-- <div id="espantapajaros1">
-    <img src="assets/img/winstonchurchill.png" alt="">
-  </div>
-
-  <div id="espantapajaros">
-    <img src="assets/img/winstonchurchill.png" alt="">
-  </div>
-</main> -->
