@@ -110,6 +110,18 @@ h3{
   margin-left: 20px;
   margin-top: -10px;
 }
+
+#imgCard{
+  margin-top:50px;
+  margin-left:200px;
+  height: 469px
+}
+.userCard{
+  margin-top:50px;
+  margin-left:-50px;
+  margin-top:50px;
+  height: 469px;
+}
 /*///////////BOTÓN////////////*/
 
 button 
@@ -136,4 +148,73 @@ button:hover{
 {
     margin-right: 72px;
     margin-left: 75px;
+}
+
+/* responsive */
+@media screen and (max-width: 996px) {
+
+  #imgCard{
+    margin-top:50px;
+    margin-left:100px;
+    width: 200px;
+    height: 409px;
+  }
+  #userCard{
+    margin-top:50px;
+    margin-left: -10px;
+    margin-right: 0px;
+    width: 200px;
+    height: 369px;
+  }
+  h3{
+    display: none;
+    visibility: hidden;
+  }
+  .cardtitle{
+    padding: 10px;
+    margin-left: 10px;
+  }
+  .inputs{
+    width: 180px;
+  }
+  .buttonsCards 
+  {
+      margin-right: 10px;
+      margin-left: 10px;
+  }
+  button{
+    margin-top: 0px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .cardtitle2{
+    text-align: center;
+  }
+  #imgCard{
+    display: none;
+    visibility: hidden;
+  }
+  .columnCards {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    align-items:center;
+  }
+  .col{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+  }
+  .cards {
+    max-width: 325px;
+    border-radius: 25px;
+    margin-left: 45%;
+    padding-bottom: 30px;
+    border-color: #767676;
+  }
 }

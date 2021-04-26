@@ -117,7 +117,6 @@ font-family: 'Signika', sans-serif;
 {
     font-family: 'Signika', sans-serif;
     text-align: center;
-    /* margin-left: 7%; */
     color: #e67e22;
 }
 .nameField
@@ -125,6 +124,16 @@ font-family: 'Signika', sans-serif;
     font-style: normal;
     font-weight: bold;
     color: #767676;
+}
+.cardImg{
+  height: 790px;
+  text-align: center;
+}
+.inputIMG{
+width: 250px;
+margin-left: -70px;
+margin-top: 10px;
+padding: 10px;
 }
 
 /*///////////BOTÓN////////////*/
@@ -153,8 +162,7 @@ button:hover
 {
     margin-right: 72px;
     margin-left: 75px;
-    /* margin-right: 72px;
-    margin-left: 75px; */
+  
 }
 
 /*****MENSAJE OCULTO Y BOTON****/
@@ -175,4 +183,50 @@ button:hover
 
 #volverProductos:hover{
    color: #408f91;
+}
+
+.comodin{
+  margin-left: -200px;
+}
+
+
+
+/* responsive */
+@media screen and (max-width: 995px) {
+  .comodin{
+  margin-left: 100px;
+  }
+  .cardImg{
+    margin-left: 150px;
+    height: 550px;
+  }
+ 
+}
+
+@media screen and (max-width: 769px) {
+
+  .cardtitle2{
+    text-align: center;
+  }
+  .buttonsCards 
+  {
+    margin-right: 50px;
+    margin-left: 50px;  
+  } 
+}
+
+@media screen and (max-width: 400px) {
+  .comodin{
+  margin-left: -130px;
+  }
+  .cardImg{
+    margin-left: 0px;
+    height: 550px;
+    width: 375px;
+  }
+  .inputIMG{
+    width: 200px;
+    margin-left: 0px;
+  }
+ 
 }

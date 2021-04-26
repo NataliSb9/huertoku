@@ -54,3 +54,15 @@
   .button{
     color: #E67E22;
   }
+
+  @media screen and (max-width: 620px) {
+    h1 {
+      display: none;
+      visibility: hidden;
+    }
+    .icon{
+      margin: 10px;
+    }
+  }
+
+

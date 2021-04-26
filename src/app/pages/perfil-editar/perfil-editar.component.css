@@ -116,22 +116,24 @@ button:hover {
 
 
 /* RESPONISVE */
-@media screen and (max-width: 830px) {
-  #edit-profile {
-    flex-direction: column;
-  }
-  #foto_perfil {
-    margin-left: 10%;
-  }
-  #edit_foto {
-    position: absolute;
-    left: 25%;
-    top: 60%;
-    transform: translate(-10%, -60%);
+@media screen and (max-width: 769px) {
+
+  .cardtitle2{
+    text-align: center;
   }
 }
-@media screen and (max-width: 450px) {
-  #edit_foto {
-    display: none;
+
+@media screen and (max-width: 400px) {
+
+  .dataprofile input {
+    padding: 8px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    margin-right: 5px;
+    width: 300px;
+    border-radius: 6px;
+  }
+  #foto_perfil{
+    width: 350px;
   }
 }

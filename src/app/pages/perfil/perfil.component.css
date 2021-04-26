@@ -75,6 +75,7 @@ a:hover{
   background-size: cover;
   margin-right: 50px;
   margin-left: -100px;
+  width: 500px
 
 }
 /** Efecto color borde TARJETAS **/
@@ -119,72 +120,35 @@ p {
   margin-right: 5px;
   width: 18px;
 }
+#comodin{
+  margin-top: 50px
+}
 
 
-/* RESPONISVE */
-/*
-@media screen and (max-width: 980px) {
-  #UserName {
-    position: absolute;
-    margin-left: 5%;
-  }
-  #data {
-    position: absolute;
-    margin-left: 5%;
-  }
-  #trophy {
-    position: absolute;
-    margin-left: 5%;
-  }
-}
-@media screen and (max-width: 812px) {
-  #UserName {
-    position: absolute;
-    margin-left: 10%;
-  }
-  #data {
-    position: absolute;
-    margin-left: 10%;
-  }
-  #trophy {
-    visibility: hidden;
-  }
-  #edit-profile {
-    position: absolute;
-    left: 20%;
-    top: 60%;
-    transform: translate(-0%, -60%);
-    color: #f39c12;
-    font-family: "Roboto", sans-serif;
-  }
-}
-@media screen and (max-width: 690px) {
-  #UserName {
-    position: absolute;
-    margin-left: 20%;
-  }
+/* RESPONISVE */ 
 
-  #data {
-    position: absolute;
-    margin-left: 20%;
+@media screen and (max-width: 769px) {
+
+  .imgPerfil{
+    width: 300px
+  }
+  .cardtitle2{
+    text-align: center;
   }
 }
-@media screen and (max-width: 690px) {
-  #data {
-    position: absolute;
-    margin-left: 20%;
+@media screen and (max-width: 620px) {
+
+  .comodin{
+    flex-direction: column;
+  }
+  .imgPerfil{
+    width: 200px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .data{
+    margin-right: 10px;
+    margin-left: 100px;
   }
 }
-@media screen and (max-width: 558px) {
-  #imgPerfil {
-    width: 40%;
-  }
-  #UserName {
-    font-size: medium;
-  }
-  #data {
-    font-size: small;
-  }
-}
-*/
 

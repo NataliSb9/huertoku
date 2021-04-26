@@ -34,15 +34,15 @@
 
 <!-- PERFIL -->
 <div class="col" id="container">
-  <div class="row" style="margin-top: 50px">
+  <div class="row" id="comodin">
     <!-- IMG DE PERFIL -->
     <div
-      class="col imgPerfil"
+      class="col "
       *ngIf="usuarioLogeado.userImg != undefined; else isImagen"
     >
       <img
-        class="sombraCards"
-        style="width: 500px; border-radius: 25px"
+        class="sombraCards imgPerfil"
+        style=" border-radius: 25px"
         src="{{ usuarioLogeado.userImg }}"
         onError="this.src='./assets/img/error-imgPerfil.png'"
         alt="foto perfil"
