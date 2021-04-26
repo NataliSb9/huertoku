@@ -14,9 +14,14 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items:center;
   align-content: center;
   flex-flow: wrap;
+}
+.colCard{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .col {
   display: flex;
@@ -80,6 +85,18 @@ mat-card-header {
   text-align: center;
 }
 
+.marginCards{
+  margin-right: 12.8%;
+  margin-left: 12.8%;
+}
+
+@media (max-width: 1600px) {
+  .marginCards{
+    margin-right: 9.8%;
+    margin-left: 9.8%;
+  }
+  
+}
 /* **** BOTON PARA ENTRAR EN LA HUERTA **** */
 a {
   border-radius: 25px;
@@ -94,15 +111,22 @@ a {
   background-color: #f39c12;
   transition: box-shadow 0.16s ease;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 65px;
   padding-top: 3px;
+  margin-bottom: 99px;
 }
 
 a:hover {
   background: #408f91;
   box-shadow: none;
 }
-
+/**Has agregado la media querie del boton + margin top y margin b***/
+@media (max-width: 1600px) {
+ a{
+   margin-top: 25px;
+   margin-bottom: 9px;
+ }
+}
 /* @media (max-width: 650px) {
   h1 {
     font-size: 1.4rem;
