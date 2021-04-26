@@ -270,3 +270,19 @@ img{
   color: #e67e22;
   box-shadow: none;
 }
+
+/* responsive */
+@media screen and (max-width: 769px) {
+
+  .cardtitle2{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+
+  .rowInsideFiltros{
+    max-width: 600px;
+  }
+}
+

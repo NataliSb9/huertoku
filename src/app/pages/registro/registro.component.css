@@ -180,3 +180,51 @@ button:hover
     margin-right: 72px;
     margin-left: 75px;
 }
+#fotoCard{
+  margin-left: 20%;
+  margin-right: 20px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1206px) {
+ 
+   #formCard{
+     margin-left: 10px;
+   }
+  
+ }
+ @media screen and (max-width: 998px) {
+ 
+  #formCard{
+    margin-left: 10px;
+    max-width: 225px;
+    height: 410px;
+  }
+  #fotoCard{
+    max-width: 360px;
+  }
+  .contentCard_resgistro{
+    margin-top: 10px;
+   }
+  .cardtitle{
+    padding-top: 10px;
+  }
+  .buttonsCards 
+{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.cardtitle2{
+  text-align: center;
+}
+
+}
+@media screen and (max-width: 769px) {
+ 
+#fotoCard{
+  display: none;
+  visibility: hidden;
+}
+ 
+}
+

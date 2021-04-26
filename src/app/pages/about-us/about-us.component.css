@@ -53,6 +53,11 @@ TIPOGRAFIAS
   a:hover{
     color:#F39C12
   }
+  .Lk{
+    text-decoration: none;
+    color: #F39C12;
+  }
+ 
   
   /* BANNER GUIA */
   .cardtitle2 {
@@ -90,4 +95,13 @@ p{
     width: 240px;
     text-align: left;
     margin-left: 15px;
+}
+
+/* resopnsive */
+@media screen and (max-width: 400px) {
+ 
+
+  .cardtitle2{
+    text-align: center;
+  }
 }

@@ -144,3 +144,35 @@
     background: #408f91;
     box-shadow: none;
   }
+
+  .colData{
+    margin-left: 50%;
+  }
+  
+  /* responsive */
+  @media screen and (max-width: 769px) {
+
+    .cardtitle2{
+      text-align: center;
+    }
+    .buttonsCards 
+    {
+      margin-right: 50px;
+      margin-left: 50px;  
+    } 
+    .colData{
+      margin-left: 10px;
+    }
+    
+  }
+  @media screen and (max-width:440px) {
+
+    .colForm{
+    margin-left: 20px;
+    }
+    .colData{
+      margin-left: 10px;
+      width:350px ;
+    }
+    
+  }

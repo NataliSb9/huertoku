@@ -199,3 +199,10 @@ button:hover {
 
 }
 
+/* responsive */
+@media screen and (max-width: 769px) {
+
+  .cardtitle2{
+    text-align: center;
+  }
+}
